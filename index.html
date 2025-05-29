@@ -30,11 +30,11 @@
       </div>
       <input type="file" id="fileInput" accept="image/*" style="display: none;">
       <div class="checkbox">
-        <input id="shadowCheckbox" attribute-type="shadow" type="checkbox"></checkbox>
+        <input id="shadowCheckbox" data-type="shadow" type="checkbox"></checkbox>
         <label for="shadowCheckbox">Внутренняя тень</label>
       </div>
       <div class="checkbox">
-        <input id="glareCheckbox" attribute-type="glare" type="checkbox"></checkbox>
+        <input id="glareCheckbox" data-type="glare" type="checkbox"></checkbox>
         <label for="glareCheckbox">Блик</label>
       </div>
       <div id="saveContainer">
@@ -50,6 +50,10 @@
         </div>
       </div>
     </div>
+  </div>
+  <div id="devices">
+    <div data-device="gtr4">GTR 4</div>
+    <div data-device="balance">Balance</div>
   </div>
 </body>
 

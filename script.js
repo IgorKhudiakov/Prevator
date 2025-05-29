@@ -2,14 +2,15 @@ let file = false
 
 const images = {
   bg: {
-    src: './images/bg.png',
+    src: './images/bgs/gtr4.png',
     visibility: true
   },
   watchface: {
-    src: './images/gtr4.png',
+    src: './images/default.png',
     visibility: true,
     width: 314,
-    height: 314
+    height: 314,
+    radius: 157
   },
   shadow: {
     src: './images/shadow.png',
@@ -21,7 +22,13 @@ const images = {
   }
 }
 
+let devices = {}
+fetch('devices.json')
+  .then(response => response.json())
+  .then(data => devices = data)
+
 document.addEventListener('DOMContentLoaded', function () {
+
   const canvas = document.getElementById('canvas')
   const ctx = canvas.getContext('2d')
 
@@ -63,9 +70,8 @@ document.addEventListener('DOMContentLoaded', function () {
         if (key == 'watchface') {
           const centerX = canvas.width / 2
           const centerY = canvas.height / 2
-          const radius = Math.min(image.img.width / 2, image.img.height / 2)
           ctx.beginPath()
-          ctx.arc(centerX, centerY, radius, 0, Math.PI * 2)
+          ctx.arc(centerX, centerY, image.radius, 0, Math.PI * 2)
           ctx.clip()
         }
 
@@ -78,7 +84,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   document.querySelectorAll('.checkbox input').forEach((button) => {
     button.addEventListener('click', (event) => {
-      const type = event.target.getAttribute('attribute-type')
+      const type = event.target.getAttribute('data-type')
       images[type].visibility = event.target.checked
       loadImages()
     })
@@ -103,5 +109,15 @@ document.addEventListener('DOMContentLoaded', function () {
     link.download = `${input.value ? input.value : input.getAttribute('data-default')}.png`
     link.href = canvas.toDataURL('image/png')
     link.click()
+  })
+
+  document.querySelectorAll('#devices > *').forEach((device) => {
+    device.addEventListener('click', (event) => {
+      const deviceType = event.target.getAttribute('data-device')
+      images.bg.src = `./images/bgs/${devices[deviceType].bg}.png`
+      Object.assign(images.watchface, devices[deviceType].preview)
+      document.getElementById('fileName').setAttribute('placeholder', `${deviceType}_preview`)
+      loadImages()
+    })
   })
 })

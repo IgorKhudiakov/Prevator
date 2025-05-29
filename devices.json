@@ -1,0 +1,18 @@
+{
+  "gtr4": {
+    "bg": "gtr4",
+    "preview": {
+      "width": 314,
+      "height": 314,
+      "radius": 157
+    }
+  },
+  "balance": {
+    "bg": "balance",
+    "preview": {
+      "width": 340,
+      "height": 340,
+      "radius": 170
+    }
+  }
+}
