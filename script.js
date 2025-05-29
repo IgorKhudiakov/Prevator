@@ -6,8 +6,8 @@ const images = {
     visibility: true
   },
   watchface: {
-    src: '',
-    visibility: false,
+    src: './images/gtr4.png',
+    visibility: true,
     width: 314,
     height: 314
   },
@@ -99,7 +99,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
   document.getElementById('save').addEventListener('click', () => {
     const link = document.createElement('a')
-    link.download = 'gtr4_preview.png'
+    const input = document.getElementById('fileName')
+    link.download = `${input.value ? input.value : input.getAttribute('data-default')}.png`
     link.href = canvas.toDataURL('image/png')
     link.click()
   })

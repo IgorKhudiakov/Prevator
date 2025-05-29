@@ -1,24 +1,61 @@
 :root {
   --accent-color: #007eff;
-  margin: 0;
-  padding: 0;
-  background: #111214;
+  --dark-color: #333;
+  --tran-bg-color: rgba(128, 128, 128, .2);
+  background-image: radial-gradient(#071022, #111214);
   color: white;
   padding: 2em;
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+}
+
+html,
+body {
+  width: 100dvw;
+  height: 100dvh;
+  margin: 0 !important;
+  padding: 0 !important;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
 }
 
 .container {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
   align-items: center;
-  gap: 2em;
+  gap: 2em 10dvw;
+  padding: 2em;
 }
 
 #preview {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
   align-items: center;
   position: relative;
   width: 480px;
@@ -32,41 +69,143 @@
 }
 
 .controls {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  gap: 1em;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  gap: 1em 2em;
+  max-width: 600px;
+}
+
+#imagePicker > div:first-child {
+  display: flex;
+  background: var(--tran-bg-color);
+  border-radius: 1em;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  aspect-ratio: 1;
+  transform: rotate(180deg);
+}
+#imagePicker > div:last-child {
+  padding: 0 1em;
+}
+
+input:focus-visible {
+  outline: none;
 }
 
 .controls .button {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  height: 3em;
+  cursor: pointer;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
   align-items: center;
-  padding: .5em 1em;
-  background: #333;
-  border-radius: .5em;
+  border-radius: 1em;
+}
+
+#saveContainer {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 3em;
+  background: var(--tran-bg-color);
+  backdrop-filter: blur(5px);
+  border-radius: 1em;
+}
+
+#fileName {
+  width: 100%;
+  height: 100%;
+  border: none;
+  padding: 0 1em;
+  color: white;
+  background: none;
 }
 
 #save {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  aspect-ratio: 1;
+  height: 100%;
   background: var(--accent-color);
+  padding: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+#imagePicker svg,
+#save svg {
+  width: 50%;
 }
 
 .button:hover {
+  -webkit-filter: brightness(1.1);
   filter: brightness(1.1);
 }
 
 .checkbox {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
   align-items: center;
   gap: 1em;
+  cursor: pointer;
+}
+.checkbox label {
+  cursor: pointer;
 }
 
 .checkbox input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
   appearance: none;
   width: 2em;
   aspect-ratio: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   position: relative;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
   align-items: center;
   margin: 0;
 }
@@ -79,7 +218,7 @@
   width: 2em;
   aspect-ratio: 1;
   border-radius: 25%;
-  background: #333;
+  background: var(--tran-bg-color)
 }
 
 .checkbox input::after {
