@@ -1,52 +1,82 @@
 {
-  "active2": {
-    "title": "Active 2",
-    "bg": "active2",
-    "preview": {
-      "type": "round",
-      "width": 314,
-      "height": 314,
-      "radius": 157
+  "amazfit": {
+    "title": "Amazfit",
+    "deviceList": {
+      "active2": {
+        "title": "Active 2",
+        "bg": "active2",
+        "preview": {
+          "type": "round",
+          "width": 314,
+          "height": 314,
+          "radius": 157
+        }
+      },
+      "balance": {
+        "title": "Balance",
+        "bg": "balance",
+        "preview": {
+          "type": "round",
+          "width": 340,
+          "height": 340,
+          "radius": 170
+        }
+      },
+      "gtr4": {
+        "title": "GTR 4",
+        "bg": "gtr4",
+        "preview": {
+          "type": "round",
+          "width": 314,
+          "height": 314,
+          "radius": 157
+        }
+      },
+      "trex3": {
+        "title": "T-Rex 3",
+        "bg": "trex3",
+        "preview": {
+          "type": "round",
+          "width": 340,
+          "height": 340,
+          "radius": 170
+        }
+      },
+      "cheetahsquare": {
+        "title": "Cheetah Square",
+        "bg": "cheetahsquare",
+        "preview": {
+          "type": "square",
+          "width": 294,
+          "height": 340,
+          "radius": 65
+        }
+      }
     }
   },
-  "balance": {
-    "title": "Balance",
-    "bg": "balance",
-    "preview": {
-      "type": "round",
-      "width": 340,
-      "height": 340,
-      "radius": 170
-    }
-  },
-  "gtr4": {
-    "title": "GTR 4",
-    "bg": "gtr4",
-    "preview": {
-      "type": "round",
-      "width": 314,
-      "height": 314,
-      "radius": 157
-    }
-  },
-  "trex3": {
-    "title": "T-Rex 3",
-    "bg": "trex3",
-    "preview": {
-      "type": "round",
-      "width": 340,
-      "height": 340,
-      "radius": 170
-    }
-  },
-  "cheetahsquare": {
-    "title": "Cheetah Square",
-    "bg": "cheetahsquare",
-    "preview": {
-      "type": "square",
-      "width": 294,
-      "height": 340,
-      "radius": 65
+  "huawei": {
+    "title": "Huawei",
+    "deviceList": {
+      "fit3": {
+        "title": "Fit 3",
+        "bg": "fit3",
+        "preview": {
+          "type": "square",
+          "width": 290,
+          "height": 340,
+          "radius": 66
+        }
+      },
+      "gt3": {
+        "title": "GT 3",
+        "bg": "gt3",
+        "preview": {
+          "type": "round",
+          "width": 314,
+          "height": 314,
+          "radius": 157
+        }
+      }
     }
   }
 }

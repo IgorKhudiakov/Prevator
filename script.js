@@ -2,7 +2,7 @@ let file = false
 
 const images = {
   bg: {
-    src: './images/bgs/gtr4.png',
+    src: './images/bgs/amazfit/gtr4.png',
     visibility: true
   },
   watchface: {
@@ -107,30 +107,58 @@ document.addEventListener('DOMContentLoaded', function () {
     link.click()
   })
 
+  const openDeviceListButton = document.getElementById('openDevices')
+  const closeDeviceListButton = document.getElementById('closeDevices')
+  openDeviceListButton.addEventListener('click', () => {
+    openDeviceListButton.classList.add('hide')
+    closeDeviceListButton.classList.remove('hide')
+    document.getElementById('devices').classList.remove('hide')
+  })
+  document.getElementById('closeDevices').addEventListener('click', () => {
+    document.getElementById('devices').classList.add('hide')
+    closeDeviceListButton.classList.add('hide')
+    openDeviceListButton.classList.remove('hide')
+  })
+
   fetch('devices.json')
     .then(response => response.json())
     .then(data => {
       devices = data
       const devicesMenu = document.getElementById("devices")
-      for (const [key, device] of Object.entries(devices)) {
-        const d = document.createElement('div')
-        d.setAttribute('data-device', key)
-        d.innerHTML = device.title
-        d.addEventListener('click', (event) => {
-          const deviceType = event.target.getAttribute('data-device')
-          images.bg.src = `./images/bgs/${devices[deviceType].bg}.png`
-          Object.assign(images.watchface, devices[deviceType].preview)
-          const input = document.getElementById('fileName')
-          input.setAttribute('placeholder', `${deviceType}_preview`)
-          input.setAttribute('data-default', `${deviceType}_preview`)
-          if (lastType != devices[deviceType].preview.type) {
-            lastType = devices[deviceType].preview.type
-            images.watchface.src = `./images/defaults/${lastType}.png`
-            Object.assign(images.watchface, devices[deviceType].preview)
-          }
-          loadImages()
+      for (const [brandName, brand] of Object.entries(devices)) {
+        const b = document.createElement('div')
+        b.classList.add('brand')
+        const brandTitle = document.createElement('div')
+        brandTitle.innerHTML = brand.title
+        brandTitle.classList.add('title')
+        brandTitle.addEventListener('click', e => {
+          b.parentNode.querySelectorAll('.title').forEach(t => {
+            if (t != e.target) t.classList.remove('active')
+            else e.target.classList.toggle('active')
+          })
         })
-        devicesMenu.appendChild(d)
+        b.appendChild(brandTitle)
+        for (const [deviceType, device] of Object.entries(brand.deviceList)) {
+          const d = document.createElement('div')
+          d.classList.add('device')
+          d.setAttribute('data-device', deviceType)
+          d.innerHTML = device.title
+          d.addEventListener('click', () => {
+            images.bg.src = `./images/bgs/${brandName}/${device.bg}.png`
+            Object.assign(images.watchface, device.preview)
+            const input = document.getElementById('fileName')
+            input.setAttribute('placeholder', `${deviceType}_preview`)
+            input.setAttribute('data-default', `${deviceType}_preview`)
+            if (lastType != device.preview.type) {
+              lastType = device.preview.type
+              images.watchface.src = `./images/defaults/${lastType}.png`
+              Object.assign(images.watchface, device.preview)
+            }
+            loadImages()
+          })
+          b.appendChild(d)
+        }
+        devicesMenu.appendChild(b)
       }
     })
 })
