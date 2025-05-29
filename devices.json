@@ -3,6 +3,7 @@
     "title": "Active 2",
     "bg": "active2",
     "preview": {
+      "type": "round",
       "width": 314,
       "height": 314,
       "radius": 157
@@ -12,6 +13,7 @@
     "title": "Balance",
     "bg": "balance",
     "preview": {
+      "type": "round",
       "width": 340,
       "height": 340,
       "radius": 170
@@ -21,6 +23,7 @@
     "title": "GTR 4",
     "bg": "gtr4",
     "preview": {
+      "type": "round",
       "width": 314,
       "height": 314,
       "radius": 157
@@ -30,9 +33,20 @@
     "title": "T-Rex 3",
     "bg": "trex3",
     "preview": {
+      "type": "round",
       "width": 340,
       "height": 340,
       "radius": 170
+    }
+  },
+  "cheetahsquare": {
+    "title": "Cheetah Square",
+    "bg": "cheetahsquare",
+    "preview": {
+      "type": "square",
+      "width": 294,
+      "height": 340,
+      "radius": 65
     }
   }
 }

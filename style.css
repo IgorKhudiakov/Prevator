@@ -2,6 +2,7 @@
   --accent-color: #007eff;
   --dark-color: #333;
   --tran-bg-color: rgba(128, 128, 128, .2);
+  background-image: -o-radial-gradient(#071022, #111214);
   background-image: radial-gradient(#071022, #111214);
   color: white;
   padding: 2em;
@@ -10,8 +11,6 @@
 
 html,
 body {
-  width: 100dvw;
-  height: 100dvh;
   margin: 0 !important;
   padding: 0 !important;
   -webkit-align-content: center;
@@ -42,6 +41,8 @@ body {
   align-items: center;
   gap: 2em 10dvw;
   margin: 3em 2em;
+  max-width: 100dvw;
+  max-height: 100dvh;
 }
 
 #preview {
@@ -85,14 +86,25 @@ body {
 }
 
 #imagePicker > div:first-child {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   background: var(--tran-bg-color);
   border-radius: 1em;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   height: 100%;
   aspect-ratio: 1;
-  transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
 }
 #imagePicker > div:last-child {
   padding: 0 1em;
@@ -127,7 +139,8 @@ input:focus-visible {
   display: flex;
   height: 3em;
   background: var(--tran-bg-color);
-  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
   border-radius: 1em;
 }
 
@@ -226,28 +239,53 @@ input:focus-visible {
 }
 
 #devices {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  position: absolute;
+  position: fixed;
   top: 2em;
   right: 2em;
-  flex-direction: row;
+  left: 2em;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
   gap: .5em;
-  flex-wrap: wrap;
-  margin: 2em;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  -webkit-box-pack: end;
+  -webkit-justify-content: end;
+      -ms-flex-pack: end;
+          justify-content: end;
 }
 #devices > * {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   height: 2em;
   min-width: 4em;
   background: var(--tran-bg-color);
   border-radius: 1em;
   padding: 0 .5em;
+  cursor: pointer;
 }
 
 @media (max-width: 600px) {
   #devices {
-    margin: 0;
+    top: 1em;
+    left: 1em;
+    right: 1em;
   }
 }

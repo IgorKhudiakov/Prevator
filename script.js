@@ -6,7 +6,7 @@ const images = {
     visibility: true
   },
   watchface: {
-    src: './images/default.png',
+    src: './images/defaults/round.png',
     visibility: true,
     width: 314,
     height: 314,
@@ -23,6 +23,7 @@ const images = {
 }
 
 let devices = {}
+let lastType = 'round'
 
 document.addEventListener('DOMContentLoaded', function () {
 
@@ -65,10 +66,8 @@ document.addEventListener('DOMContentLoaded', function () {
         const y = (maxHeight - image.img.height) / 2
 
         if (key == 'watchface') {
-          const centerX = canvas.width / 2
-          const centerY = canvas.height / 2
           ctx.beginPath()
-          ctx.arc(centerX, centerY, image.radius, 0, Math.PI * 2)
+          ctx.roundRect(x, y, image.img.width, image.img.height, image.radius)
           ctx.clip()
         }
 
@@ -124,6 +123,11 @@ document.addEventListener('DOMContentLoaded', function () {
           const input = document.getElementById('fileName')
           input.setAttribute('placeholder', `${deviceType}_preview`)
           input.setAttribute('data-default', `${deviceType}_preview`)
+          if (lastType != devices[deviceType].preview.type) {
+            lastType = devices[deviceType].preview.type
+            images.watchface.src = `./images/defaults/${lastType}.png`
+            Object.assign(images.watchface, devices[deviceType].preview)
+          }
           loadImages()
         })
         devicesMenu.appendChild(d)
