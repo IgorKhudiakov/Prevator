@@ -23,9 +23,6 @@ const images = {
 }
 
 let devices = {}
-fetch('devices.json')
-  .then(response => response.json())
-  .then(data => devices = data)
 
 document.addEventListener('DOMContentLoaded', function () {
 
@@ -111,13 +108,25 @@ document.addEventListener('DOMContentLoaded', function () {
     link.click()
   })
 
-  document.querySelectorAll('#devices > *').forEach((device) => {
-    device.addEventListener('click', (event) => {
-      const deviceType = event.target.getAttribute('data-device')
-      images.bg.src = `./images/bgs/${devices[deviceType].bg}.png`
-      Object.assign(images.watchface, devices[deviceType].preview)
-      document.getElementById('fileName').setAttribute('placeholder', `${deviceType}_preview`)
-      loadImages()
+  fetch('devices.json')
+    .then(response => response.json())
+    .then(data => {
+      devices = data
+      const devicesMenu = document.getElementById("devices")
+      for (const [key, device] of Object.entries(devices)) {
+        const d = document.createElement('div')
+        d.setAttribute('data-device', key)
+        d.innerHTML = device.title
+        d.addEventListener('click', (event) => {
+          const deviceType = event.target.getAttribute('data-device')
+          images.bg.src = `./images/bgs/${devices[deviceType].bg}.png`
+          Object.assign(images.watchface, devices[deviceType].preview)
+          const input = document.getElementById('fileName')
+          input.setAttribute('placeholder', `${deviceType}_preview`)
+          input.setAttribute('data-default', `${deviceType}_preview`)
+          loadImages()
+        })
+        devicesMenu.appendChild(d)
+      }
     })
-  })
 })
