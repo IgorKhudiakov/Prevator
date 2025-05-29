@@ -41,8 +41,7 @@ body {
   align-items: center;
   gap: 2em 10dvw;
   margin: 3em 2em;
-  max-width: 100dvw;
-  max-height: 100dvh;
+  min-height: calc(100dvh - 6em);
 }
 
 #preview {
@@ -238,6 +237,19 @@ input:focus-visible {
   background: var(--accent-color);
 }
 
+#source {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2em;
+  height: 2em;
+  position: fixed;
+  top: 2em;
+  left: 2em;
+  border-radius: .5em;
+  color: white;
+}
+
 #devices {
   display: -webkit-box;
   display: -webkit-flex;
@@ -283,6 +295,10 @@ input:focus-visible {
 }
 
 @media (max-width: 600px) {
+  #source {
+    top: 1em;
+    left: 1em;
+  }
   #devices {
     top: 1em;
     left: 1em;
