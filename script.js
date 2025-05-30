@@ -17,7 +17,7 @@ const images = {
     visibility: false
   },
   glare: {
-    src: './images/glare.png',
+    src: './images/glares/default/glare.png',
     visibility: false
   }
 }
@@ -97,6 +97,7 @@ document.addEventListener('DOMContentLoaded', function () {
       }
       reader.readAsDataURL(file)
     }
+    event.target.value = null
   })
 
   document.getElementById('save').addEventListener('click', () => {
@@ -122,11 +123,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
   document.getElementById('openFaq').addEventListener('click', () => {
     document.querySelector('body').style.overflow = 'hidden'
-    document.getElementById('faq').classList.remove('hide')
+    document.getElementById('faq').classList.remove('hidden', 'inactive')
   })
   document.getElementById('closeFaq').addEventListener('click', () => {
     document.querySelector('body').style.overflow = 'auto'
-    document.getElementById('faq').classList.add('hide')
+    document.getElementById('faq').classList.add('inactive')
+    setTimeout(() => document.getElementById('faq').classList.add('hidden'), 500)
   })
 
   fetch('devices.json')
@@ -147,11 +149,16 @@ document.addEventListener('DOMContentLoaded', function () {
           })
         })
         b.appendChild(brandTitle)
-        for (const [deviceType, device] of Object.entries(brand.deviceList)) {
+        for (const [deviceModel, device] of Object.entries(brand.deviceList)) {
           const d = document.createElement('div')
           d.classList.add('device', 'button')
-          d.setAttribute('data-device', deviceType)
-          d.innerHTML = device.title
+          d.setAttribute('data-device', deviceModel)
+          const display = document.createElement('div')
+          display.classList.add('display', device.preview.type)
+          const title = document.createElement('div')
+          title.innerHTML = device.title
+          d.appendChild(display)
+          d.appendChild(title)
           d.addEventListener('click', () => {
             b.parentNode.querySelectorAll('.device').forEach(t => {
               if (t != d) t.classList.remove('active')
@@ -160,14 +167,15 @@ document.addEventListener('DOMContentLoaded', function () {
             images.bg.src = `./images/bgs/${brandName}/${device.bg}.png`
             Object.assign(images.watchface, device.preview)
             const input = document.getElementById('fileName')
-            input.setAttribute('placeholder', `${deviceType}_preview`)
-            input.setAttribute('data-default', `${deviceType}_preview`)
+            input.setAttribute('placeholder', `${deviceModel}_preview`)
+            input.setAttribute('data-default', `${deviceModel}_preview`)
             if (lastType != device.preview.type) {
               lastType = device.preview.type
               images.watchface.src = `./images/defaults/${lastType}.png`
               images.shadow.src = `./images/shadows/${lastType}.png`
               Object.assign(images.watchface, device.preview)
             }
+            images.glare.src = device.preview?.customGlare ? `./images/glares/${brandName}/${device.bg}.png` : './images/glares/default/glare.png'
             loadImages()
           })
           b.appendChild(d)

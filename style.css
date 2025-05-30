@@ -46,7 +46,7 @@ body {
 }
 
 .button,
-.button label {
+.button > * {
   cursor: pointer;
 }
 
@@ -147,6 +147,7 @@ input:focus-visible {
   -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px);
   border-radius: 1em;
+  border: 1px solid var(--tran-bg-color);
 }
 
 #fileName {
@@ -254,6 +255,7 @@ input:focus-visible {
   position: fixed;
   top: 0;
   width: 100%;
+  height: 6em;
   padding: 2em;
 }
 
@@ -264,12 +266,12 @@ input:focus-visible {
   display: flex;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
   -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   height: 2em;
 }
 
@@ -302,9 +304,9 @@ input:focus-visible {
   display: flex;
   width: 100%;
   -webkit-box-pack: end;
-  -webkit-justify-content: end;
-      -ms-flex-pack: end;
-          justify-content: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
   gap: .5em;
 }
 
@@ -330,6 +332,12 @@ input:focus-visible {
   color: white;
 }
 
+#closeFaq {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
 #devices {
   display: -webkit-box;
   display: -webkit-flex;
@@ -350,21 +358,16 @@ input:focus-visible {
 }
 
 #devices .brand {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  gap: .5em;
   background: var(--tran-bg-color);
   border-radius: 1em;
   -webkit-backdrop-filter: blur(3px);
   backdrop-filter: blur(3px);
   cursor: default;
+  height: auto;
+  -webkit-transition: height 1s ease;
+  -o-transition: height 1s ease;
+  transition: height 1s ease;
+  overflow: hidden;
 }
 
 #devices .brand .title {
@@ -402,33 +405,58 @@ input:focus-visible {
 }
 
 #devices .device {
-  display: none;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  gap: .5em;
   -webkit-box-align: center;
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
-  height: 2em;
-  padding: 0 .5em;
+  height: 0;
+  padding: 0;
   background-color: transparent;
   -webkit-transition: all .2s;
   -o-transition: all .2s;
   transition: all .2s;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  opacity: 0;
+  pointer-events: none;
+}
+#devices .display {
+  height: 1em;
+  background: var(--tran-bg-color);
+  border: 1px solid var(--tran-bg-color);
+}
+.display.round {
+  width: 1em;
+  border-radius: .5em;
+}
+.display.square {
+  width: .8em;
+  margin: 0 .1em;
+  border-radius: .2em;
+}
+.display.band {
+  width: .5em;
+  margin: 0 .25em;
+  border-radius: .25em;
 }
 
 #devices .title.active~.device {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  height: 2em;
+  padding: 0 .5em;
+  opacity: 1;
+  pointer-events: unset;
 }
 
-#devices .device:last-child {
+#devices .title.active~:not(:first-child) {
+  margin-top: .5em;
+}
+
+#devices .title.active~.device:last-child {
   border-radius: 0 0 .5em .5em;
   margin-bottom: .5em;
 }
@@ -457,12 +485,12 @@ input:focus-visible {
   display: flex;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
   -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 #faq .content {
@@ -473,18 +501,36 @@ input:focus-visible {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   gap: 1em;
   width: 90%;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   max-width: 500px;
   background: var(--tran-bg-color);
-  -webkit-backdrop-filter: blur(3px);
-          backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  -webkit-box-shadow: 0px .5em 1em rgba(0, 0, 0, .5);
+  box-shadow: 0px .5em 1em rgba(0, 0, 0, .5);
   border-radius: 2em;
+  border: 1px solid var(--tran-bg-color);
   padding: min(5dvw, 3em);
+  -webkit-transition: all .5s;
+  -o-transition: all .5s;
+  transition: all .5s;
+  opacity: 1;
+}
+
+#faq.hidden {
+  z-index: -100;
+}
+
+#faq.inactive .content {
+  -webkit-transform: translateY(5em);
+  -ms-transform: translateY(5em);
+  transform: translateY(5em);
+  opacity: 0;
 }
 
 #faq .title {
@@ -495,8 +541,8 @@ input:focus-visible {
   gap: .5em;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
 #faq .title>*:first-child {

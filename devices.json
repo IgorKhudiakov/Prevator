@@ -19,7 +19,19 @@
           "type": "round",
           "width": 340,
           "height": 340,
-          "radius": 170
+          "radius": 170,
+          "customGlare": true
+        }
+      },
+      "bip6": {
+        "title": "Bip 6",
+        "bg": "bip6",
+        "preview": {
+          "type": "square",
+          "width": 294,
+          "height": 340,
+          "radius": 65,
+          "customGlare": true
         }
       },
       "gtr4": {
@@ -39,7 +51,8 @@
           "type": "round",
           "width": 340,
           "height": 340,
-          "radius": 170
+          "radius": 170,
+          "customGlare": true
         }
       },
       "cheetahsquare": {
@@ -74,7 +87,8 @@
           "type": "round",
           "width": 314,
           "height": 314,
-          "radius": 157
+          "radius": 157,
+          "customGlare": true
         }
       }
     }
