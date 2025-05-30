@@ -120,6 +120,15 @@ document.addEventListener('DOMContentLoaded', function () {
     openDeviceListButton.classList.remove('hide')
   })
 
+  document.getElementById('openFaq').addEventListener('click', () => {
+    document.querySelector('body').style.overflow = 'hidden'
+    document.getElementById('faq').classList.remove('hide')
+  })
+  document.getElementById('closeFaq').addEventListener('click', () => {
+    document.querySelector('body').style.overflow = 'auto'
+    document.getElementById('faq').classList.add('hide')
+  })
+
   fetch('devices.json')
     .then(response => response.json())
     .then(data => {
@@ -130,7 +139,7 @@ document.addEventListener('DOMContentLoaded', function () {
         b.classList.add('brand')
         const brandTitle = document.createElement('div')
         brandTitle.innerHTML = brand.title
-        brandTitle.classList.add('title')
+        brandTitle.classList.add('title', 'button')
         brandTitle.addEventListener('click', e => {
           b.parentNode.querySelectorAll('.title').forEach(t => {
             if (t != e.target) t.classList.remove('active')
@@ -140,7 +149,7 @@ document.addEventListener('DOMContentLoaded', function () {
         b.appendChild(brandTitle)
         for (const [deviceType, device] of Object.entries(brand.deviceList)) {
           const d = document.createElement('div')
-          d.classList.add('device')
+          d.classList.add('device', 'button')
           d.setAttribute('data-device', deviceType)
           d.innerHTML = device.title
           d.addEventListener('click', () => {
@@ -155,7 +164,7 @@ document.addEventListener('DOMContentLoaded', function () {
             input.setAttribute('data-default', `${deviceType}_preview`)
             if (lastType != device.preview.type) {
               lastType = device.preview.type
-              // images.watchface.src = `./images/defaults/${lastType}.png`
+              images.watchface.src = `./images/defaults/${lastType}.png`
               images.shadow.src = `./images/shadows/${lastType}.png`
               Object.assign(images.watchface, device.preview)
             }

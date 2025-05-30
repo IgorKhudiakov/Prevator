@@ -78,5 +78,20 @@
         }
       }
     }
+  },
+  "xiaomi": {
+    "title": "Xiaomi",
+    "deviceList": {
+      "sb7": {
+        "title": "Smart Band 7",
+        "bg": "sb7",
+        "preview": {
+          "type": "band",
+          "width": 128,
+          "height": 326,
+          "radius": 96
+        }
+      }
+    }
   }
 }

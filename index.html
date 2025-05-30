@@ -29,17 +29,17 @@
         <div>Загрузить картинку</div>
       </div>
       <input type="file" id="fileInput" accept="image/*" style="display: none;">
-      <div class="checkbox">
+      <div class="checkbox button">
         <input id="shadowCheckbox" data-type="shadow" type="checkbox"></checkbox>
         <label for="shadowCheckbox">Внутренняя тень</label>
       </div>
-      <div class="checkbox">
+      <div class="checkbox button">
         <input id="glareCheckbox" data-type="glare" type="checkbox"></checkbox>
         <label for="glareCheckbox">Блик</label>
       </div>
       <div id="saveContainer">
         <input id="fileName" type="text" data-default="gtr4_preview" placeholder="gtr4_preview">
-        <div id="save" class="button">
+        <div id="save" class="button" title="Скачать">
           <svg version="1.1" viewBox="0 0 24 24" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
             xmlns:xlink="http://www.w3.org/1999/xlink">
             <path fill="currentColor"
@@ -52,6 +52,14 @@
     </div>
   </div>
   <div id="header">
+    <a class="donateLink" title="Поддержать" target="_blank" href="https://yoomoney.ru/to/4100119028733968/100">
+      <svg viewBox="0 0 169 120" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M108.99 0C75.5725 0 48.9902 26.962 48.9902 60C48.9902 93.4177 75.9523 120 108.99 120C142.028 120 168.99 93.038 168.99 60C168.99 26.962 142.028 0 108.99 0ZM108.99 82.4051C96.8383 82.4051 86.5852 72.1519 86.5852 60C86.5852 47.8481 96.8383 37.5949 108.99 37.5949C121.142 37.5949 131.395 47.8481 131.395 60C131.016 72.1519 121.142 82.4051 108.99 82.4051Z"
+          fill="currentColor" />
+        <path d="M48.6076 17.4684V104.81H27.3418L0 17.4684H48.6076V17.4684Z" fill="currentColor" />
+      </svg>
+    </a>
     <a id="source" title="Исходный код" target="_blank" href="https://github.com/IgorKhudiakov/Prevator">
       <svg viewBox="0 0 98 96" xmlns="http://www.w3.org/2000/svg">
         <path fill-rule="evenodd" clip-rule="evenodd"
@@ -60,14 +68,14 @@
       </svg>
     </a>
     <div id="deviceChooser">
-      <div id="openDevices">
+      <div id="openDevices" class="button">
         <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1" viewBox="0 0 24 24"
           xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xodm="http://www.corel.com/coreldraw/odm/2003">
           <path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"
             d="M10.01 0l3.98 0c1.09,0 1.98,0.89 1.98,1.98l0 2.27c2.43,1.24 4.19,3.59 4.63,6.38 0.09,-0.05 0.2,-0.08 0.31,-0.08l0.28 0c0.32,0 0.58,0.26 0.58,0.58l0 1.74c0,0.32 -0.26,0.58 -0.58,0.58l-0.28 0c-0.11,0 -0.22,-0.03 -0.31,-0.08 -0.44,2.79 -2.2,5.14 -4.63,6.38l0 2.27c0,1.09 -0.89,1.98 -1.98,1.98l-3.98 0c-1.09,0 -1.98,-0.89 -1.98,-1.98l0 -2.26c-2.81,-1.45 -4.74,-4.38 -4.74,-7.76 0,-3.38 1.93,-6.31 4.74,-7.76l0 -2.26c0,-1.09 0.89,-1.98 1.98,-1.98zm1.99 4.74c4.01,0 7.26,3.25 7.26,7.26 0,4.01 -3.25,7.26 -7.26,7.26 -4.01,0 -7.26,-3.25 -7.26,-7.26 0,-4.01 3.25,-7.26 7.26,-7.26z" />
         </svg>
       </div>
-      <div id="closeDevices" class="hide">
+      <div id="closeDevices" class="button hide">
         <svg version="1.1" viewBox="0 0 24 24" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
           xmlns:xlink="http://www.w3.org/1999/xlink">
           <path fill="currentColor"
@@ -76,6 +84,34 @@
       </div>
       <div id="devices" class="hide"></div>
     </div>
+  </div>
+  <div id="faq" class="hide">
+    <div class="content">
+      <div class="title">
+        <div>Как пользоваться</div>
+        <div id="closeFaq" class="button">
+          <svg version="1.1" viewBox="0 0 24 24" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink">
+            <path fill="currentColor"
+              d="M14.8,12l3.6-3.6c0.8-0.8,0.8-2,0-2.8c-0.8-0.8-2-0.8-2.8,0L12,9.2L8.4,5.6c-0.8-0.8-2-0.8-2.8,0 c-0.8,0.8-0.8,2,0,2.8L9.2,12l-3.6,3.6c-0.8,0.8-0.8,2,0,2.8C6,18.8,6.5,19,7,19s1-0.2,1.4-0.6l3.6-3.6l3.6,3.6 C16,18.8,16.5,19,17,19s1-0.2,1.4-0.6c0.8-0.8,0.8-2,0-2.8L14.8,12z" />
+          </svg>
+        </div>
+      </div>
+      <div>
+        <span>1. Выберите нужное устройство.</span><br><br>
+        <span>2. Загрузите скриншот циферблата или мини-приложения, используя соответствующую кнопку.</span><br><br>
+        <span>3. При необходимости включите "украшения" в виде внутренней тени и бликов.</span><br><br>
+        <span>4. Если вы удовлетворены результатом, укажите имя файла (по умолчанию - [devicename_preview.png]) и
+          нажмите "Скачать".</span><br><br>
+        <span>5. Повторяйте пункты 1-4, пока вам не надоест.</span>
+      </div>
+    </div>
+  </div>
+  <div id="openFaq" class="button">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path fill="currentColor"
+        d="M12,0A12,12,0,1,0,24,12,12.01,12.01,0,0,0,12,0Zm1,18a1,1,0,0,1-2,0V11H10a1,1,0,0,1,0-2h2a1,1,0,0,1,1,1ZM12.02,7a1,1,0,0,1-.01-2h.01a1,1,0,0,1,0,2Z" />
+    </svg>
   </div>
 </body>
 
