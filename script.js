@@ -13,7 +13,7 @@ const images = {
     radius: 157
   },
   shadow: {
-    src: './images/shadow.png',
+    src: './images/shadows/round.png',
     visibility: false
   },
   glare: {
@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function () {
     canvas.width = maxWidth
     canvas.height = maxHeight
 
-    // ctx.clearRect(0, 0, canvas.width, canvas.height)
+    ctx.clearRect(0, 0, canvas.width, canvas.height)
 
     for (const [key, image] of Object.entries(images)) {
       if (image?.src && image.visibility) {
@@ -144,6 +144,10 @@ document.addEventListener('DOMContentLoaded', function () {
           d.setAttribute('data-device', deviceType)
           d.innerHTML = device.title
           d.addEventListener('click', () => {
+            b.parentNode.querySelectorAll('.device').forEach(t => {
+              if (t != d) t.classList.remove('active')
+              else d.classList.toggle('active')
+            })
             images.bg.src = `./images/bgs/${brandName}/${device.bg}.png`
             Object.assign(images.watchface, device.preview)
             const input = document.getElementById('fileName')
@@ -151,7 +155,8 @@ document.addEventListener('DOMContentLoaded', function () {
             input.setAttribute('data-default', `${deviceType}_preview`)
             if (lastType != device.preview.type) {
               lastType = device.preview.type
-              images.watchface.src = `./images/defaults/${lastType}.png`
+              // images.watchface.src = `./images/defaults/${lastType}.png`
+              images.shadow.src = `./images/shadows/${lastType}.png`
               Object.assign(images.watchface, device.preview)
             }
             loadImages()

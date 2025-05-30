@@ -2,6 +2,7 @@
   --accent-color: #007eff;
   --dark-color: #333;
   --tran-bg-color: rgba(128, 128, 128, .2);
+  --tran-accent-bg-color: rgba(0, 126, 255, .2);
   background-image: -o-radial-gradient(#071022, #111214);
   background-image: radial-gradient(#071022, #111214);
   color: white;
@@ -244,12 +245,20 @@ input:focus-visible {
 }
 
 #header {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  box-sizing: border-box;
-  justify-content: space-between;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   position: fixed;
   top: 0;
   width: 100%;
+  height: 6em;
   padding: 2em;
 }
 
@@ -273,6 +282,9 @@ input:focus-visible {
 }
 
 #deviceChooser {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   gap: .5em;
 }
@@ -290,16 +302,16 @@ input:focus-visible {
   display: flex;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
   gap: 1em;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-box-pack: end;
-  -webkit-justify-content: end;
-  -ms-flex-pack: end;
-  justify-content: end;
   width: 150px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  max-height: calc(100dvh - 6em);
+  overflow: auto;
 }
 
 #devices .brand {
@@ -315,21 +327,41 @@ input:focus-visible {
   gap: .5em;
   background: var(--tran-bg-color);
   border-radius: 1em;
-  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+          backdrop-filter: blur(3px);
   cursor: default;
 }
 
 #devices .brand .title {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   font-weight: 600;
   text-transform: uppercase;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   background: var(--tran-bg-color);
   border-radius: 1em;
   padding: 1em .5em;
-  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+          backdrop-filter: blur(3px);
+  cursor: pointer;
+  -webkit-transition: all .2s;
+  -o-transition: all .2s;
+  transition: all .2s;
+}
+#devices .brand .title:hover {
+  -webkit-filter: brightness(1.1);
+          filter: brightness(1.1);
 }
 
 #devices .device {
@@ -346,8 +378,11 @@ input:focus-visible {
   padding: 0 .5em;
   cursor: pointer;
   background-color: transparent;
+  -webkit-transition: all .2s;
+  -o-transition: all .2s;
   transition: all .2s;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 #devices .title.active ~ .device {
   display: -webkit-box;
@@ -362,6 +397,9 @@ input:focus-visible {
 #devices .device:hover {
   background-color: var(--tran-bg-color);
 }
+#devices .device.active {
+  background-color: var(--tran-accent-bg-color);
+}
 
 .hide {
   display: none !important;
@@ -371,4 +409,8 @@ input:focus-visible {
   #header {
     padding: 1em;
   }
+}
+
+:root {
+  scrollbar-color: var(--tran-bg-color) #111214;
 }
