@@ -202,6 +202,10 @@ input:focus-visible {
   align-items: center;
   gap: 1em;
 }
+.checkbox.disable {
+  opacity: .3;
+  pointer-events: none;
+}
 
 .checkbox input {
   -webkit-appearance: none;

@@ -17,10 +17,10 @@
         "bg": "balance",
         "preview": {
           "type": "round",
-          "width": 340,
-          "height": 340,
-          "radius": 170,
-          "customGlare": true
+          "width": 324,
+          "height": 324,
+          "radius": 162,
+          "hasGlare": true
         }
       },
       "bip6": {
@@ -28,10 +28,21 @@
         "bg": "bip6",
         "preview": {
           "type": "square",
-          "width": 294,
-          "height": 340,
+          "width": 266,
+          "height": 307,
           "radius": 65,
-          "customGlare": true
+          "hasGlare": true
+        }
+      },
+      "cheetahsquare": {
+        "title": "Cheetah Square",
+        "bg": "cheetahsquare",
+        "preview": {
+          "type": "square",
+          "width": 266,
+          "height": 307,
+          "radius": 65,
+          "hasGlare": true
         }
       },
       "gtr4": {
@@ -41,7 +52,8 @@
           "type": "round",
           "width": 314,
           "height": 314,
-          "radius": 157
+          "radius": 157,
+          "hasGlare": true
         }
       },
       "trex3": {
@@ -49,20 +61,10 @@
         "bg": "trex3",
         "preview": {
           "type": "round",
-          "width": 340,
-          "height": 340,
-          "radius": 170,
-          "customGlare": true
-        }
-      },
-      "cheetahsquare": {
-        "title": "Cheetah Square",
-        "bg": "cheetahsquare",
-        "preview": {
-          "type": "square",
-          "width": 294,
-          "height": 340,
-          "radius": 65
+          "width": 324,
+          "height": 324,
+          "radius": 162,
+          "hasGlare": true
         }
       }
     }
@@ -88,7 +90,7 @@
           "width": 314,
           "height": 314,
           "radius": 157,
-          "customGlare": true
+          "hasGlare": true
         }
       }
     }
@@ -99,6 +101,16 @@
       "sb7": {
         "title": "Smart Band 7",
         "bg": "sb7",
+        "preview": {
+          "type": "band",
+          "width": 128,
+          "height": 326,
+          "radius": 96
+        }
+      },
+      "sb9": {
+        "title": "Smart Band 9",
+        "bg": "sb9",
         "preview": {
           "type": "band",
           "width": 128,

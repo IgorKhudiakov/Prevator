@@ -1,5 +1,3 @@
-let file = false
-
 const images = {
   bg: {
     src: './images/bgs/amazfit/gtr4.png',
@@ -17,15 +15,16 @@ const images = {
     visibility: false
   },
   glare: {
-    src: './images/glares/default/glare.png',
+    src: './images/glares/amazfit/gtr4.png',
     visibility: false
   }
 }
 
-let devices = {}
-let lastType = 'round'
-
 document.addEventListener('DOMContentLoaded', function () {
+  let file = false
+
+  let devices = {}
+  let lastType = 'round'
 
   const canvas = document.getElementById('canvas')
   const ctx = canvas.getContext('2d')
@@ -62,10 +61,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
     for (const [key, image] of Object.entries(images)) {
       if (image?.src && image.visibility) {
+        if (key == 'glare') ctx.restore()
+
         const x = (maxWidth - image.img.width) / 2
         const y = (maxHeight - image.img.height) / 2
 
         if (key == 'watchface') {
+          ctx.save()
           ctx.beginPath()
           ctx.roundRect(x, y, image.img.width, image.img.height, image.radius)
           ctx.clip()
@@ -175,7 +177,10 @@ document.addEventListener('DOMContentLoaded', function () {
               images.shadow.src = `./images/shadows/${lastType}.png`
               Object.assign(images.watchface, device.preview)
             }
-            images.glare.src = device.preview?.customGlare ? `./images/glares/${brandName}/${device.bg}.png` : './images/glares/default/glare.png'
+            if (device.preview?.hasGlare) images.glare.src = `./images/glares/${brandName}/${device.bg}.png`
+            const glareCheckbox = document.getElementById('glareCheckbox')
+            images.glare.visibility = device.preview?.hasGlare ? glareCheckbox.checked : false
+            device.preview?.hasGlare ? glareCheckbox.parentNode.classList.remove('disable') : glareCheckbox.parentNode.classList.add('disable')
             loadImages()
           })
           b.appendChild(d)
