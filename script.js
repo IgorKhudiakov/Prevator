@@ -1,6 +1,6 @@
 const images = {
   bg: {
-    src: './images/bgs/amazfit/gtr4.png',
+    src: './images/bgs/amazfit/gtr4_black.png',
     visibility: true
   },
   watchface: {
@@ -20,7 +20,18 @@ const images = {
   }
 }
 
-document.addEventListener('DOMContentLoaded', function () {
+const colors = {
+  black: '#212224',
+  brown: '#3d1e0a',
+  gray: '#414244',
+  lime: '#333500',
+  mint: '#1e2e2c',
+  orange: '#511801',
+  red: '#3f0404',
+  white: '#888',
+}
+
+document.addEventListener('DOMContentLoaded', () => {
   let file = false
 
   let devices = {}
@@ -133,6 +144,38 @@ document.addEventListener('DOMContentLoaded', function () {
     setTimeout(() => document.getElementById('faq').classList.add('hidden'), 500)
   })
 
+  function changeBgColor(newColor) {
+    document.documentElement.style.setProperty('--background-inner-new-color', newColor)
+    document.body.classList.add('active')
+    setTimeout(() => {
+      document.documentElement.style.setProperty('--background-inner-color', newColor)
+      document.body.classList.remove('active')
+    }, 1000)
+  }
+
+  function changeDevice(brand, model, device, variant = false, index = 0) {
+    images.bg.src = `./images/bgs/${brand}/${device.bg}${variant ? `_${variant.toLowerCase()}` : device?.variants ? `_${device.variants[0]}` : ''}.png`
+    Object.assign(images.watchface, device.preview)
+    const input = document.getElementById('fileName')
+    input.setAttribute('placeholder', `${model}_preview`)
+    input.setAttribute('data-default', `${model}_preview`)
+    if (lastType != device.preview.type) {
+      lastType = device.preview.type
+      images.watchface.src = `./images/defaults/${lastType}.png`
+      images.shadow.src = `./images/shadows/${lastType}.png`
+      Object.assign(images.watchface, device.preview)
+    }
+    if (device.preview?.hasGlare) images.glare.src = `./images/glares/${brand}/${device.bg}.png`
+    const glareCheckbox = document.getElementById('glareCheckbox')
+    images.glare.visibility = device.preview?.hasGlare ? glareCheckbox.checked : false
+    device.preview?.hasGlare ? glareCheckbox.parentNode.classList.remove('disable') : glareCheckbox.parentNode.classList.add('disable')
+
+    const newInnerColor = variant && colors[device.accents[index]] ? colors[device.accents[index]] : colors[device?.accent] ?? '#071022'
+    changeBgColor(newInnerColor)
+
+    loadImages()
+  }
+
   fetch('devices.json')
     .then(response => response.json())
     .then(data => {
@@ -159,29 +202,38 @@ document.addEventListener('DOMContentLoaded', function () {
           display.classList.add('display', device.preview.type)
           const title = document.createElement('div')
           title.innerHTML = device.title
-          d.appendChild(display)
-          d.appendChild(title)
+          const model = document.createElement('div')
+          model.classList.add('model')
+          model.appendChild(display)
+          model.appendChild(title)
+          d.appendChild(model)
+          if (device?.variants) {
+            d.classList.remove('button')
+            const variants = document.createElement('div')
+            variants.classList.add('variants')
+            device?.variants.forEach((v, i) => {
+              let variant = document.createElement('div')
+              variant.classList.add('variant', 'button')
+              variant.innerHTML = v
+              variant.addEventListener('click', () => {
+                document.getElementById('devices').querySelectorAll('.variant').forEach(t => {
+                  if (t != variant) t.classList.remove('active')
+                  else variant.classList.add('active')
+                })
+                changeDevice(brandName, deviceModel, device, v, i)
+              })
+              variants.appendChild(variant)
+            })
+            d.appendChild(variants)
+          }
           d.addEventListener('click', () => {
             b.parentNode.querySelectorAll('.device').forEach(t => {
-              if (t != d) t.classList.remove('active')
-              else d.classList.toggle('active')
+              if (t != d) {
+                t.classList.remove('active')
+                t.querySelectorAll('.variant').forEach(v => v.classList.remove('active'))
+              } else d.classList.add('active')
             })
-            images.bg.src = `./images/bgs/${brandName}/${device.bg}.png`
-            Object.assign(images.watchface, device.preview)
-            const input = document.getElementById('fileName')
-            input.setAttribute('placeholder', `${deviceModel}_preview`)
-            input.setAttribute('data-default', `${deviceModel}_preview`)
-            if (lastType != device.preview.type) {
-              lastType = device.preview.type
-              images.watchface.src = `./images/defaults/${lastType}.png`
-              images.shadow.src = `./images/shadows/${lastType}.png`
-              Object.assign(images.watchface, device.preview)
-            }
-            if (device.preview?.hasGlare) images.glare.src = `./images/glares/${brandName}/${device.bg}.png`
-            const glareCheckbox = document.getElementById('glareCheckbox')
-            images.glare.visibility = device.preview?.hasGlare ? glareCheckbox.checked : false
-            device.preview?.hasGlare ? glareCheckbox.parentNode.classList.remove('disable') : glareCheckbox.parentNode.classList.add('disable')
-            loadImages()
+            if (!device?.variants) changeDevice(brandName, deviceModel, device)
           })
           b.appendChild(d)
         }

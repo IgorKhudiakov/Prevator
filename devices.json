@@ -5,6 +5,7 @@
       "active2": {
         "title": "Active 2",
         "bg": "active2",
+        "accent": "gray",
         "preview": {
           "type": "round",
           "width": 314,
@@ -15,6 +16,7 @@
       "balance": {
         "title": "Balance",
         "bg": "balance",
+        "accent": "mint",
         "preview": {
           "type": "round",
           "width": 324,
@@ -26,6 +28,7 @@
       "bip6": {
         "title": "Bip 6",
         "bg": "bip6",
+        "accent": "orange",
         "preview": {
           "type": "square",
           "width": 266,
@@ -37,6 +40,7 @@
       "cheetahsquare": {
         "title": "Cheetah Square",
         "bg": "cheetahsquare",
+        "accent": "lime",
         "preview": {
           "type": "square",
           "width": 266,
@@ -48,6 +52,8 @@
       "gtr4": {
         "title": "GTR 4",
         "bg": "gtr4",
+        "variants": ["Black", "Brown", "Gray"],
+        "accents": ["red", "brown", "gray"],
         "preview": {
           "type": "round",
           "width": 314,
@@ -59,6 +65,7 @@
       "trex3": {
         "title": "T-Rex 3",
         "bg": "trex3",
+        "accent": "orange",
         "preview": {
           "type": "round",
           "width": 324,
@@ -75,6 +82,7 @@
       "fit3": {
         "title": "Fit 3",
         "bg": "fit3",
+        "accent": "gray",
         "preview": {
           "type": "square",
           "width": 290,
@@ -85,6 +93,9 @@
       "gt3": {
         "title": "GT 3",
         "bg": "gt3",
+        "variants": ["Brown", "Silver"],
+        "accents": ["brown", "gray"],
+        "accent": "brown",
         "preview": {
           "type": "round",
           "width": 314,
