@@ -1,22 +1,26 @@
 const images = {
   bg: {
     src: './images/bgs/amazfit/gtr4_black.png',
-    visibility: true
+    visibility: true,
+    loaded: false
   },
   watchface: {
     src: './images/defaults/round.png',
     visibility: true,
+    loaded: false,
     width: 314,
     height: 314,
     radius: 157
   },
   shadow: {
     src: './images/shadows/round.png',
-    visibility: false
+    visibility: false,
+    loaded: false
   },
   glare: {
     src: './images/glares/amazfit/gtr4.png',
-    visibility: false
+    visibility: false,
+    loaded: false
   }
 }
 
@@ -44,6 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function loadImages() {
     for (const [key, imgData] of Object.entries(images)) {
+      imgData.loaded = false
       if (imgData?.src) {
         const img = new Image()
         if (imgData?.width) img.width = `${imgData.width}`
@@ -51,36 +56,42 @@ document.addEventListener('DOMContentLoaded', () => {
         img.src = imgData.src
         imgData.img = img
 
-        img.onload = () => updateCanvas()
+        img.onload = () => {
+          imgData.loaded = true
+          updateCanvas()
+        }
       }
     }
   }
 
   function updateCanvas() {
-    let maxWidth = 0
-    let maxHeight = 0
-    Object.entries(images).forEach(([key, image]) => {
-      if (!image.img) return
-      if (image.img.width > maxWidth) maxWidth = image.img.width
-      if (image.img.height > maxHeight) maxHeight = image.img.height
-    })
-
-    canvas.width = maxWidth
-    canvas.height = maxHeight
+    canvas.width = 480
+    canvas.height = 720
 
     ctx.clearRect(0, 0, canvas.width, canvas.height)
+    ctx.save()
+
+    const allImagesLoaded = () => {
+      for (const [key, image] of Object.entries(images)) {
+        if (image.visibility && !image.loaded) return false
+      }
+      return true
+    }
+
+    if (!allImagesLoaded()) return
+    else document.getElementById('preview').classList.remove('load')
 
     for (const [key, image] of Object.entries(images)) {
       if (image?.src && image.visibility) {
         if (key == 'glare') ctx.restore()
 
-        const x = (maxWidth - image.img.width) / 2
-        const y = (maxHeight - image.img.height) / 2
+        const x = (canvas.width - image.img.width) / 2
+        const y = (canvas.height - image.img.height) / 2
 
         if (key == 'watchface') {
           ctx.save()
           ctx.beginPath()
-          ctx.roundRect(x, y, image.img.width, image.img.height, image.radius)
+          ctx.roundRect(x, y, images.watchface.width, images.watchface.height, images.watchface.radius)
           ctx.clip()
         }
 
@@ -134,14 +145,29 @@ document.addEventListener('DOMContentLoaded', () => {
     openDeviceListButton.classList.remove('hide')
   })
 
-  document.getElementById('openFaq').addEventListener('click', () => {
-    document.querySelector('body').style.overflow = 'hidden'
-    document.getElementById('faq').classList.remove('hidden', 'inactive')
-  })
-  document.getElementById('closeFaq').addEventListener('click', () => {
-    document.querySelector('body').style.overflow = 'auto'
-    document.getElementById('faq').classList.add('inactive')
-    setTimeout(() => document.getElementById('faq').classList.add('hidden'), 500)
+  document.querySelectorAll('.openModal').forEach(o => {
+    o.addEventListener('click', () => {
+      document.querySelector('body').style.overflow = 'hidden'
+      const modal = document.getElementById(o.getAttribute('data-type'))
+      modal.classList.remove('hidden')
+      modal.classList.add('active')
+      const closeButton = document.createElement('div')
+      closeButton.innerHTML = `
+        <div class="button closeModal">
+          <svg version="1.1" viewBox="0 0 24 24" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink">
+            <path fill="currentColor"
+              d="M14.8,12l3.6-3.6c0.8-0.8,0.8-2,0-2.8c-0.8-0.8-2-0.8-2.8,0L12,9.2L8.4,5.6c-0.8-0.8-2-0.8-2.8,0 c-0.8,0.8-0.8,2,0,2.8L9.2,12l-3.6,3.6c-0.8,0.8-0.8,2,0,2.8C6,18.8,6.5,19,7,19s1-0.2,1.4-0.6l3.6-3.6l3.6,3.6 C16,18.8,16.5,19,17,19s1-0.2,1.4-0.6c0.8-0.8,0.8-2,0-2.8L14.8,12z" />
+          </svg>
+        </div>
+      `
+      closeButton.addEventListener('click', () => {
+        document.querySelector('body').style.overflow = 'auto'
+        modal.classList.remove('active')
+        setTimeout(() => modal.classList.add('hidden'), 500)
+      })
+      if (!modal.querySelector('.closeModal')) modal.querySelector('.title').appendChild(closeButton)
+    })
   })
 
   function changeBgColor(newColor) {
@@ -154,6 +180,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function changeDevice(brand, model, device, variant = false, index = 0) {
+    document.getElementById('preview').classList.add('load')
+
     images.bg.src = `./images/bgs/${brand}/${device.bg}${variant ? `_${variant.toLowerCase()}` : device?.variants ? `_${device.variants[0]}` : ''}.png`
     Object.assign(images.watchface, device.preview)
     const input = document.getElementById('fileName')

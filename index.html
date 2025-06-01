@@ -12,7 +12,7 @@
 
 <body>
   <div class="container">
-    <div id="preview">
+    <div id="preview" class="load">
       <canvas id="canvas"></canvas>
     </div>
     <div class="controls">
@@ -85,17 +85,17 @@
       <div id="devices" class="hide"></div>
     </div>
   </div>
-  <div id="faq" class="hidden inactive">
+  <div id="version" class="button openModal" data-type="history">1.1.0</div>
+  <div id="openFaq" class="button openModal" data-type="faq">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path fill="currentColor"
+        d="M12,0A12,12,0,1,0,24,12,12.01,12.01,0,0,0,12,0Zm1,18a1,1,0,0,1-2,0V11H10a1,1,0,0,1,0-2h2a1,1,0,0,1,1,1ZM12.02,7a1,1,0,0,1-.01-2h.01a1,1,0,0,1,0,2Z" />
+    </svg>
+  </div>
+  <div id="faq" class="modal hidden">
     <div class="content">
       <div class="title">
         <div>Как пользоваться</div>
-        <div id="closeFaq" class="button">
-          <svg version="1.1" viewBox="0 0 24 24" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
-            xmlns:xlink="http://www.w3.org/1999/xlink">
-            <path fill="currentColor"
-              d="M14.8,12l3.6-3.6c0.8-0.8,0.8-2,0-2.8c-0.8-0.8-2-0.8-2.8,0L12,9.2L8.4,5.6c-0.8-0.8-2-0.8-2.8,0 c-0.8,0.8-0.8,2,0,2.8L9.2,12l-3.6,3.6c-0.8,0.8-0.8,2,0,2.8C6,18.8,6.5,19,7,19s1-0.2,1.4-0.6l3.6-3.6l3.6,3.6 C16,18.8,16.5,19,17,19s1-0.2,1.4-0.6c0.8-0.8,0.8-2,0-2.8L14.8,12z" />
-          </svg>
-        </div>
       </div>
       <div>
         <span>1. Выберите нужное устройство.</span><br><br>
@@ -107,11 +107,56 @@
       </div>
     </div>
   </div>
-  <div id="openFaq" class="button">
-    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-      <path fill="currentColor"
-        d="M12,0A12,12,0,1,0,24,12,12.01,12.01,0,0,0,12,0Zm1,18a1,1,0,0,1-2,0V11H10a1,1,0,0,1,0-2h2a1,1,0,0,1,1,1ZM12.02,7a1,1,0,0,1-.01-2h.01a1,1,0,0,1,0,2Z" />
-    </svg>
+  <div id="history" class="modal hidden">
+    <div class="content">
+      <div class="title">
+        <div>История версий</div>
+      </div>
+      <div id="versions">
+        <div>
+          <div class="version">1.1.0</div>
+          <div>
+            <div>
+              - Добавлен раздел "История версий".
+            </div>
+            <div>
+              - Анимация при смене часов.
+            </div>
+            <div>
+              - Исправлены искажения при смене часов и мелкие ошибки.
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="version">1.0.0</div>
+          <div>
+            <div>
+              - Поддержка нескольких вариантов одного устройства.
+            </div>
+            <div>
+              - Анимация фона при смене часов.
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="version">Beta</div>
+          <div>
+            <div>
+              - Выбор устройства, включение и отключение внутренней тени дисплея и бликов (если поддерживается).
+            </div>
+            <div>
+              - Загрузка картинок и предпросмотр итогового результата.
+            </div>
+            <div>
+              - Редактирование названия и сохранение готового изображения.
+            </div>
+            <div>
+              - Поддерживаемые устройства: Amazfit (Active 2, Balance, Bip 6, Cheetah Square GTR 4, T-Rex 3), Huawei (Fit 3, GT 3), Xiaomi (Band 7, Band 9).
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </body>
 

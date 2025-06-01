@@ -21,6 +21,7 @@ body {
 
 body {
   background: -o-radial-gradient(circle at center, var(--background-inner-color), var(--background-outer-color));
+  background: -o-radial-gradient(center, circle, var(--background-inner-color), var(--background-outer-color));
   background: radial-gradient(circle at center, var(--background-inner-color), var(--background-outer-color));
 }
 
@@ -29,11 +30,14 @@ body::before {
   position: absolute;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
+  width: 100dvw;
+  height: 100dvh;
   background: -o-radial-gradient(circle at center, var(--background-inner-new-color), var(--background-outer-color));
+  background: -o-radial-gradient(center, circle, var(--background-inner-new-color), var(--background-outer-color));
   background: radial-gradient(circle at center, var(--background-inner-new-color), var(--background-outer-color));
   opacity: 0;
+  -webkit-transition: opacity 1s ease;
+  -o-transition: opacity 1s ease;
   transition: opacity 1s ease;
   z-index: -1;
 }
@@ -95,6 +99,77 @@ body.active::before {
   display: block;
   width: 100%;
   height: 100%;
+  opacity: 1;
+  -webkit-transition: opacity 1s;
+  -o-transition: opacity 1s;
+  transition: opacity 1s;
+}
+
+#preview.load canvas {
+  opacity: 0;
+}
+
+#preview::before,
+#preview::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: calc(50% - 1em);
+  bottom: calc(50% - 1em);
+  border-radius: 1em;
+  width: 2em;
+  background: rgba(128, 128, 128, .2);
+  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
+  -webkit-transform-origin: 50% calc(100% - 1em);
+  -ms-transform-origin: 50% calc(100% - 1em);
+  transform-origin: 50% calc(100% - 1em);
+  -webkit-transition: opacity .5s;
+  -o-transition: opacity .5s;
+  transition: opacity .5s;
+  opacity: 0;
+  z-index: -1;
+}
+
+#preview.load::before,
+#preview.load::after {
+  opacity: 1;
+}
+
+#preview.load::before {
+  height: 15%;
+  -webkit-animation: rotateHand 10s linear infinite;
+  animation: rotateHand 10s linear infinite;
+}
+
+#preview.load::after {
+  height: 20%;
+  -webkit-animation: rotateHand 2s linear infinite;
+  animation: rotateHand 2s linear infinite;
+}
+
+@-webkit-keyframes rotateHand {
+  from {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotateHand {
+  from {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
 }
 
 .controls {
@@ -340,27 +415,36 @@ input:focus-visible {
 
 #openDevices,
 #closeDevices,
-#closeFaq {
+.closeModal {
   width: 2em;
   height: 2em;
 }
 
+#version,
 #openFaq {
   position: fixed;
-  right: 2em;
   bottom: 2em;
   -webkit-transition: all .2s;
   -o-transition: all .2s;
   transition: all .2s;
   color: var(--tran-bg-color);
+}
+
+#version {
+  left: 2em;
+}
+
+#openFaq {
+  right: 2em;
   width: 1.5em;
 }
 
+#version:hover,
 #openFaq:hover {
   color: white;
 }
 
-#closeFaq {
+.closeModal {
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
@@ -387,9 +471,10 @@ input:focus-visible {
 
 #devices .brand {
   background: var(--tran-bg-color);
+  border: 1px solid var(--tran-bg-color);
   border-radius: 1em;
-  -webkit-backdrop-filter: blur(3px);
-  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
   cursor: default;
   height: auto;
   -webkit-transition: height 1s ease;
@@ -417,6 +502,7 @@ input:focus-visible {
   justify-content: center;
   background: var(--tran-bg-color);
   border-radius: 1em;
+  border: 1px solid var(--tran-bg-color);
   padding: .8em .5em;
   -webkit-backdrop-filter: blur(3px);
   backdrop-filter: blur(3px);
@@ -437,11 +523,18 @@ input:focus-visible {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   gap: .5em;
   height: 0;
   padding: 0 .5em;
   background-color: transparent;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
   -webkit-transition: all .2s;
   -o-transition: all .2s;
@@ -453,12 +546,20 @@ input:focus-visible {
 }
 
 #devices .model {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   gap: .5em;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
   align-items: center;
 }
 
 #devices .display {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
   flex-shrink: 0;
   height: 1em;
   background: var(--tran-bg-color);
@@ -484,11 +585,18 @@ input:focus-visible {
 
 #devices .variants {
   display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   gap: .25em;
 }
 
-#devices .title.active ~ .device.active .variants {
+#devices .title.active~.device.active .variants {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
 }
 
@@ -498,9 +606,12 @@ input:focus-visible {
   background: var(--tran-bg-color);
   border-radius: .5em;
   color: #ccc;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   opacity: 0;
   pointer-events: none;
+  -webkit-transition: all .2s;
+  -o-transition: all .2s;
   transition: all .2s;
 }
 
@@ -512,6 +623,7 @@ input:focus-visible {
 }
 
 #devices .variant:hover {
+  -webkit-filter: brightness(1.1);
   filter: brightness(1.1);
 }
 
@@ -550,7 +662,7 @@ input:focus-visible {
   display: none !important;
 }
 
-#faq {
+.modal {
   position: fixed;
   top: 0;
   left: 0;
@@ -570,7 +682,7 @@ input:focus-visible {
   align-items: center;
 }
 
-#faq .content {
+.modal .content {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -580,11 +692,12 @@ input:focus-visible {
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  gap: 1em;
+  gap: 1.5em;
   width: 90%;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   max-width: 500px;
+  max-height: calc(100% - 4em);
   background: var(--tran-bg-color);
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
@@ -597,20 +710,25 @@ input:focus-visible {
   -o-transition: all .5s;
   transition: all .5s;
   opacity: 1;
+  z-index: 100;
 }
 
-#faq.hidden {
+.modal .content>div:not(.title) {
+  overflow-y: auto;
+}
+
+.modal.hidden {
   z-index: -100;
 }
 
-#faq.inactive .content {
+.modal:not(.active) .content {
   -webkit-transform: translateY(5em);
   -ms-transform: translateY(5em);
   transform: translateY(5em);
   opacity: 0;
 }
 
-#faq .title {
+.modal .title {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -622,13 +740,41 @@ input:focus-visible {
   justify-content: space-between;
 }
 
-#faq .title>*:first-child {
+.modal .title>*:first-child {
   font-size: 1.5em;
+}
+
+#versions {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 1.5em;
+}
+
+#versions .version {
+  margin-bottom: .5em;
+  font-size: 1.2em;
+}
+#versions .version + div {
+  display: flex;
+  flex-direction: column;
+  gap: .5em;
 }
 
 @media (max-width: 600px) {
   #header {
     padding: 1em;
+  }
+
+  #version {
+    left: 1em;
+    bottom: 1em;
   }
 
   #openFaq {
@@ -639,4 +785,8 @@ input:focus-visible {
 
 :root {
   scrollbar-color: var(--tran-bg-color) #111214;
+}
+
+:root * {
+  scrollbar-color: var(--tran-bg-color) transparent;
 }
