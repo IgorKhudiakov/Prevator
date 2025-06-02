@@ -25,14 +25,124 @@ const images = {
 }
 
 const colors = {
+  default: '#007eff',
   black: '#212224',
-  brown: '#3d1e0a',
-  gray: '#414244',
-  lime: '#333500',
-  mint: '#1e2e2c',
-  orange: '#511801',
-  red: '#3f0404',
-  white: '#888',
+  brown: '#6b3917',
+  gray: '#686868',
+  lime: '#a3a900',
+  mint: '#02b393',
+  orange: '#ff4800',
+  red: '#ff0000',
+  white: '#ffffff'
+}
+
+class I18n {
+  constructor(options = {}) {
+    this.defaultLang = options.defaultLang || 'en'
+    this.fallbackLang = options.fallbackLang || 'en'
+    this.lang = this.defaultLang;
+    this.translations = {}
+    this.selector = options.selector || '[data-i18n], [data-i18n-title]'
+    this.attribute = options.attribute || ['data-i18n', 'data-i18n-title']
+    this.pluralRules = {
+      en: (n) => n === 1 ? 'one' : 'many',
+      ru: (n) => n % 10 === 1 && n % 100 !== 11 ? 'one'
+        : [2, 3, 4].includes(n % 10) && ![12, 13, 14].includes(n % 100) ? 'few'
+          : 'many'
+    };
+  }
+
+  async init(lang) {
+    this.lang = lang || this.detectLanguage()
+    await this.loadLanguage(this.lang)
+    this.applyAll()
+    document.documentElement.lang = this.lang
+  }
+
+  detectLanguage() {
+    const urlLang = new URLSearchParams(window.location.search).get('lang')
+    const savedLang = localStorage.getItem('lang')
+    const browserLang = navigator.language.split('-')[0]
+    return urlLang || savedLang || browserLang || this.defaultLang
+  }
+
+  async fetchTranslations(lang) {
+    try {
+      const response = await fetch(`/locales/${lang}.json`)
+      if (!response.ok) throw new Error('Failed to load translations')
+      return await response.json()
+    } catch (error) {
+      // console.error(`Error loading ${lang} translations:`, error)
+      if (lang !== this.fallbackLang) {
+        return this.fetchTranslations(this.fallbackLang)
+      }
+      return {}
+    }
+  }
+
+  async loadLanguage(lang) {
+    if (!this.translations[lang]) {
+      this.translations[lang] = await this.fetchTranslations(lang)
+    }
+    this.lang = lang
+    localStorage.setItem('land', lang)
+  }
+
+  t(key, params = {}) {
+    let value = this.getNestedValue(this.translations[this.lang], key) ||
+      this.getNestedValue(this.translations[this.fallbackLang], key) ||
+      key
+
+    // Обработка плюрализации
+    if (typeof value === 'object' && params.count !== undefined) {
+      const rule = this.pluralRules[this.lang] || this.pluralRules.en
+      const pluralForm = rule(params.count)
+      value = value[pluralForm] || value.other || value.many || value.one || key
+    }
+
+    // Подстановка параметров
+    if (typeof value === 'string' && params) {
+      Object.keys(params).forEach(param => {
+        value = value.replace(new RegExp(`\\{${param}\\}`, 'g'), params[param])
+      })
+    }
+
+    return value || key
+  }
+
+  getNestedValue(obj, path) {
+    return path.split('.').reduce((acc, part) => acc && acc[part], obj)
+  }
+
+  applyAll() {
+    document.querySelectorAll(this.selector).forEach(element => {
+      const isAttributes = Array.isArray(this.attribute)
+      const key = isAttributes ? (element.getAttribute(this.attribute[0]) ?? element.getAttribute(this.attribute[1])) : element.getAttribute(this.attribute)
+      const params = this.extractParams(element)
+      const text = this.t(key, params)
+
+      if (element.hasAttribute('data-i18n-title')) element.setAttribute('title', this.t(element.getAttribute('data-i18n-title'), params))
+      else element.tagName === 'INPUT' && element.placeholder ? element.placeholder = text : element.textContent = text
+    })
+  }
+
+  extractParams(element) {
+    const params = {}
+    Array.from(element.attributes).forEach(attr => {
+      if (attr.name.startsWith('data-i18n-')) {
+        const paramName = attr.name.replace('data-i18n-', '')
+        params[paramName] = isNaN(attr.value) ? attr.value : Number(attr.value)
+      }
+    })
+    return params
+  }
+
+  async changeLanguage(lang) {
+    await this.loadLanguage(lang)
+    this.applyAll()
+    document.documentElement.lang = lang
+    document.dispatchEvent(new CustomEvent('languageChanged', { detail: lang }))
+  }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -64,6 +174,38 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  function drawHyperbolicRect(ctx, x, y, width, height, radius) {
+    ctx.moveTo(x + radius, y)
+    ctx.lineTo(x + width - radius, y)
+
+    ctx.bezierCurveTo(
+      x + width - radius * 0.3, y,
+      x + width, y + radius * 0.3,
+      x + width, y + radius
+    )
+
+    ctx.lineTo(x + width, y + height - radius)
+    ctx.bezierCurveTo(
+      x + width, y + height - radius * 0.3,
+      x + width - radius * 0.3, y + height,
+      x + width - radius, y + height
+    )
+
+    ctx.lineTo(x + radius, y + height)
+    ctx.bezierCurveTo(
+      x + radius * 0.3, y + height,
+      x, y + height - radius * 0.3,
+      x, y + height - radius
+    )
+
+    ctx.lineTo(x, y + radius)
+    ctx.bezierCurveTo(
+      x, y + radius * 0.3,
+      x + radius * 0.3, y,
+      x + radius, y
+    )
+  }
+
   function updateCanvas() {
     canvas.width = 480
     canvas.height = 720
@@ -91,7 +233,9 @@ document.addEventListener('DOMContentLoaded', () => {
         if (key == 'watchface') {
           ctx.save()
           ctx.beginPath()
-          ctx.roundRect(x, y, images.watchface.width, images.watchface.height, images.watchface.radius)
+          if (image?.rounding == "hyperbolic") drawHyperbolicRect(ctx, x, y, images.watchface.width, images.watchface.height, images.watchface.radius)
+          else ctx.roundRect(x, y, images.watchface.width, images.watchface.height, images.watchface.radius)
+          ctx.closePath()
           ctx.clip()
         }
 
@@ -171,16 +315,14 @@ document.addEventListener('DOMContentLoaded', () => {
   })
 
   function changeBgColor(newColor) {
-    document.documentElement.style.setProperty('--background-inner-new-color', newColor)
-    document.body.classList.add('active')
-    setTimeout(() => {
-      document.documentElement.style.setProperty('--background-inner-color', newColor)
-      document.body.classList.remove('active')
-    }, 1000)
+    document.documentElement.style.setProperty('--background-inner-color', newColor)
   }
+  changeBgColor(localStorage.getItem('color') ?? colors.red)
 
-  function changeDevice(brand, model, device, variant = false, index = 0) {
+  function changeDevice({ brand, model, variant }) {
     document.getElementById('preview').classList.add('load')
+
+    const device = devices[brand].deviceList[model]
 
     images.bg.src = `./images/bgs/${brand}/${device.bg}${variant ? `_${variant.toLowerCase()}` : device?.variants ? `_${device.variants[0]}` : ''}.png`
     Object.assign(images.watchface, device.preview)
@@ -193,15 +335,33 @@ document.addEventListener('DOMContentLoaded', () => {
       images.shadow.src = `./images/shadows/${lastType}.png`
       Object.assign(images.watchface, device.preview)
     }
-    if (device.preview?.hasGlare) images.glare.src = `./images/glares/${brand}/${device.bg}.png`
     const glareCheckbox = document.getElementById('glareCheckbox')
-    images.glare.visibility = device.preview?.hasGlare ? glareCheckbox.checked : false
-    device.preview?.hasGlare ? glareCheckbox.parentNode.classList.remove('disable') : glareCheckbox.parentNode.classList.add('disable')
+    if (device.preview?.hasGlare) {
+      glareCheckbox.parentNode.classList.remove('disable')
+      images.glare.src = `./images/glares/${brand}/${device.bg}.png`
+      images.glare.visibility = glareCheckbox.checked
+    } else {
+      glareCheckbox.parentNode.classList.add('disable')
+      images.glare.visibility = false
+    }
+    if (!device.preview?.rounding) delete images.watchface.rounding
 
-    const newInnerColor = variant && colors[device.accents[index]] ? colors[device.accents[index]] : colors[device?.accent] ?? '#071022'
+    const colorIndex = variant ? device.variants.indexOf(variant) : device?.variants ? 0 : -1
+    const newInnerColor = colorIndex >= 0 ? colors[device?.accents[colorIndex]] : colors[device?.accent] ?? colors.default
+    localStorage.setItem('color', newInnerColor)
     changeBgColor(newInnerColor)
 
+    localStorage.setItem('device', JSON.stringify({
+      brand: brand,
+      model: model,
+      variant: variant
+    }))
     loadImages()
+  }
+
+  const localDevice = JSON.parse(localStorage.getItem('device')) ?? {
+    brand: "amazfit",
+    model: "gtr4"
   }
 
   fetch('devices.json')
@@ -248,7 +408,7 @@ document.addEventListener('DOMContentLoaded', () => {
                   if (t != variant) t.classList.remove('active')
                   else variant.classList.add('active')
                 })
-                changeDevice(brandName, deviceModel, device, v, i)
+                changeDevice({ brand: brandName, model: deviceModel, variant: v })
               })
               variants.appendChild(variant)
             })
@@ -261,11 +421,25 @@ document.addEventListener('DOMContentLoaded', () => {
                 t.querySelectorAll('.variant').forEach(v => v.classList.remove('active'))
               } else d.classList.add('active')
             })
-            if (!device?.variants) changeDevice(brandName, deviceModel, device)
+            if (!device?.variants) changeDevice({ brand: brandName, model: deviceModel })
           })
           b.appendChild(d)
         }
         devicesMenu.appendChild(b)
       }
+      changeDevice(localDevice)
     })
+})
+
+document.addEventListener('DOMContentLoaded', async () => {
+  const i18n = new I18n({
+    defaultLang: 'en',
+    fallbackLang: 'en'
+  })
+
+  await i18n.init()
+
+  document.querySelectorAll('.button.lang').forEach(b => {
+    b.addEventListener('click', () => i18n.changeLanguage(b.getAttribute('data-lang')))
+  })
 })

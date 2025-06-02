@@ -1,0 +1,16 @@
+{
+  "buttons": {
+    "uploadImage": "Upload Image",
+    "innerShadow": "Inner Shadow",
+    "glare": "Glare",
+    "download": "Download",
+    "devices": "Devices",
+    "close": "Close"
+  },
+  "faq": {
+    "title": "How it works"
+  },
+  "history": {
+    "title": "Version history"
+  }
+}

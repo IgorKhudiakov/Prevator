@@ -26,20 +26,20 @@
               d="M19,19H5c-1.1,0-2,0.9-2,2v0c0,0.6,0.4,1,1,1h16c0.6,0,1-0.4,1-1v0C21,19.9,20.1,19,19,19z" />
           </svg>
         </div>
-        <div>Загрузить картинку</div>
+        <div data-i18n="buttons.uploadImage">Загрузить картинку</div>
       </div>
       <input type="file" id="fileInput" accept="image/*" style="display: none;">
       <div class="checkbox button">
         <input id="shadowCheckbox" data-type="shadow" type="checkbox"></checkbox>
-        <label for="shadowCheckbox">Внутренняя тень</label>
+        <label for="shadowCheckbox" data-i18n="buttons.innerShadow">Внутренняя тень</label>
       </div>
       <div class="checkbox button">
         <input id="glareCheckbox" data-type="glare" type="checkbox"></checkbox>
-        <label for="glareCheckbox">Блик</label>
+        <label for="glareCheckbox" data-i18n="buttons.glare">Блики</label>
       </div>
       <div id="saveContainer">
         <input id="fileName" type="text" data-default="gtr4_preview" placeholder="gtr4_preview">
-        <div id="save" class="button" title="Скачать">
+        <div id="save" class="button" data-i18n-title="buttons.download" title="Скачать">
           <svg version="1.1" viewBox="0 0 24 24" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
             xmlns:xlink="http://www.w3.org/1999/xlink">
             <path fill="currentColor"
@@ -67,15 +67,17 @@
           fill="currentColor" />
       </svg>
     </a>
+    <div class="button lang" data-lang="en">EN</div>
+    <div class="button lang" data-lang="ru">RU</div>
     <div id="deviceChooser">
-      <div id="openDevices" class="button">
+      <div id="openDevices" class="button" data-i18n-title="buttons.devices" title="Устройства">
         <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1" viewBox="0 0 24 24"
           xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xodm="http://www.corel.com/coreldraw/odm/2003">
           <path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"
             d="M10.01 0l3.98 0c1.09,0 1.98,0.89 1.98,1.98l0 2.27c2.43,1.24 4.19,3.59 4.63,6.38 0.09,-0.05 0.2,-0.08 0.31,-0.08l0.28 0c0.32,0 0.58,0.26 0.58,0.58l0 1.74c0,0.32 -0.26,0.58 -0.58,0.58l-0.28 0c-0.11,0 -0.22,-0.03 -0.31,-0.08 -0.44,2.79 -2.2,5.14 -4.63,6.38l0 2.27c0,1.09 -0.89,1.98 -1.98,1.98l-3.98 0c-1.09,0 -1.98,-0.89 -1.98,-1.98l0 -2.26c-2.81,-1.45 -4.74,-4.38 -4.74,-7.76 0,-3.38 1.93,-6.31 4.74,-7.76l0 -2.26c0,-1.09 0.89,-1.98 1.98,-1.98zm1.99 4.74c4.01,0 7.26,3.25 7.26,7.26 0,4.01 -3.25,7.26 -7.26,7.26 -4.01,0 -7.26,-3.25 -7.26,-7.26 0,-4.01 3.25,-7.26 7.26,-7.26z" />
         </svg>
       </div>
-      <div id="closeDevices" class="button hide">
+      <div id="closeDevices" class="button hide" data-i18n-title="buttons.close" title="Закрыть">
         <svg version="1.1" viewBox="0 0 24 24" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
           xmlns:xlink="http://www.w3.org/1999/xlink">
           <path fill="currentColor"
@@ -85,8 +87,8 @@
       <div id="devices" class="hide"></div>
     </div>
   </div>
-  <div id="version" class="button openModal" data-type="history">1.1.0</div>
-  <div id="openFaq" class="button openModal" data-type="faq">
+  <div id="version" class="button openModal" data-type="history" data-i18n-title="history.title" title="История версий">1.2.0</div>
+  <div id="openFaq" class="button openModal" data-type="faq" data-i18n-title="faq.title" title="Как пользоваться">
     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
       <path fill="currentColor"
         d="M12,0A12,12,0,1,0,24,12,12.01,12.01,0,0,0,12,0Zm1,18a1,1,0,0,1-2,0V11H10a1,1,0,0,1,0-2h2a1,1,0,0,1,1,1ZM12.02,7a1,1,0,0,1-.01-2h.01a1,1,0,0,1,0,2Z" />
@@ -95,7 +97,7 @@
   <div id="faq" class="modal hidden">
     <div class="content">
       <div class="title">
-        <div>Как пользоваться</div>
+        <div data-i18n="faq.title">Как пользоваться</div>
       </div>
       <div>
         <span>1. Выберите нужное устройство.</span><br><br>
@@ -110,9 +112,23 @@
   <div id="history" class="modal hidden">
     <div class="content">
       <div class="title">
-        <div>История версий</div>
+        <div data-i18n="history.title">История версий</div>
       </div>
       <div id="versions">
+        <div>
+          <div class="version">1.2.0</div>
+          <div>
+            <div>
+              - Поддержка гиперболического закругления на устройствах, где оно применяется.
+            </div>
+            <div>
+              - При обновлении страницы, выбранное устройство теперь сохраняется.
+            </div>
+            <div>
+              - Сайт стал поддерживать локализацию (другие языки).
+            </div>
+          </div>
+        </div>
         <div>
           <div class="version">1.1.0</div>
           <div>

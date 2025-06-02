@@ -85,9 +85,10 @@
         "accent": "gray",
         "preview": {
           "type": "square",
+          "rounding": "hyperbolic",
           "width": 290,
           "height": 340,
-          "radius": 66
+          "radius": 85
         }
       },
       "gt3": {

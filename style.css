@@ -1,10 +1,9 @@
 :root {
-  --accent-color: #007eff;
   --dark-color: #333;
   --tran-bg-color: rgba(128, 128, 128, .2);
   --tran-accent-bg-color: rgba(0, 126, 255, .2);
-  --background-inner-color: #071022;
-  --background-outer-color: #111214;
+  --background-inner-color: #007eff;
+  --accent-color: var(--background-inner-color);
   color: white;
   padding: 2em;
   font-family: Roboto, Arial, Helvetica, sans-serif;
@@ -20,30 +19,17 @@ body {
 }
 
 body {
-  background: -o-radial-gradient(circle at center, var(--background-inner-color), var(--background-outer-color));
-  background: -o-radial-gradient(center, circle, var(--background-inner-color), var(--background-outer-color));
-  background: radial-gradient(circle at center, var(--background-inner-color), var(--background-outer-color));
+  background-color: var(--background-inner-color);
+  transition: background-color 1s ease;
 }
-
 body::before {
   content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
+  position: fixed;
   width: 100dvw;
   height: 100dvh;
-  background: -o-radial-gradient(circle at center, var(--background-inner-new-color), var(--background-outer-color));
-  background: -o-radial-gradient(center, circle, var(--background-inner-new-color), var(--background-outer-color));
-  background: radial-gradient(circle at center, var(--background-inner-new-color), var(--background-outer-color));
-  opacity: 0;
-  -webkit-transition: opacity 1s ease;
-  -o-transition: opacity 1s ease;
-  transition: opacity 1s ease;
+  background-image: -o-radial-gradient(circle at center, rgba(17, 18, 20, .5) rgba(17, 18, 20, .9));
+  background-image: radial-gradient(circle at center, rgba(17, 18, 20, .5), rgba(17, 18, 20, .9));
   z-index: -1;
-}
-
-body.active::before {
-  opacity: 1;
 }
 
 .container {
@@ -256,6 +242,10 @@ input:focus-visible {
   color: white;
   background: none;
 }
+#fileName::placeholder {
+  color: white;
+  opacity: .3;
+}
 
 #save {
   -webkit-flex-shrink: 0;
@@ -263,7 +253,8 @@ input:focus-visible {
   flex-shrink: 0;
   aspect-ratio: 1;
   height: 100%;
-  background: var(--accent-color);
+  background-color: var(--accent-color);
+  transition: background-color 1s ease;
   padding: 0;
   display: -webkit-box;
   display: -webkit-flex;
@@ -336,7 +327,8 @@ input:focus-visible {
   width: 2em;
   aspect-ratio: 1;
   border-radius: 25%;
-  background: var(--tran-bg-color)
+  background-color: var(--tran-bg-color);
+  transition: background-color 1s ease;
 }
 
 .checkbox input::after {
@@ -362,7 +354,8 @@ input:focus-visible {
   padding: 2em;
 }
 
-#header a {
+#header a,
+#header > .button {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
