@@ -68,7 +68,7 @@ class I18n {
 
   async fetchTranslations(lang) {
     try {
-      const response = await fetch(`/locales/${lang}.json`)
+      const response = await fetch(`./locales/${lang}.json`)
       if (!response.ok) throw new Error('Failed to load translations')
       return await response.json()
     } catch (error) {
@@ -324,7 +324,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const device = devices[brand].deviceList[model]
 
-    images.bg.src = `./images/bgs/${brand}/${device.bg}${variant ? `_${variant.toLowerCase()}` : device?.variants ? `_${device.variants[0]}` : ''}.png`
+    images.bg.src = `./images/bgs/${brand}/${device.bg}${variant ? `_${variant.toLowerCase()}` : device?.variants ? `_${device.variants[0].toLowerCase()}` : ''}.png`
     Object.assign(images.watchface, device.preview)
     const input = document.getElementById('fileName')
     input.setAttribute('placeholder', `${model}_preview`)

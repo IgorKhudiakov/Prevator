@@ -20,6 +20,8 @@ body {
 
 body {
   background-color: var(--background-inner-color);
+  -webkit-transition: background-color 1s ease;
+  -o-transition: background-color 1s ease;
   transition: background-color 1s ease;
 }
 body::before {
@@ -28,6 +30,7 @@ body::before {
   width: 100dvw;
   height: 100dvh;
   background-image: -o-radial-gradient(circle at center, rgba(17, 18, 20, .5) rgba(17, 18, 20, .9));
+  background-image: -o-radial-gradient(center, circle, rgba(17, 18, 20, .5), rgba(17, 18, 20, .9));
   background-image: radial-gradient(circle at center, rgba(17, 18, 20, .5), rgba(17, 18, 20, .9));
   z-index: -1;
 }
@@ -242,6 +245,22 @@ input:focus-visible {
   color: white;
   background: none;
 }
+#fileName::-webkit-input-placeholder {
+  color: white;
+  opacity: .3;
+}
+#fileName::-moz-placeholder {
+  color: white;
+  opacity: .3;
+}
+#fileName:-ms-input-placeholder {
+  color: white;
+  opacity: .3;
+}
+#fileName::-ms-input-placeholder {
+  color: white;
+  opacity: .3;
+}
 #fileName::placeholder {
   color: white;
   opacity: .3;
@@ -254,6 +273,8 @@ input:focus-visible {
   aspect-ratio: 1;
   height: 100%;
   background-color: var(--accent-color);
+  -webkit-transition: background-color 1s ease;
+  -o-transition: background-color 1s ease;
   transition: background-color 1s ease;
   padding: 0;
   display: -webkit-box;
@@ -328,6 +349,8 @@ input:focus-visible {
   aspect-ratio: 1;
   border-radius: 25%;
   background-color: var(--tran-bg-color);
+  -webkit-transition: background-color 1s ease;
+  -o-transition: background-color 1s ease;
   transition: background-color 1s ease;
 }
 
@@ -755,8 +778,15 @@ input:focus-visible {
   font-size: 1.2em;
 }
 #versions .version + div {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   gap: .5em;
 }
 
