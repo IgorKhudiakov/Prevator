@@ -5,7 +5,7 @@
       "active2": {
         "title": "Active 2",
         "bg": "active2",
-        "accent": "gray",
+        "accent": "#686868",
         "preview": {
           "type": "round",
           "width": 314,
@@ -16,7 +16,7 @@
       "balance": {
         "title": "Balance",
         "bg": "balance",
-        "accent": "mint",
+        "accent": "#368a7f",
         "preview": {
           "type": "round",
           "width": 324,
@@ -28,7 +28,7 @@
       "bip6": {
         "title": "Bip 6",
         "bg": "bip6",
-        "accent": "orange",
+        "accent": "#f74c22",
         "preview": {
           "type": "square",
           "width": 266,
@@ -40,7 +40,7 @@
       "cheetahsquare": {
         "title": "Cheetah Square",
         "bg": "cheetahsquare",
-        "accent": "lime",
+        "accent": "#a3a900",
         "preview": {
           "type": "square",
           "width": 266,
@@ -53,7 +53,7 @@
         "title": "GTR 4",
         "bg": "gtr4",
         "variants": ["Black", "Brown", "Gray"],
-        "accents": ["red", "brown", "gray"],
+        "accents": ["#af2e24", "#6b3917", "#2b2b2b"],
         "preview": {
           "type": "round",
           "width": 314,
@@ -65,7 +65,7 @@
       "trex3": {
         "title": "T-Rex 3",
         "bg": "trex3",
-        "accent": "orange",
+        "accent": "#b91900",
         "preview": {
           "type": "round",
           "width": 324,
@@ -82,7 +82,7 @@
       "fit3": {
         "title": "Fit 3",
         "bg": "fit3",
-        "accent": "gray",
+        "accent": "#686868",
         "preview": {
           "type": "square",
           "rounding": "hyperbolic",
@@ -91,17 +91,56 @@
           "radius": 85
         }
       },
+      "fit4": {
+        "title": "Fit 4",
+        "bg": "fit4",
+        "variants": ["Black", "Purple", "White"],
+        "accents": ["#2b2b2b", "#c7c9c8", "#c7c9c8"],
+        "preview": {
+          "type": "square",
+          "rounding": "hyperbolic",
+          "width": 290,
+          "height": 340,
+          "radius": 85,
+          "hasGlare": true
+        }
+      },
       "gt3": {
         "title": "GT 3",
         "bg": "gt3",
         "variants": ["Brown", "Silver"],
-        "accents": ["brown", "gray"],
-        "accent": "brown",
+        "accents": ["#6b3917", "#c7c9c8"],
         "preview": {
           "type": "round",
           "width": 314,
           "height": 314,
           "radius": 157,
+          "hasGlare": true
+        }
+      },
+      "gt4": {
+        "title": "GT 4",
+        "bg": "gt4",
+        "variants": ["Black", "Brown", "Green"],
+        "accents": ["#212224", "#6b3917", "#718f4f"],
+        "preview": {
+          "type": "round",
+          "width": 324,
+          "height": 324,
+          "radius": 162,
+          "hasGlare": true
+        }
+      },
+      "gt5": {
+        "title": "Watch 5",
+        "bg": "watch5",
+        "variants": ["Black", "Brown", "Violet"],
+        "accents": ["#212224", "#442a21", "#6b649f"],
+        "preview": {
+          "type": "round",
+          "width": 324,
+          "height": 324,
+          "radius": 162,
           "hasGlare": true
         }
       }

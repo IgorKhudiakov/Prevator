@@ -24,17 +24,7 @@ const images = {
   }
 }
 
-const colors = {
-  default: '#007eff',
-  black: '#212224',
-  brown: '#6b3917',
-  gray: '#686868',
-  lime: '#a3a900',
-  mint: '#02b393',
-  orange: '#ff4800',
-  red: '#ff0000',
-  white: '#ffffff'
-}
+const DEFAULT_BG_COLOR = '#007eff'
 
 class I18n {
   constructor(options = {}) {
@@ -317,7 +307,6 @@ document.addEventListener('DOMContentLoaded', () => {
   function changeBgColor(newColor) {
     document.documentElement.style.setProperty('--background-inner-color', newColor)
   }
-  changeBgColor(localStorage.getItem('color') ?? colors.red)
 
   function changeDevice({ brand, model, variant }) {
     document.getElementById('preview').classList.add('load')
@@ -347,8 +336,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!device.preview?.rounding) delete images.watchface.rounding
 
     const colorIndex = variant ? device.variants.indexOf(variant) : device?.variants ? 0 : -1
-    const newInnerColor = colorIndex >= 0 ? colors[device?.accents[colorIndex]] : colors[device?.accent] ?? colors.default
-    localStorage.setItem('color', newInnerColor)
+    const newInnerColor = colorIndex >= 0 ? device?.accents[colorIndex] : device?.accent ?? DEFAULT_BG_COLOR
     changeBgColor(newInnerColor)
 
     localStorage.setItem('device', JSON.stringify({
