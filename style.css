@@ -678,10 +678,10 @@ input:focus-visible {
   display: none !important;
 }
 
-.modal {
+#modalContainer {
   position: fixed;
-  top: 0;
   left: 0;
+  bottom: 0;
   width: 100dvw;
   height: 100dvh;
   display: -webkit-box;
@@ -696,9 +696,13 @@ input:focus-visible {
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
+  transition: height .5s;
+}
+#modalContainer.hidden {
+  z-index: -100;
 }
 
-.modal .content {
+#modalContainer .modal {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -725,19 +729,13 @@ input:focus-visible {
   -webkit-transition: all .5s;
   -o-transition: all .5s;
   transition: all .5s;
-  opacity: 1;
-  z-index: 100;
 }
 
-.modal .content>div:not(.title) {
+#modalContainer .modal>div:not(.title) {
   overflow-y: auto;
 }
 
-.modal.hidden {
-  z-index: -100;
-}
-
-.modal:not(.active) .content {
+#modalContainer:not(.active) .modal {
   -webkit-transform: translateY(5em);
   -ms-transform: translateY(5em);
   transform: translateY(5em);
@@ -760,6 +758,10 @@ input:focus-visible {
   font-size: 1.5em;
 }
 
+.modal .title + div {
+  line-height: 2em;
+}
+
 #versions {
   display: -webkit-box;
   display: -webkit-flex;
@@ -776,18 +778,6 @@ input:focus-visible {
 #versions .version {
   margin-bottom: .5em;
   font-size: 1.2em;
-}
-#versions .version + div {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  gap: .5em;
 }
 
 @media (max-width: 600px) {

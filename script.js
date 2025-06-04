@@ -133,6 +133,70 @@ class I18n {
   }
 }
 
+class Modal {
+  constructor() {
+    this.modal = document.createElement('div')
+    this.modal.classList.add('modal')
+    this.title = document.createElement('div')
+    this.close = document.createElement('div')
+    this.close.classList.add('button', 'closeModal')
+    this.close.innerHTML = `
+      <svg version="1.1" viewBox="0 0 24 24" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink">
+        <path fill="currentColor"
+          d="M14.8,12l3.6-3.6c0.8-0.8,0.8-2,0-2.8c-0.8-0.8-2-0.8-2.8,0L12,9.2L8.4,5.6c-0.8-0.8-2-0.8-2.8,0 c-0.8,0.8-0.8,2,0,2.8L9.2,12l-3.6,3.6c-0.8,0.8-0.8,2,0,2.8C6,18.8,6.5,19,7,19s1-0.2,1.4-0.6l3.6-3.6l3.6,3.6 C16,18.8,16.5,19,17,19s1-0.2,1.4-0.6c0.8-0.8,0.8-2,0-2.8L14.8,12z" />
+      </svg>
+    `
+    this.close.addEventListener('click', () => this.hide())
+    this.titleContainer = document.createElement('div')
+    this.titleContainer.classList.add('title')
+    this.titleContainer.appendChild(this.title)
+    this.titleContainer.appendChild(this.close)
+    this.modal.appendChild(this.titleContainer)
+    this.content = document.createElement('div')
+    this.modal.appendChild(this.content)
+  }
+
+  init() {
+    this.modalContainer = document.getElementById('modalContainer')
+    this.modalContainer.appendChild(this.modal)
+  }
+
+  insertData(type) {
+    this.title.innerText = i18n.t(`titles.${type}`)
+    const url = `./modals/${type}_${i18n.lang}.html`
+    this.loadAndProcessHTML(url, this.content)
+    this.view()
+  }
+
+  view() {
+    this.modalContainer.classList.remove('hidden')
+    this.modalContainer.classList.add('active')
+  }
+  hide() {
+    this.modalContainer.classList.remove('active')
+    setTimeout(() => {
+      this.modalContainer.classList.add('hidden')
+    }, 500);
+  }
+
+  async loadAndProcessHTML(url, targetElement) {
+    try {
+      const response = await fetch(url);
+      if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`)
+
+      let html = await response.text()
+
+      targetElement.innerHTML = html
+
+      return targetElement
+    } catch (error) {
+      targetElement.innerHTML = `<p>Error loading content: ${error.message}</p>`
+      return null
+    }
+  }
+}
+
 function formatVariantName(str) {
   const parts = str.split('_')
 
@@ -152,6 +216,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const canvas = document.getElementById('canvas')
   const ctx = canvas.getContext('2d')
+
+  const modal = new Modal()
+  modal.init()
 
   loadImages()
 
@@ -291,25 +358,7 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.openModal').forEach(o => {
     o.addEventListener('click', () => {
       document.querySelector('body').style.overflow = 'hidden'
-      const modal = document.getElementById(o.getAttribute('data-type'))
-      modal.classList.remove('hidden')
-      modal.classList.add('active')
-      const closeButton = document.createElement('div')
-      closeButton.innerHTML = `
-        <div class="button closeModal">
-          <svg version="1.1" viewBox="0 0 24 24" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
-            xmlns:xlink="http://www.w3.org/1999/xlink">
-            <path fill="currentColor"
-              d="M14.8,12l3.6-3.6c0.8-0.8,0.8-2,0-2.8c-0.8-0.8-2-0.8-2.8,0L12,9.2L8.4,5.6c-0.8-0.8-2-0.8-2.8,0 c-0.8,0.8-0.8,2,0,2.8L9.2,12l-3.6,3.6c-0.8,0.8-0.8,2,0,2.8C6,18.8,6.5,19,7,19s1-0.2,1.4-0.6l3.6-3.6l3.6,3.6 C16,18.8,16.5,19,17,19s1-0.2,1.4-0.6c0.8-0.8,0.8-2,0-2.8L14.8,12z" />
-          </svg>
-        </div>
-      `
-      closeButton.addEventListener('click', () => {
-        document.querySelector('body').style.overflow = 'auto'
-        modal.classList.remove('active')
-        setTimeout(() => modal.classList.add('hidden'), 500)
-      })
-      if (!modal.querySelector('.closeModal')) modal.querySelector('.title').appendChild(closeButton)
+      modal.insertData(o.getAttribute('data-type'))
     })
   })
 
@@ -430,12 +479,12 @@ document.addEventListener('DOMContentLoaded', () => {
     })
 })
 
-document.addEventListener('DOMContentLoaded', async () => {
-  const i18n = new I18n({
-    defaultLang: 'en',
-    fallbackLang: 'en'
-  })
+const i18n = new I18n({
+  defaultLang: 'en',
+  fallbackLang: 'en'
+})
 
+document.addEventListener('DOMContentLoaded', async () => {
   await i18n.init()
 
   document.querySelectorAll('.button.lang').forEach(b => {

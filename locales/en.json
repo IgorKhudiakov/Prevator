@@ -7,10 +7,8 @@
     "devices": "Devices",
     "close": "Close"
   },
-  "faq": {
-    "title": "How it works"
-  },
-  "history": {
-    "title": "Version history"
+  "titles": {
+    "faq": "How it works",
+    "history": "Version history"
   }
 }

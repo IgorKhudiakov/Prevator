@@ -26,6 +26,19 @@
           "hasGlare": true
         }
       },
+      "balance2": {
+        "title": "Balance 2",
+        "bg": "balance2",
+        "variants": ["black", "orange"],
+        "accents": ["#454648", "#aa3d26"],
+        "preview": {
+          "type": "round",
+          "width": 324,
+          "height": 324,
+          "radius": 162,
+          "hasGlare": true
+        }
+      },
       "bip6": {
         "title": "Bip 6",
         "bg": "bip6",
@@ -79,7 +92,21 @@
       "trex3": {
         "title": "T-Rex 3",
         "bg": "trex3",
-        "accent": "#be4531",
+        "variants": ["lava", "onyx"],
+        "accents": ["#be4531", "#96180f"],
+        "preview": {
+          "type": "round",
+          "width": 324,
+          "height": 324,
+          "radius": 162,
+          "hasGlare": true
+        }
+      },
+      "trexultra": {
+        "title": "T-Rex Ultra",
+        "bg": "trexultra",
+        "variants": ["beige", "black"],
+        "accents": ["#b8a388", "#414244"],
         "preview": {
           "type": "round",
           "width": 324,
@@ -96,7 +123,7 @@
       "fit3": {
         "title": "Fit 3",
         "bg": "fit3",
-        "accent": "#686868",
+        "accent": "#67686a",
         "preview": {
           "type": "square",
           "rounding": "hyperbolic",
@@ -109,7 +136,7 @@
         "title": "Fit 4",
         "bg": "fit4",
         "variants": ["black", "purple", "white"],
-        "accents": ["#2b2b2b", "#dbc8ef", "#afa69a"],
+        "accents": ["#2b2c2e", "#dbc8ef", "#afa69a"],
         "preview": {
           "type": "square",
           "rounding": "hyperbolic",

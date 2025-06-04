@@ -87,112 +87,14 @@
       <div id="devices" class="hide"></div>
     </div>
   </div>
-  <div id="version" class="button openModal" data-type="history" data-i18n-title="history.title" title="История версий">1.2.2</div>
+  <div id="version" class="button openModal" data-type="history" data-i18n-title="history.title" title="История версий">1.2.3</div>
   <div id="openFaq" class="button openModal" data-type="faq" data-i18n-title="faq.title" title="Как пользоваться">
     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
       <path fill="currentColor"
         d="M12,0A12,12,0,1,0,24,12,12.01,12.01,0,0,0,12,0Zm1,18a1,1,0,0,1-2,0V11H10a1,1,0,0,1,0-2h2a1,1,0,0,1,1,1ZM12.02,7a1,1,0,0,1-.01-2h.01a1,1,0,0,1,0,2Z" />
     </svg>
   </div>
-  <div id="faq" class="modal hidden">
-    <div class="content">
-      <div class="title">
-        <div data-i18n="faq.title">Как пользоваться</div>
-      </div>
-      <div>
-        <span>1. Выберите нужное устройство.</span><br><br>
-        <span>2. Загрузите скриншот циферблата или мини-приложения, используя соответствующую кнопку.</span><br><br>
-        <span>3. При необходимости включите "украшения" в виде внутренней тени и бликов.</span><br><br>
-        <span>4. Если вы удовлетворены результатом, укажите имя файла (по умолчанию - [devicename_preview.png]) и
-          нажмите "Скачать".</span><br><br>
-        <span>5. Повторяйте пункты 1-4, пока вам не надоест.</span>
-      </div>
-    </div>
-  </div>
-  <div id="history" class="modal hidden">
-    <div class="content">
-      <div class="title">
-        <div data-i18n="history.title">История версий</div>
-      </div>
-      <div id="versions">
-        <div>
-          <div class="version">1.2.2</div>
-          <div>
-            <div>
-              - Добавлены Amazfit GTS 4 (Gray, Orange), Balance (Gray), Xiaomi Band 9 (Blue, Silver), Band 9 Pro (Beige, Black и White).
-            </div>
-          </div>
-        </div>
-        <div>
-          <div class="version">1.2.1</div>
-          <div>
-            <div>
-              - Цвет фона теперь индивидуален для каждой модели часов.
-            </div>
-            <div>
-              - Добавлены Huawet GT 4, Fit 4 и Watch 5.
-            </div>
-          </div>
-        </div>
-        <div>
-          <div class="version">1.2.0</div>
-          <div>
-            <div>
-              - Поддержка гиперболического закругления на устройствах, где оно применяется.
-            </div>
-            <div>
-              - При обновлении страницы, выбранное устройство теперь сохраняется.
-            </div>
-            <div>
-              - Сайт стал поддерживать локализацию (другие языки).
-            </div>
-          </div>
-        </div>
-        <div>
-          <div class="version">1.1.0</div>
-          <div>
-            <div>
-              - Добавлен раздел "История версий".
-            </div>
-            <div>
-              - Анимация при смене часов.
-            </div>
-            <div>
-              - Исправлены искажения при смене часов и мелкие ошибки.
-            </div>
-          </div>
-        </div>
-        <div>
-          <div class="version">1.0.0</div>
-          <div>
-            <div>
-              - Поддержка нескольких вариантов одного устройства.
-            </div>
-            <div>
-              - Анимация фона при смене часов.
-            </div>
-          </div>
-        </div>
-        <div>
-          <div class="version">Beta</div>
-          <div>
-            <div>
-              - Выбор устройства, включение и отключение внутренней тени дисплея и бликов (если поддерживается).
-            </div>
-            <div>
-              - Загрузка картинок и предпросмотр итогового результата.
-            </div>
-            <div>
-              - Редактирование названия и сохранение готового изображения.
-            </div>
-            <div>
-              - Поддерживаемые устройства: Amazfit (Active 2, Balance, Bip 6, Cheetah Square GTR 4, T-Rex 3), Huawei (Fit 3, GT 3), Xiaomi (Band 7, Band 9).
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  <div id="modalContainer" class="hidden"></div>
 </body>
 
 </html>
