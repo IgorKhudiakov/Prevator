@@ -30,7 +30,7 @@ class I18n {
   constructor(options = {}) {
     this.defaultLang = options.defaultLang || 'en'
     this.fallbackLang = options.fallbackLang || 'en'
-    this.lang = this.defaultLang;
+    this.lang = this.defaultLang
     this.translations = {}
     this.selector = options.selector || '[data-i18n], [data-i18n-title]'
     this.attribute = options.attribute || ['data-i18n', 'data-i18n-title']
@@ -39,7 +39,7 @@ class I18n {
       ru: (n) => n % 10 === 1 && n % 100 !== 11 ? 'one'
         : [2, 3, 4].includes(n % 10) && ![12, 13, 14].includes(n % 100) ? 'few'
           : 'many'
-    };
+    }
   }
 
   async init(lang) {
@@ -71,11 +71,9 @@ class I18n {
   }
 
   async loadLanguage(lang) {
-    if (!this.translations[lang]) {
-      this.translations[lang] = await this.fetchTranslations(lang)
-    }
+    if (!this.translations[lang]) this.translations[lang] = await this.fetchTranslations(lang)
     this.lang = lang
-    localStorage.setItem('land', lang)
+    localStorage.setItem('lang', lang)
   }
 
   t(key, params = {}) {
@@ -133,6 +131,17 @@ class I18n {
     document.documentElement.lang = lang
     document.dispatchEvent(new CustomEvent('languageChanged', { detail: lang }))
   }
+}
+
+function formatVariantName(str) {
+  const parts = str.split('_')
+
+  const formattedParts = parts.map(part => {
+    if (!part) return ''
+    return part.charAt(0).toUpperCase() + part.slice(1).toLowerCase()
+  })
+
+  return formattedParts.join(' ').replace(/\s+/g, ' ').trim()
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -313,7 +322,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const device = devices[brand].deviceList[model]
 
-    images.bg.src = `./images/bgs/${brand}/${device.bg}${variant ? `_${variant.toLowerCase()}` : device?.variants ? `_${device.variants[0].toLowerCase()}` : ''}.png`
+    images.bg.src = `./images/bgs/${brand}/${device.bg}${variant ? `_${variant}` : device?.variants ? `_${device.variants[0]}` : ''}.png`
     Object.assign(images.watchface, device.preview)
     const input = document.getElementById('fileName')
     input.setAttribute('placeholder', `${model}_preview`)
@@ -373,6 +382,7 @@ document.addEventListener('DOMContentLoaded', () => {
         for (const [deviceModel, device] of Object.entries(brand.deviceList)) {
           const d = document.createElement('div')
           d.classList.add('device', 'button')
+          if (localDevice.brand == brandName && localDevice.model == deviceModel) d.classList.add('active')
           d.setAttribute('data-device', deviceModel)
           const display = document.createElement('div')
           display.classList.add('display', device.preview.type)
@@ -390,7 +400,8 @@ document.addEventListener('DOMContentLoaded', () => {
             device?.variants.forEach((v, i) => {
               let variant = document.createElement('div')
               variant.classList.add('variant', 'button')
-              variant.innerHTML = v
+              if (localDevice.brand == brandName && localDevice.model == deviceModel && localDevice?.variant == v) variant.classList.add('active')
+              variant.innerHTML = formatVariantName(v)
               variant.addEventListener('click', () => {
                 document.getElementById('devices').querySelectorAll('.variant').forEach(t => {
                   if (t != variant) t.classList.remove('active')

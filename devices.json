@@ -16,7 +16,8 @@
       "balance": {
         "title": "Balance",
         "bg": "balance",
-        "accent": "#368a7f",
+        "variants": ["gray", "sunset"],
+        "accents": ["#606060", "#368a7f"],
         "preview": {
           "type": "round",
           "width": 324,
@@ -52,7 +53,7 @@
       "gtr4": {
         "title": "GTR 4",
         "bg": "gtr4",
-        "variants": ["Black", "Brown", "Gray"],
+        "variants": ["black", "brown", "gray"],
         "accents": ["#af2e24", "#6b3917", "#2b2b2b"],
         "preview": {
           "type": "round",
@@ -62,10 +63,23 @@
           "hasGlare": true
         }
       },
+      "gtrs": {
+        "title": "GTS 4",
+        "bg": "gts4",
+        "variants": ["black", "orange"],
+        "accents": ["#2b2b2b", "#d9633c"],
+        "preview": {
+          "type": "square",
+          "width": 266,
+          "height": 307,
+          "radius": 65,
+          "hasGlare": true
+        }
+      },
       "trex3": {
         "title": "T-Rex 3",
         "bg": "trex3",
-        "accent": "#b91900",
+        "accent": "#be4531",
         "preview": {
           "type": "round",
           "width": 324,
@@ -94,8 +108,8 @@
       "fit4": {
         "title": "Fit 4",
         "bg": "fit4",
-        "variants": ["Black", "Purple", "White"],
-        "accents": ["#2b2b2b", "#c7c9c8", "#c7c9c8"],
+        "variants": ["black", "purple", "white"],
+        "accents": ["#2b2b2b", "#dbc8ef", "#afa69a"],
         "preview": {
           "type": "square",
           "rounding": "hyperbolic",
@@ -108,7 +122,7 @@
       "gt3": {
         "title": "GT 3",
         "bg": "gt3",
-        "variants": ["Brown", "Silver"],
+        "variants": ["brown", "silver"],
         "accents": ["#6b3917", "#c7c9c8"],
         "preview": {
           "type": "round",
@@ -121,7 +135,7 @@
       "gt4": {
         "title": "GT 4",
         "bg": "gt4",
-        "variants": ["Black", "Brown", "Green"],
+        "variants": ["black", "brown", "green"],
         "accents": ["#212224", "#6b3917", "#718f4f"],
         "preview": {
           "type": "round",
@@ -134,7 +148,7 @@
       "gt5": {
         "title": "Watch 5",
         "bg": "watch5",
-        "variants": ["Black", "Brown", "Violet"],
+        "variants": ["black", "brown", "violet"],
         "accents": ["#212224", "#442a21", "#6b649f"],
         "preview": {
           "type": "round",
@@ -162,11 +176,25 @@
       "sb9": {
         "title": "Smart Band 9",
         "bg": "sb9",
+        "variants": ["black", "blue", "silver"],
+        "accents": ["#212224", "#bad3ed", "#cfd1d6"],
         "preview": {
           "type": "band",
           "width": 128,
           "height": 326,
           "radius": 96
+        }
+      },
+      "sb9pro": {
+        "title": "Smart Band 9 Pro",
+        "bg": "sb9pro",
+        "variants": ["beige", "black", "white"],
+        "accents": ["#e7dbcf", "#212224", "#c9c6cb"],
+        "preview": {
+          "type": "square",
+          "width": 218,
+          "height": 308,
+          "radius": 30
         }
       }
     }
