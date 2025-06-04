@@ -187,6 +187,23 @@
       }
     }
   },
+  "redmi": {
+    "title": "Redmi",
+    "deviceList": {
+      "watch5": {
+        "title": "Watch 5",
+        "bg": "watch5",
+        "variants": ["black", "lavender", "white"],
+        "accents": ["#212224", "#d3d1e9", "#c9cacc"],
+        "preview": {
+          "type": "square",
+          "width": 260,
+          "height": 308,
+          "radius": 62
+        }
+      }
+    }
+  },
   "xiaomi": {
     "title": "Xiaomi",
     "deviceList": {
@@ -197,7 +214,7 @@
           "type": "band",
           "width": 128,
           "height": 326,
-          "radius": 96
+          "radius": 64
         }
       },
       "sb9": {
@@ -209,7 +226,19 @@
           "type": "band",
           "width": 128,
           "height": 326,
-          "radius": 96
+          "radius": 64
+        }
+      },
+      "sb9active": {
+        "title": "Smart Band 9 Active",
+        "bg": "sb9active",
+        "variants": ["black", "pink", "white"],
+        "accents": ["#212224", "#c6b1ad", "#c0bab1"],
+        "preview": {
+          "type": "square",
+          "width": 168,
+          "height": 308,
+          "radius": 28
         }
       },
       "sb9pro": {
@@ -222,6 +251,16 @@
           "width": 218,
           "height": 308,
           "radius": 30
+        }
+      },
+      "sb10": {
+        "title": "Smart Band 10",
+        "bg": "sb10",
+        "preview": {
+          "type": "band",
+          "width": 132,
+          "height": 326,
+          "radius": 66
         }
       }
     }

@@ -481,7 +481,7 @@ input:focus-visible {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  max-height: calc(100dvh - 6em);
+  max-height: calc(100dvh - 4em);
   overflow: auto;
 }
 
@@ -497,6 +497,7 @@ input:focus-visible {
   -o-transition: height 1s ease;
   transition: height 1s ease;
   overflow: hidden;
+  flex-shrink: 0;
 }
 
 #devices .brand .title {
