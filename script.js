@@ -1,6 +1,6 @@
 const images = {
   bg: {
-    src: './images/bgs/amazfit/gtr4_black.png',
+    src: './images/bgs/amazfit/gtr4_superspeed_black.png',
     visibility: true,
     loaded: false
   },
