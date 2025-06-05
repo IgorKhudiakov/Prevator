@@ -14,6 +14,12 @@
   <div class="container">
     <div id="preview" class="load">
       <canvas id="canvas"></canvas>
+      <div id="wfcontrols" class="hidden">
+        <div class="button" data-type="minus">-</div>
+        <div id="scale" data-val="0">0</div>
+        <div class="button" data-type="plus">+</div>
+        <div class="button" data-type="reset" data-i18n="buttons.reset">Сброс</div>
+      </div>
     </div>
     <div class="controls">
       <div id="imagePicker" class="button">
@@ -36,6 +42,10 @@
       <div class="checkbox button">
         <input id="glareCheckbox" data-type="glare" type="checkbox"></checkbox>
         <label for="glareCheckbox" data-i18n="buttons.glare">Блики</label>
+      </div>
+      <div class="checkbox button">
+        <input id="scaleCheckbox" data-type="scale" type="checkbox"></checkbox>
+        <label for="scaleCheckbox" data-i18n="buttons.scale">Масштабировать скриншот</label>
       </div>
       <div id="saveContainer">
         <input id="fileName" type="text" data-default="gtr4_preview" placeholder="gtr4_preview">
@@ -87,7 +97,7 @@
       <div id="devices" class="hide"></div>
     </div>
   </div>
-  <div id="version" class="button openModal" data-type="history" data-i18n-title="history.title" title="История версий">1.2.4</div>
+  <div id="version" class="button openModal" data-type="history" data-i18n-title="history.title" title="История версий">1.2.5</div>
   <div id="openFaq" class="button openModal" data-type="faq" data-i18n-title="faq.title" title="Как пользоваться">
     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
       <path fill="currentColor"

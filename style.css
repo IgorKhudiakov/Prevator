@@ -74,6 +74,7 @@ body::before {
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
+  flex-direction: column;
   justify-content: center;
   -webkit-box-align: center;
   -webkit-align-items: center;
@@ -82,6 +83,24 @@ body::before {
   position: relative;
   width: 480px;
   aspect-ratio: 2/3;
+}
+#wfcontrols {
+  display: flex;
+  gap: 1em;
+}
+#wfcontrols.hidden {
+  display: none;
+}
+#wfcontrols > * {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 .5em;
+  box-sizing: border-box;
+  height: 2em;
+  min-width: 2em;
+  border-radius: .5em;
+  background-color: var(--tran-bg-color);
 }
 
 #preview canvas {
@@ -212,7 +231,7 @@ input:focus-visible {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  height: 3em;
+  max-height: 3em;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;

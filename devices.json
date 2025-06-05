@@ -39,6 +39,17 @@
           "hasGlare": true
         }
       },
+      "bip5unity": {
+        "title": "Bip 5 Unity",
+        "bg": "bip5unity",
+        "accent": "#313234",
+        "preview": {
+          "type": "square",
+          "width": 260,
+          "height": 307,
+          "radius": 55
+        }
+      },
       "bip6": {
         "title": "Bip 6",
         "bg": "bip6",
@@ -51,10 +62,32 @@
           "hasGlare": true
         }
       },
+      "cheetahpro": {
+        "title": "Cheetah Pro",
+        "bg": "cheetahpro",
+        "accent": "#c1b1a0",
+        "preview": {
+          "type": "round",
+          "width": 324,
+          "height": 324,
+          "radius": 162
+        }
+      },
+      "cheetahround": {
+        "title": "Cheetah Round",
+        "bg": "cheetahround",
+        "accent": "#c5d110",
+        "preview": {
+          "type": "round",
+          "width": 314,
+          "height": 314,
+          "radius": 157
+        }
+      },
       "cheetahsquare": {
         "title": "Cheetah Square",
         "bg": "cheetahsquare",
-        "accent": "#a3a900",
+        "accent": "#c5d110",
         "preview": {
           "type": "square",
           "width": 266,

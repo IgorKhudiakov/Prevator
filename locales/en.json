@@ -5,7 +5,9 @@
     "glare": "Glare",
     "download": "Download",
     "devices": "Devices",
-    "close": "Close"
+    "close": "Close",
+    "scale": "Zoom in screenshot",
+    "reser": "Reset"
   },
   "titles": {
     "faq": "How it works",

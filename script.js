@@ -272,6 +272,23 @@ document.addEventListener('DOMContentLoaded', () => {
     )
   }
 
+  function checkScale() {
+    return document.getElementById('scaleCheckbox').checked
+  }
+
+  function changeScale(val) {
+    const scaleElem = document.getElementById('scale')
+    scaleElem.setAttribute('data-val', val)
+    scaleElem.innerHTML = val
+  }
+
+  function loadScale() {
+    const currentScale = localStorage.getItem('scale') ?? 0
+    images.watchface.scale = currentScale
+    changeScale(currentScale)
+  }
+  loadScale()
+
   function updateCanvas() {
     canvas.width = 480
     canvas.height = 720
@@ -305,17 +322,34 @@ document.addEventListener('DOMContentLoaded', () => {
           ctx.clip()
         }
 
-        ctx.drawImage(image.img, x, y, image.img.width, image.img.height)
+        const imageScale = checkScale() ? +(image?.scale ?? 0) : 0
+        ctx.drawImage(image.img, x - imageScale, y - imageScale, image.img.width + imageScale * 2, image.img.height + imageScale * 2)
       }
     }
   }
 
+  document.querySelectorAll('#wfcontrols .button').forEach(button => {
+    button.addEventListener('click', e => {
+      const currentScale = document.getElementById('scale')
+      let currentScaleVal = +(currentScale.getAttribute('data-val') ?? 0)
+      const type = e.target.getAttribute('data-type')
+      type == 'plus' ? currentScaleVal++ : type == 'minus' ? currentScaleVal-- : currentScaleVal = 0
+      changeScale(currentScaleVal)
+      images.watchface.scale = currentScaleVal
+      localStorage.setItem('scale', currentScaleVal)
+      updateCanvas()
+    })
+  })
+
   document.getElementById('imagePicker').addEventListener('click', () => document.getElementById('fileInput').click())
 
-  document.querySelectorAll('.checkbox input').forEach((button) => {
-    button.addEventListener('click', (event) => {
+  document.querySelectorAll('.checkbox input').forEach(button => {
+    button.addEventListener('click', event => {
       const type = event.target.getAttribute('data-type')
-      images[type].visibility = event.target.checked
+      if (type == 'scale') {
+        document.getElementById('wfcontrols').classList.toggle('hidden')
+        updateCanvas()
+      } else images[type].visibility = event.target.checked
       loadImages()
     })
   })
