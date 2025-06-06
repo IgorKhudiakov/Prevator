@@ -165,8 +165,7 @@ class Modal {
   insertData(type) {
     this.title.innerText = i18n.t(`titles.${type}`)
     const url = `./modals/${type}_${i18n.lang}.html`
-    this.loadAndProcessHTML(url, this.content)
-    this.view()
+    this.loadAndProcessHTML(url, this.content).then(this.view())
   }
 
   view() {
@@ -191,7 +190,7 @@ class Modal {
 
       return targetElement
     } catch (error) {
-      targetElement.innerHTML = `<p>Error loading content: ${error.message}</p>`
+      targetElement.innerHTML = `Error loading content: ${error.message}`
       return null
     }
   }
@@ -276,25 +275,24 @@ document.addEventListener('DOMContentLoaded', () => {
     return document.getElementById('scaleCheckbox').checked
   }
 
-  function changeScale(val) {
+  function changeScale(val, textInput = false) {
     const scaleElem = document.getElementById('scale')
     scaleElem.setAttribute('data-val', val)
-    scaleElem.innerHTML = val
+    if (textInput) scaleElem.innerHTML = val > 0 ? `+${val}` : val
+    images.watchface.scale = val
+    localStorage.setItem('scale', val)
   }
 
   function loadScale() {
     const currentScale = localStorage.getItem('scale') ?? 0
     images.watchface.scale = currentScale
-    changeScale(currentScale)
+    changeScale(currentScale, true)
   }
   loadScale()
 
   function updateCanvas() {
     canvas.width = 480
     canvas.height = 720
-
-    ctx.clearRect(0, 0, canvas.width, canvas.height)
-    ctx.save()
 
     const allImagesLoaded = () => {
       for (const [key, image] of Object.entries(images)) {
@@ -304,7 +302,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if (!allImagesLoaded()) return
-    else document.getElementById('preview').classList.remove('load')
+
+    ctx.clearRect(0, 0, canvas.width, canvas.height)
+    ctx.save()
 
     for (const [key, image] of Object.entries(images)) {
       if (image?.src && image.visibility) {
@@ -326,19 +326,28 @@ document.addEventListener('DOMContentLoaded', () => {
         ctx.drawImage(image.img, x - imageScale, y - imageScale, image.img.width + imageScale * 2, image.img.height + imageScale * 2)
       }
     }
+
+    document.getElementById('preview').classList.remove('load')
   }
 
-  document.querySelectorAll('#wfcontrols .button').forEach(button => {
-    button.addEventListener('click', e => {
-      const currentScale = document.getElementById('scale')
-      let currentScaleVal = +(currentScale.getAttribute('data-val') ?? 0)
-      const type = e.target.getAttribute('data-type')
-      type == 'plus' ? currentScaleVal++ : type == 'minus' ? currentScaleVal-- : currentScaleVal = 0
-      changeScale(currentScaleVal)
-      images.watchface.scale = currentScaleVal
-      localStorage.setItem('scale', currentScaleVal)
-      updateCanvas()
-    })
+  document.querySelectorAll('#wfcontrols > *').forEach(button => {
+    if (button.classList.contains('button')) {
+      button.addEventListener('click', e => {
+        const currentScale = document.getElementById('scale')
+        let currentVal = +(currentScale.getAttribute('data-val') ?? 0)
+        const type = e.target.getAttribute('data-type')
+        type == 'plus' ? currentVal++ : type == 'minus' ? currentVal-- : currentVal = 0
+        changeScale(currentVal, true)
+        updateCanvas()
+      })
+    } else {
+      button.addEventListener('input', e => {
+        let currentVal = e.target.textContent
+        if (isNaN(currentVal)) currentVal = 0
+        changeScale(currentVal)
+        updateCanvas()
+      })
+    }
   })
 
   document.getElementById('imagePicker').addEventListener('click', () => document.getElementById('fileInput').click())

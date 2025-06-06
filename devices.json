@@ -121,6 +121,18 @@
           "hasGlare": true
         }
       },
+      "falcon": {
+        "title": "Falcon",
+        "bg": "falcon",
+        "accent": "#777169",
+        "preview": {
+          "type": "round",
+          "width": 278,
+          "height": 278,
+          "radius": 139,
+          "hasGlare": true
+        }
+      },
       "gtr4": {
         "title": "GTR 4",
         "bg": "gtr4",
@@ -208,7 +220,7 @@
         "title": "GT 3",
         "bg": "gt3",
         "variants": ["brown", "silver"],
-        "accents": ["#6b3917", "#c7c9c8"],
+        "accents": ["#6b3917", "#97999b"],
         "preview": {
           "type": "round",
           "width": 314,
@@ -303,7 +315,7 @@
         "title": "Smart Band 9 Pro",
         "bg": "sb9pro",
         "variants": ["beige", "black", "white"],
-        "accents": ["#e7dbcf", "#212224", "#c9c6cb"],
+        "accents": ["#e7dbcf", "#38393b", "#c9c6cb"],
         "preview": {
           "type": "square",
           "width": 218,

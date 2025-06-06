@@ -1,3 +1,8 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 :root {
   --dark-color: #333;
   --tran-bg-color: rgba(128, 128, 128, .2);
@@ -5,14 +10,11 @@
   --background-inner-color: #007eff;
   --accent-color: var(--background-inner-color);
   color: white;
-  padding: 2em;
   font-family: Roboto, Arial, Helvetica, sans-serif;
 }
 
 html,
 body {
-  margin: 0 !important;
-  padding: 0 !important;
   -webkit-align-content: center;
   -ms-flex-line-pack: center;
   align-content: center;
@@ -30,9 +32,9 @@ body::before {
   position: fixed;
   width: 100dvw;
   height: 100dvh;
-  background-image: -o-radial-gradient(circle at center, rgba(17, 18, 20, .5) rgba(17, 18, 20, .9));
-  background-image: -o-radial-gradient(center, circle, rgba(17, 18, 20, .5), rgba(17, 18, 20, .9));
-  background-image: radial-gradient(circle at center, rgba(17, 18, 20, .5), rgba(17, 18, 20, .9));
+  background-image: -o-radial-gradient(circle at center, rgba(0, 0, 0, .5), rgba(0, 0, 0, .9));
+  background-image: -o-radial-gradient(center, circle, rgba(0, 0, 0, .5), rgba(0, 0, 0, .9));
+  background-image: radial-gradient(circle at center, rgba(0, 0, 0, .5), rgba(0, 0, 0, .9));
   z-index: -1;
 }
 
@@ -65,6 +67,10 @@ body::before {
 .button,
 .button>* {
   cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 #preview {
@@ -78,8 +84,8 @@ body::before {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   justify-content: center;
   -webkit-box-align: center;
   -webkit-align-items: center;
@@ -96,10 +102,14 @@ body::before {
   display: -ms-flexbox;
   display: flex;
   gap: 1em;
+  height: fit-content;
+  transition: all .5s ease;
 }
 
 #wfcontrols.hidden {
-  display: none;
+  height: 0;
+  pointer-events: none;
+  opacity: 0;
 }
 
 #wfcontrols>* {
@@ -109,15 +119,15 @@ body::before {
   display: flex;
   -webkit-box-align: center;
   -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   padding: 0 .5em;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   height: 2em;
   min-width: 2em;
   border-radius: .5em;
@@ -317,7 +327,7 @@ input:focus-visible {
   flex-shrink: 0;
   aspect-ratio: 1;
   height: 100%;
-  background-color: var(--accent-color);
+  background-color: var(--tran-bg-color);
   -webkit-transition: background-color 1s ease;
   -o-transition: background-color 1s ease;
   transition: background-color 1s ease;
@@ -403,8 +413,12 @@ input:focus-visible {
   width: 1.2em;
 }
 
-.checkbox input:checked::after {
+.checkbox input:checked::before {
   background: var(--accent-color);
+}
+
+.checkbox input:checked::after {
+  background: white;
 }
 
 #header {
@@ -412,14 +426,12 @@ input:focus-visible {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
   gap: 1em;
   position: fixed;
   top: 0;
-  width: 100%;
-  height: 6em;
-  padding: 2em;
+  width: -webkit-fill-available;
+  height: 2em;
+  margin: 2em;
 }
 
 #header a,
@@ -466,13 +478,14 @@ input:focus-visible {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  width: 100%;
-  margin-left: -100px;
   -webkit-box-pack: end;
   -webkit-justify-content: flex-end;
   -ms-flex-pack: end;
   justify-content: flex-end;
   gap: .5em;
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 
 #openDevices,
@@ -485,7 +498,7 @@ input:focus-visible {
 #closeDevices {
   background-color: var(--tran-bg-color);
   -webkit-backdrop-filter: blur(3px);
-          backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
   border-radius: 25%;
 }
 
@@ -551,8 +564,8 @@ input:focus-visible {
   transition: height 1s ease;
   overflow: hidden;
   -webkit-flex-shrink: 0;
-      -ms-flex-negative: 0;
-          flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
 }
 
 #devices .brand .title {
@@ -841,7 +854,7 @@ input:focus-visible {
 
 @media (max-width: 600px) {
   #header {
-    padding: 1em;
+    margin: 1em;
   }
 
   #version {
