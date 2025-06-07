@@ -102,8 +102,8 @@ class I18n {
     return path.split('.').reduce((acc, part) => acc && acc[part], obj)
   }
 
-  applyAll() {
-    document.querySelectorAll(this.selector).forEach(element => {
+  applyAll(parent = document) {
+    parent.querySelectorAll(this.selector).forEach(element => {
       const isAttributes = Array.isArray(this.attribute)
       const key = isAttributes ? (element.getAttribute(this.attribute[0]) ?? element.getAttribute(this.attribute[1])) : element.getAttribute(this.attribute)
       const params = this.extractParams(element)
@@ -162,9 +162,14 @@ class Modal {
     this.modalContainer.appendChild(this.modal)
   }
 
-  insertData(type) {
+  clear() {
+    this.content.innerHTML = ''
+  }
+
+  insertData(type, isLocalize) {
+    this.title.setAttribute('data-i18n', `titles.${type}`)
     this.title.innerText = i18n.t(`titles.${type}`)
-    const url = `./modals/${type}_${i18n.lang}.html`
+    const url = `./modals/${type}${isLocalize ? `_${i18n.lang}` : ''}.html`
     this.loadAndProcessHTML(url, this.content).then(this.view())
   }
 
@@ -174,6 +179,7 @@ class Modal {
   }
   hide() {
     this.modalContainer.classList.remove('active')
+    document.querySelector('body').style.overflow="auto"
     setTimeout(() => {
       this.modalContainer.classList.add('hidden')
     }, 500);
@@ -188,7 +194,13 @@ class Modal {
 
       targetElement.innerHTML = html
 
-      return targetElement
+      const scripts = targetElement.querySelectorAll('script')
+      scripts.forEach(oldScript => {
+        const newScript = document.createElement('script')
+        Array.from(oldScript.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value) )
+        if (oldScript.textContent) newScript.textContent = oldScript.textContent
+        oldScript.parentNode.replaceChild(newScript, oldScript)
+      })
     } catch (error) {
       targetElement.innerHTML = `Error loading content: ${error.message}`
       return null
@@ -401,7 +413,8 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.openModal').forEach(o => {
     o.addEventListener('click', () => {
       document.querySelector('body').style.overflow = 'hidden'
-      modal.insertData(o.getAttribute('data-type'))
+      modal.clear()
+      modal.insertData(o.getAttribute('data-type'), !(o.getAttribute('data-dnl') ?? false))
     })
   })
 
@@ -527,10 +540,4 @@ const i18n = new I18n({
   fallbackLang: 'en'
 })
 
-document.addEventListener('DOMContentLoaded', async () => {
-  await i18n.init()
-
-  document.querySelectorAll('.button.lang').forEach(b => {
-    b.addEventListener('click', () => i18n.changeLanguage(b.getAttribute('data-lang')))
-  })
-})
+document.addEventListener('DOMContentLoaded', async () => await i18n.init())

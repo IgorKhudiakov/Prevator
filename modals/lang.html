@@ -1,0 +1,10 @@
+<div class="languages">
+  <div class="button lang" data-lang="en"><span>English</span></div>
+  <div class="button lang" data-lang="ru"><span>Русский</span></div>
+  <div class="button lang" data-lang="cn"><span>中文</span></div>
+</div>
+<script>
+  document.querySelectorAll('.button.lang').forEach( b => {
+    b.addEventListener('click', () => i18n.changeLanguage(b.getAttribute('data-lang')))
+  })
+</script>

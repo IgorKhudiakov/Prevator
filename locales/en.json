@@ -10,7 +10,13 @@
     "reser": "Reset"
   },
   "titles": {
+    "lang": "Language",
+    "donate": "Donate",
     "faq": "How it works",
     "history": "Version history"
+  },
+  "donate": {
+    "descSNG": "Relevant for Russia, Belarus and Kazakhstan:",
+    "descOthers": "For other countries:"
   }
 }
