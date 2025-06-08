@@ -30,12 +30,26 @@
       "active2": {
         "title": "Active 2",
         "bg": "active2",
-        "accent": "#686868",
+        "variants": ["black_sport", "premium", "red_sport"],
+        "accents": ["#686868", "#686868", "#c0503b"],
         "preview": {
           "type": "round",
           "width": 314,
           "height": 314,
           "radius": 157
+        }
+      },
+      "active2square": {
+        "title": "Active 2 Square",
+        "bg": "active2square",
+        "accent": "#67686a",
+        "preview": {
+          "type": "square",
+          "rounding": "hyperbolic",
+          "width": 266,
+          "height": 308,
+          "radius": 154,
+          "power": 0.03
         }
       },
       "balance": {
@@ -55,7 +69,7 @@
         "title": "Balance 2",
         "bg": "balance2",
         "variants": ["black", "orange"],
-        "accents": ["#454648", "#aa3d26"],
+        "accents": ["#42433e", "#aa3d26"],
         "preview": {
           "type": "round",
           "width": 324,

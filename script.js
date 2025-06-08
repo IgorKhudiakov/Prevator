@@ -251,34 +251,34 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  function drawHyperbolicRect(ctx, x, y, width, height, radius) {
+  function drawHyperbolicRect(ctx, x, y, width, height, radius, power = 0.3) {
     ctx.moveTo(x + radius, y)
     ctx.lineTo(x + width - radius, y)
 
     ctx.bezierCurveTo(
-      x + width - radius * 0.3, y,
-      x + width, y + radius * 0.3,
+      x + width - radius * power, y,
+      x + width, y + radius * power,
       x + width, y + radius
     )
 
     ctx.lineTo(x + width, y + height - radius)
     ctx.bezierCurveTo(
-      x + width, y + height - radius * 0.3,
-      x + width - radius * 0.3, y + height,
+      x + width, y + height - radius * power,
+      x + width - radius * power, y + height,
       x + width - radius, y + height
     )
 
     ctx.lineTo(x + radius, y + height)
     ctx.bezierCurveTo(
-      x + radius * 0.3, y + height,
-      x, y + height - radius * 0.3,
+      x + radius * power, y + height,
+      x, y + height - radius * power,
       x, y + height - radius
     )
 
     ctx.lineTo(x, y + radius)
     ctx.bezierCurveTo(
-      x, y + radius * 0.3,
-      x + radius * 0.3, y,
+      x, y + radius * power,
+      x + radius * power, y,
       x + radius, y
     )
   }
@@ -328,7 +328,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (key == 'watchface') {
           ctx.save()
           ctx.beginPath()
-          if (image?.rounding == "hyperbolic") drawHyperbolicRect(ctx, x, y, images.watchface.width, images.watchface.height, images.watchface.radius)
+          if (image?.rounding == "hyperbolic") drawHyperbolicRect(ctx, x, y, images.watchface.width, images.watchface.height, images.watchface.radius, images.watchface?.power)
           else ctx.roundRect(x, y, images.watchface.width, images.watchface.height, images.watchface.radius)
           ctx.closePath()
           ctx.clip()
@@ -429,6 +429,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     images.bg.src = `./images/bgs/${brand}/${device.bg}${variant ? `_${variant}` : device?.variants ? `_${device.variants[0]}` : ''}.png`
     Object.assign(images.watchface, device.preview)
+    if (!device.preview?.power) delete images.watchface.power
     const input = document.getElementById('fileName')
     input.setAttribute('placeholder', `${model}_preview`)
     input.setAttribute('data-default', `${model}_preview`)
