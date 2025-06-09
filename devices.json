@@ -204,6 +204,30 @@
   "huawei": {
     "title": "Huawei",
     "deviceList": {
+      "band9": {
+        "title": "Band 9",
+        "bg": "band9",
+        "variants": ["black", "blue", "yellow"],
+        "accents": ["#525356", "#232a5b", "#fdf0a7"],
+        "preview": {
+          "type": "band",
+          "width": 172,
+          "height": 326,
+          "radius": 24
+        }
+      },
+      "band10": {
+        "title": "Band 10",
+        "bg": "band10",
+        "variants": ["black", "blue", "green"],
+        "accents": ["#525356", "#9eafbf", "#f7fe5e"],
+        "preview": {
+          "type": "band",
+          "width": 172,
+          "height": 326,
+          "radius": 24
+        }
+      },
       "d2": {
         "title": "D 2",
         "bg": "d2",
@@ -361,6 +385,18 @@
           "width": 260,
           "height": 308,
           "radius": 62
+        }
+      },
+      "watch5active": {
+        "title": "Watch 5 Active",
+        "bg": "watch5active",
+        "variants": ["black", "silver"],
+        "accents": ["#434549", "#dbdadd"],
+        "preview": {
+          "type": "square",
+          "width": 256,
+          "height": 308,
+          "radius": 60
         }
       }
     }
