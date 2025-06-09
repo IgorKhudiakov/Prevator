@@ -204,6 +204,19 @@
   "huawei": {
     "title": "Huawei",
     "deviceList": {
+      "d2": {
+        "title": "D 2",
+        "bg": "d2",
+        "variants": ["black", "golden"],
+        "accents": ["#494d57", "#ad9a84"],
+        "preview": {
+          "type": "square",
+          "rounding": "hyperbolic",
+          "width": 290,
+          "height": 340,
+          "radius": 85
+        }
+      },
       "fit3": {
         "title": "Fit 3",
         "bg": "fit3",
@@ -221,6 +234,20 @@
         "bg": "fit4",
         "variants": ["black", "purple", "white"],
         "accents": ["#2b2c2e", "#dbc8ef", "#afa69a"],
+        "preview": {
+          "type": "square",
+          "rounding": "hyperbolic",
+          "width": 290,
+          "height": 340,
+          "radius": 85,
+          "hasGlare": true
+        }
+      },
+      "fit4pro": {
+        "title": "Fit 4 Pro",
+        "bg": "fit4pro",
+        "variants": ["black", "blue", "green"],
+        "accents": ["#2b2c2e", "#cdeff9", "#bacb42"],
         "preview": {
           "type": "square",
           "rounding": "hyperbolic",
@@ -257,6 +284,56 @@
         }
       },
       "gt5": {
+        "title": "GT 5",
+        "bg": "gt5",
+        "variants": ["black", "blue", "brown"],
+        "accents": ["#212224", "#325179", "#603e2b"],
+        "preview": {
+          "type": "round",
+          "width": 324,
+          "height": 324,
+          "radius": 162,
+          "hasGlare": true
+        }
+      },
+      "gt5pro": {
+        "title": "GT 5 Pro",
+        "bg": "gt5pro",
+        "variants": ["black", "titanium"],
+        "accents": ["#767676", "#e9e8e4"],
+        "preview": {
+          "type": "round",
+          "width": 324,
+          "height": 324,
+          "radius": 162,
+          "hasGlare": true
+        }
+      },
+      "watch4": {
+        "title": "Watch 4",
+        "bg": "watch4",
+        "accent": "#212224",
+        "preview": {
+          "type": "round",
+          "width": 324,
+          "height": 324,
+          "radius": 162
+        }
+      },
+      "watch4pro": {
+        "title": "Watch 4 Pro",
+        "bg": "watch4pro",
+        "variants": ["brown", "space", "titan"],
+        "accents": ["#412d24", "#6a0d10", "#dfdcd8"],
+        "preview": {
+          "type": "round",
+          "width": 324,
+          "height": 324,
+          "radius": 162,
+          "hasGlare": true
+        }
+      },
+      "watch5": {
         "title": "Watch 5",
         "bg": "watch5",
         "variants": ["black", "brown", "violet"],
