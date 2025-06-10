@@ -398,6 +398,18 @@
           "height": 308,
           "radius": 60
         }
+      },
+      "watch5lite": {
+        "title": "Watch 5 Lite",
+        "bg": "watch5lite",
+        "variants": ["black", "light_gold"],
+        "accents": ["#434549", "#dbdadd"],
+        "preview": {
+          "type": "square",
+          "width": 252,
+          "height": 308,
+          "radius": 65
+        }
       }
     }
   },
@@ -458,6 +470,18 @@
           "width": 132,
           "height": 326,
           "radius": 66
+        }
+      },
+      "watchs4": {
+        "title": "Watch S4",
+        "bg": "watchs4",
+        "variants": ["rainbow", "silver"],
+        "accents": ["#3ec698", "#d5d6d8"],
+        "preview": {
+          "type": "round",
+          "width": 324,
+          "height": 324,
+          "radius": 162
         }
       }
     }
