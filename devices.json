@@ -413,6 +413,35 @@
       }
     }
   },
+  "samsung": {
+    "title": "Samsung",
+    "deviceList": {
+      "galaxywatch7": {
+        "title": "Galaxy Watch 7",
+        "bg": "galaxywatch7",
+        "variants": ["green", "silver"],
+        "accents": ["#606053", "#b8b8b4"],
+        "preview": {
+          "type": "round",
+          "width": 314,
+          "height": 314,
+          "radius": 157
+        }
+      },
+      "galaxywatchultra": {
+        "title": "Galaxy Watch Ultra",
+        "bg": "galaxywatchultra",
+        "variants": ["black", "gray", "white"],
+        "accents": ["#e5761c", "#b4b0a7", "#dadbd5"],
+        "preview": {
+          "type": "round",
+          "width": 324,
+          "height": 324,
+          "radius": 162
+        }
+      }
+    }
+  },
   "xiaomi": {
     "title": "Xiaomi",
     "deviceList": {
