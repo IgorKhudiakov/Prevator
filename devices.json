@@ -6,7 +6,7 @@
         "title": "Active",
         "bg": "active",
         "variants": ["midnight_black", "petal_pink"],
-        "accents": ["#293032", "#e8cecb"],
+        "accents": ["#3e3e3e", "#efd7d3"],
         "preview": {
           "type": "square",
           "width": 266,
@@ -31,7 +31,7 @@
         "title": "Active 2",
         "bg": "active2",
         "variants": ["black_sport", "premium", "red_sport"],
-        "accents": ["#686868", "#686868", "#c0503b"],
+        "accents": ["#63636c", "#686868", "#c0503b"],
         "preview": {
           "type": "round",
           "width": 314,
@@ -190,7 +190,7 @@
         "title": "T-Rex Ultra",
         "bg": "trexultra",
         "variants": ["beige", "black"],
-        "accents": ["#b8a388", "#414244"],
+        "accents": ["#c9a670", "#b4b2ae"],
         "preview": {
           "type": "round",
           "width": 324,
@@ -257,7 +257,7 @@
         "title": "Fit 4",
         "bg": "fit4",
         "variants": ["black", "purple", "white"],
-        "accents": ["#2b2c2e", "#dbc8ef", "#afa69a"],
+        "accents": ["#494a4b", "#ded7e6", "#afa69a"],
         "preview": {
           "type": "square",
           "rounding": "hyperbolic",
@@ -271,7 +271,7 @@
         "title": "Fit 4 Pro",
         "bg": "fit4pro",
         "variants": ["black", "blue", "green"],
-        "accents": ["#2b2c2e", "#cdeff9", "#bacb42"],
+        "accents": ["#494a4b", "#cdeff9", "#bacb42"],
         "preview": {
           "type": "square",
           "rounding": "hyperbolic",
@@ -311,7 +311,7 @@
         "title": "GT 5",
         "bg": "gt5",
         "variants": ["black", "blue", "brown"],
-        "accents": ["#212224", "#325179", "#603e2b"],
+        "accents": ["#535353", "#57708e", "#603e2b"],
         "preview": {
           "type": "round",
           "width": 324,
@@ -361,13 +361,56 @@
         "title": "Watch 5",
         "bg": "watch5",
         "variants": ["black", "brown", "violet"],
-        "accents": ["#212224", "#442a21", "#6b649f"],
+        "accents": ["#414344", "#442a21", "#6b649f"],
         "preview": {
           "type": "round",
           "width": 324,
           "height": 324,
           "radius": 162,
           "hasGlare": true
+        }
+      }
+    }
+  },
+  "oneplus": {
+    "title": "Oneplus",
+    "deviceList": {
+      "watch2": {
+        "title": "Watch 2",
+        "bg": "watch2",
+        "variants": ["black_steel", "radiant_steel"],
+        "accents": ["#414246", "#7b8d91"],
+        "preview": {
+          "type": "round",
+          "width": 314,
+          "height": 314,
+          "radius": 157,
+          "hasGlare": true
+        }
+      },
+      "watch2r": {
+        "title": "Watch 2R",
+        "bg": "watch2r",
+        "variants": ["forest_green", "gunmetal_gray"],
+        "accents": ["#5d7b60", "#505050"],
+        "preview": {
+          "type": "round",
+          "width": 314,
+          "height": 314,
+          "radius": 157,
+          "hasGlare": true
+        }
+      },
+      "watch3": {
+        "title": "Watch 3",
+        "bg": "watch3",
+        "variants": ["emerald", "obsidian"],
+        "accents": ["#65755d", "#43444a"],
+        "preview": {
+          "type": "round",
+          "width": 324,
+          "height": 324,
+          "radius": 162
         }
       }
     }
@@ -379,7 +422,7 @@
         "title": "Watch 5",
         "bg": "watch5",
         "variants": ["black", "lavender", "white"],
-        "accents": ["#212224", "#d3d1e9", "#c9cacc"],
+        "accents": ["#58595d", "#d3d1e9", "#ececec"],
         "preview": {
           "type": "square",
           "width": 260,
@@ -391,7 +434,7 @@
         "title": "Watch 5 Active",
         "bg": "watch5active",
         "variants": ["black", "silver"],
-        "accents": ["#434549", "#dbdadd"],
+        "accents": ["#434549", "#dad9dc"],
         "preview": {
           "type": "square",
           "width": 256,
@@ -403,7 +446,7 @@
         "title": "Watch 5 Lite",
         "bg": "watch5lite",
         "variants": ["black", "light_gold"],
-        "accents": ["#434549", "#dbdadd"],
+        "accents": ["#434549", "#e7e2de"],
         "preview": {
           "type": "square",
           "width": 252,
@@ -416,11 +459,23 @@
   "samsung": {
     "title": "Samsung",
     "deviceList": {
+      "galaxywatch6": {
+        "title": "Galaxy Watch 6",
+        "bg": "galaxywatch6",
+        "variants": ["black", "silver"],
+        "accents": ["#727377", "#cfd0d5"],
+        "preview": {
+          "type": "round",
+          "width": 314,
+          "height": 314,
+          "radius": 157
+        }
+      },
       "galaxywatch7": {
         "title": "Galaxy Watch 7",
         "bg": "galaxywatch7",
         "variants": ["green", "silver"],
-        "accents": ["#606053", "#b8b8b4"],
+        "accents": ["#838374", "#dbdbd9"],
         "preview": {
           "type": "round",
           "width": 314,
@@ -448,6 +503,7 @@
       "sb7": {
         "title": "Smart Band 7",
         "bg": "sb7",
+        "accent": "#434549",
         "preview": {
           "type": "band",
           "width": 128,
@@ -459,7 +515,7 @@
         "title": "Smart Band 9",
         "bg": "sb9",
         "variants": ["black", "blue", "silver"],
-        "accents": ["#212224", "#bad3ed", "#cfd1d6"],
+        "accents": ["#434549", "#bad3ed", "#cfd1d6"],
         "preview": {
           "type": "band",
           "width": 128,
@@ -471,7 +527,7 @@
         "title": "Smart Band 9 Active",
         "bg": "sb9active",
         "variants": ["black", "pink", "white"],
-        "accents": ["#212224", "#c6b1ad", "#c0bab1"],
+        "accents": ["#434549", "#c6b1ad", "#c0bab1"],
         "preview": {
           "type": "square",
           "width": 168,
@@ -483,7 +539,7 @@
         "title": "Smart Band 9 Pro",
         "bg": "sb9pro",
         "variants": ["beige", "black", "white"],
-        "accents": ["#e7dbcf", "#38393b", "#c9c6cb"],
+        "accents": ["#e7dbcf", "#434549", "#c9c6cb"],
         "preview": {
           "type": "square",
           "width": 218,
@@ -494,6 +550,7 @@
       "sb10": {
         "title": "Smart Band 10",
         "bg": "sb10",
+        "accent": "#434549",
         "preview": {
           "type": "band",
           "width": 132,
