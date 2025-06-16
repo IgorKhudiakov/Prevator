@@ -483,8 +483,19 @@
           "radius": 157
         }
       },
+      "galaxywatch8": {
+        "title": "Galaxy Watch 8",
+        "bg": "galaxywatch8",
+        "accent": "#535257",
+        "preview": {
+          "type": "round",
+          "width": 314,
+          "height": 314,
+          "radius": 157
+        }
+      },
       "galaxywatchultra": {
-        "title": "Galaxy Watch Ultra",
+        "title": "Galaxy Watch Ultra 2024",
         "bg": "galaxywatchultra",
         "variants": ["black", "gray", "white"],
         "accents": ["#e5761c", "#b4b0a7", "#dadbd5"],
@@ -550,12 +561,13 @@
       "sb10": {
         "title": "Smart Band 10",
         "bg": "sb10",
-        "accent": "#434549",
+        "variants": ["black", "pink", "white"],
+        "accents": ["#3d3e40", "#edd9d8", "#dbdbdd"],
         "preview": {
           "type": "band",
-          "width": 132,
-          "height": 326,
-          "radius": 66
+          "width": 140,
+          "height": 344,
+          "radius": 70
         }
       },
       "watchs4": {
