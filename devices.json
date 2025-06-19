@@ -372,6 +372,35 @@
       }
     }
   },
+  "nothing": {
+    "title": "Nothing",
+    "deviceList": {
+      "cmfwatchpro": {
+        "title": "CMF Watch Pro",
+        "bg": "cmfwatchpro",
+        "accent": "#57565b",
+        "preview": {
+          "type": "square",
+          "width": 266,
+          "height": 307,
+          "radius": 65
+        }
+      },
+      "cmfwatchpro2": {
+        "title": "CMF Watch Pro 2",
+        "bg": "cmfwatchpro2",
+        "variants": ["ash", "dark", "orange"],
+        "accents": ["#bbbbbb", "#181818", "#fb461f"],
+        "preview": {
+          "type": "round",
+          "width": 290,
+          "height": 290,
+          "radius": 145,
+          "hasGlare": true
+        }
+      }
+    }
+  },
   "oneplus": {
     "title": "Oneplus",
     "deviceList": {
