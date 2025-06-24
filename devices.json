@@ -201,6 +201,37 @@
       }
     }
   },
+  "apple": {
+    "title": "Apple",
+    "deviceList": {
+      "series9": {
+        "title": "Watch Series 9",
+        "bg": "watchseries9",
+        "variants": ["gold", "red", "silver"],
+        "accents": ["#f0d6b5", "#da1a40", "#e9e8e6"],
+        "preview": {
+          "type": "square",
+          "rounding": "hyperbolic",
+          "width": 252,
+          "height": 308,
+          "radius": 68
+        }
+      },
+      "series10": {
+        "title": "Watch Series 10",
+        "bg": "watchseries10",
+        "variants": ["black", "gold", "silver"],
+        "accents": ["#37393b", "#958c87", "#79889f"],
+        "preview": {
+          "type": "square",
+          "rounding": "hyperbolic",
+          "width": 258,
+          "height": 308,
+          "radius": 76
+        }
+      }
+    }
+  },
   "huawei": {
     "title": "Huawei",
     "deviceList": {

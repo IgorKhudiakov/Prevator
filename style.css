@@ -5,7 +5,8 @@
 
 :root {
   --dark-color: #333;
-  --tran-bg-color: rgba(128, 128, 128, .2);
+  --tran-bg-color: rgba(255, 255, 255, .1);
+  --tran-bg-dark-color: rgba(0, 0, 0, .1);
   --tran-accent-bg-color: rgba(0, 126, 255, .2);
   --background-inner-color: #007eff;
   --accent-color: var(--background-inner-color);
@@ -68,9 +69,9 @@ body::before {
 .button>* {
   cursor: pointer;
   -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 #preview {
@@ -135,7 +136,7 @@ body::before {
   height: 2em;
   min-width: 2em;
   border-radius: .5em;
-  background-color: var(--tran-bg-color);
+  background-color: var(--tran-bg-dark-color);
 }
 
 #preview canvas {
@@ -234,12 +235,13 @@ body::before {
 #imagePicker {
   width: 100%;
 }
+
 #imagePicker>div:first-child {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  background: var(--tran-bg-color);
+  background: var(--tran-bg-dark-color);
   border-radius: 1em;
   -webkit-box-align: center;
   -webkit-align-items: center;
@@ -287,7 +289,7 @@ input:focus-visible {
   display: -ms-flexbox;
   display: flex;
   height: 3em;
-  background: var(--tran-bg-color);
+  background: var(--tran-bg-dark-color);
   -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px);
   border-radius: 1em;
@@ -334,7 +336,7 @@ input:focus-visible {
   flex-shrink: 0;
   aspect-ratio: 1;
   height: 100%;
-  background-color: var(--tran-bg-color);
+  background-color: var(--tran-bg-dark-color);
   -webkit-transition: background-color 1s ease;
   -o-transition: background-color 1s ease;
   transition: background-color 1s ease;
@@ -376,8 +378,7 @@ input:focus-visible {
 }
 
 .checkbox.disable {
-  opacity: .3;
-  pointer-events: none;
+  display: none;
 }
 
 .checkbox input {
@@ -410,7 +411,7 @@ input:focus-visible {
   width: 2em;
   aspect-ratio: 1;
   border-radius: 25%;
-  background-color: var(--tran-bg-color);
+  background-color: var(--tran-bg-dark-color);
   -webkit-transition: background-color 1s ease;
   -o-transition: background-color 1s ease;
   transition: background-color 1s ease;
@@ -503,7 +504,7 @@ input:focus-visible {
 }
 
 #closeDevices {
-  background-color: var(--tran-bg-color);
+  background-color: var(--tran-bg-dark-color);
   -webkit-backdrop-filter: blur(3px);
   backdrop-filter: blur(3px);
   border-radius: 25%;
@@ -559,7 +560,7 @@ input:focus-visible {
 }
 
 #devices .brand {
-  background: var(--tran-bg-color);
+  background: var(--tran-bg-dark-color);
   border: 1px solid var(--tran-bg-color);
   border-radius: 1em;
   -webkit-backdrop-filter: blur(5px);
@@ -592,15 +593,19 @@ input:focus-visible {
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  background: var(--tran-bg-color);
+  background: var(--tran-bg-dark-color);
+  border-bottom: 1px solid transparent;
   border-radius: 1em;
-  border: 1px solid var(--tran-bg-color);
   padding: .8em .5em;
   -webkit-backdrop-filter: blur(3px);
   backdrop-filter: blur(3px);
   -webkit-transition: all .2s;
   -o-transition: all .2s;
   transition: all .2s;
+}
+
+#devices .brand .title.active {
+  border-bottom: 1px solid var(--tran-bg-color);
 }
 
 #devices .brand .title.active,
@@ -695,7 +700,7 @@ input:focus-visible {
 #devices .variant {
   height: 0;
   padding: 0 .75em;
-  background: var(--tran-bg-color);
+  background: var(--tran-bg-dark-color);
   border-radius: .5em;
   color: #ccc;
   -webkit-box-sizing: border-box;
@@ -720,8 +725,12 @@ input:focus-visible {
 }
 
 #devices .variant.active {
-  background: var(--tran-accent-bg-color);
+  background-color: var(--accent-color);
   color: white;
+}
+
+#devices .variant.active span {
+  mix-blend-mode: difference;
 }
 
 #devices .title.active~.device {
@@ -747,7 +756,7 @@ input:focus-visible {
 }
 
 #devices .device.active {
-  background-color: var(--tran-accent-bg-color);
+  background-color: var(--tran-bg-color);
 }
 
 .hide {
@@ -797,7 +806,7 @@ input:focus-visible {
   box-sizing: border-box;
   max-width: 500px;
   max-height: calc(100% - 4em);
-  background: var(--tran-bg-color);
+  background: var(--tran-bg-dark-color);
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   -webkit-box-shadow: 0px .5em 2em rgba(0, 0, 0, .3);
@@ -860,24 +869,52 @@ input:focus-visible {
 }
 
 .languages {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
   gap: 1em;
 }
 
+.lang {
+  background: var(--tran-bg-color);
+  padding: 0 1em;
+  border: 1px solid var(--tran-bg-color);
+  border-radius: 1em;
+  -webkit-transition: all .2s;
+  -o-transition: all .2s;
+  transition: all .2s;
+}
+
 .donationButtons {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   gap: 1em 2em;
-  flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
 }
+
 .donationButtons a {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   gap: .5em;
   color: white;
   text-decoration: none;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
+
 .donationButtons svg {
   height: 2em;
 }

@@ -159,6 +159,10 @@ class Modal {
 
   init() {
     this.modalContainer = document.getElementById('modalContainer')
+    this.modalContainer.addEventListener('click', e => {
+      if (e.target !== this.modalContainer) return
+      this.hide()
+    })
     this.modalContainer.appendChild(this.modal)
   }
 
@@ -179,7 +183,7 @@ class Modal {
   }
   hide() {
     this.modalContainer.classList.remove('active')
-    document.querySelector('body').style.overflow="auto"
+    document.querySelector('body').style.overflow = "auto"
     setTimeout(() => {
       this.modalContainer.classList.add('hidden')
     }, 500);
@@ -197,7 +201,7 @@ class Modal {
       const scripts = targetElement.querySelectorAll('script')
       scripts.forEach(oldScript => {
         const newScript = document.createElement('script')
-        Array.from(oldScript.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value) )
+        Array.from(oldScript.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
         if (oldScript.textContent) newScript.textContent = oldScript.textContent
         oldScript.parentNode.replaceChild(newScript, oldScript)
       })
@@ -379,7 +383,8 @@ document.addEventListener('DOMContentLoaded', () => {
     file = event.target.files[0]
     if (file) {
       const reader = new FileReader()
-      reader.onload = function (e) {
+      let isGif = file.type == 'image/gif'
+      reader.onload = e => {
         images.watchface.src = e.target.result
         images.watchface.visibility = true
         loadImages()
@@ -507,7 +512,7 @@ document.addEventListener('DOMContentLoaded', () => {
               let variant = document.createElement('div')
               variant.classList.add('variant', 'button')
               if (localDevice.brand == brandName && localDevice.model == deviceModel && localDevice?.variant == v) variant.classList.add('active')
-              variant.innerHTML = formatVariantName(v)
+              variant.innerHTML = '<span>' + formatVariantName(v) + '</span>'
               variant.addEventListener('click', () => {
                 document.getElementById('devices').querySelectorAll('.variant').forEach(t => {
                   if (t != variant) t.classList.remove('active')
