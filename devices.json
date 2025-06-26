@@ -568,6 +568,73 @@
       }
     }
   },
+  "vivo": {
+    "title": "Vivo",
+    "deviceList": {
+      "watch": {
+        "title": "Watch",
+        "bg": "watch",
+        "variants": ["brown", "shadow_black"],
+        "accents": ["#996c48", "#45464b"],
+        "preview": {
+          "type": "round",
+          "width": 294,
+          "height": 294,
+          "radius": 147
+        }
+      },
+      "watch2": {
+        "title": "Watch 2",
+        "bg": "watch2",
+        "accent": "#45464b",
+        "preview": {
+          "type": "round",
+          "width": 314,
+          "height": 314,
+          "radius": 157,
+          "hasGlare": true
+        }
+      },
+      "watch3": {
+        "title": "Watch 3",
+        "bg": "watch3",
+        "variants": ["asteroid_black", "haoyue", "moonlight_white"],
+        "accents": ["#45464b", "#e4dccf", "#e4dccf"],
+        "preview": {
+          "type": "round",
+          "width": 314,
+          "height": 314,
+          "radius": 157,
+          "hasGlare": true
+        }
+      },
+      "watchgt": {
+        "title": "Watch GT",
+        "bg": "watchgt",
+        "variants": ["cloud_white", "summer_black"],
+        "accents": ["#fcfbf3", "#44454a"],
+        "preview": {
+          "type": "square",
+          "width": 266,
+          "height": 308,
+          "radius": 66
+        }
+      },
+      "watch5": {
+        "title": "Watch 5",
+        "bg": "watch5",
+        "variants": ["moonlight", "peach", "steel"],
+        "accents": ["#e4dcd5", "#f6e3e2", "#f4f0ee"],
+        "preview": {
+          "type": "round",
+          "width": 314,
+          "height": 314,
+          "radius": 157,
+          "hasGlare": true
+        }
+      }
+    }
+  },
   "xiaomi": {
     "title": "Xiaomi",
     "deviceList": {
