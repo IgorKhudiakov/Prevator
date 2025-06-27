@@ -475,6 +475,81 @@
       }
     }
   },
+  "realme": {
+    "title": "Realme",
+    "deviceList": {
+      "watch": {
+        "title": "Watch",
+        "bg": "watch",
+        "accent": "#484848",
+        "preview": {
+          "type": "square",
+          "width": 308,
+          "height": 308,
+          "radius": 28
+        }
+      },
+      "watch2pro": {
+        "title": "Watch 2 Pro",
+        "bg": "watch2pro",
+        "variants": ["metallic_silver", "space_grey"],
+        "accents": ["#cac8c8", "#44454a"],
+        "preview": {
+          "type": "square",
+          "width": 256,
+          "height": 308,
+          "radius": 50
+        }
+      },
+      "watch3": {
+        "title": "Watch 3",
+        "bg": "watch3",
+        "variants": ["black", "white"],
+        "accents": ["#44454a", "#cccdd1"],
+        "preview": {
+          "type": "square",
+          "width": 258,
+          "height": 308,
+          "radius": 50
+        }
+      },
+      "watchs": {
+        "title": "Watch S",
+        "bg": "watchs",
+        "accent": "#44454a",
+        "preview": {
+          "type": "round",
+          "width": 280,
+          "height": 280,
+          "radius": 140,
+          "hasGlare": true
+        }
+      },
+      "watchs2": {
+        "title": "Watch S 2",
+        "bg": "watchs2",
+        "variants": ["black", "grey", "silver"],
+        "accents": ["#44454a", "#929292", "#4b5e6d"],
+        "preview": {
+          "type": "round",
+          "width": 314,
+          "height": 314,
+          "radius": 157
+        }
+      },
+      "watchspro": {
+        "title": "Watch S Pro",
+        "bg": "watchspro",
+        "accent": "#44454a",
+        "preview": {
+          "type": "round",
+          "width": 300,
+          "height": 300,
+          "radius": 150
+        }
+      }
+    }
+  },
   "redmi": {
     "title": "Redmi",
     "deviceList": {
