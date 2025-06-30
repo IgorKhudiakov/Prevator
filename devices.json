@@ -78,6 +78,42 @@
           "hasGlare": true
         }
       },
+      "band7": {
+        "title": "Band 7",
+        "bg": "band7",
+        "variants": ["beige", "black", "blue", "orange", "pink"],
+        "accents": ["#f0ebe5", "#3c3c3c", "#d3e0f1", "#f99a5f", "#fae2d9"],
+        "preview": {
+          "type": "square",
+          "width": 146,
+          "height": 278,
+          "radius": 18
+        }
+      },
+      "bip3pro": {
+        "title": "Bip 3 / 3 Pro",
+        "bg": "bip3pro",
+        "variants": ["black", "blue", "cream", "pink"],
+        "accents": ["#585858", "#d0cce5", "#e0dbd1", "#e9d0ce"],
+        "preview": {
+          "type": "square",
+          "width": 238,
+          "height": 278,
+          "radius": 42
+        }
+      },
+      "bip5": {
+        "title": "Bip 5",
+        "bg": "bip5",
+        "variants": ["charcoal", "grey", "pink"],
+        "accents": ["#585858", "#ececec", "#fbe0d9"],
+        "preview": {
+          "type": "square",
+          "width": 260,
+          "height": 307,
+          "radius": 55
+        }
+      },
       "bip5unity": {
         "title": "Bip 5 Unity",
         "bg": "bip5unity",
@@ -147,6 +183,30 @@
           "hasGlare": true
         }
       },
+      "gtr3": {
+        "title": "GTR 3",
+        "bg": "gtr3",
+        "variants": ["beige", "thunder_black"],
+        "accents": ["#c1b5a9", "#44454a"],
+        "preview": {
+          "type": "round",
+          "width": 294,
+          "height": 294,
+          "radius": 147
+        }
+      },
+      "gtr3pro": {
+        "title": "GTR 3 Pro",
+        "bg": "gtr3pro",
+        "variants": ["brown_leather", "infinite_black"],
+        "accents": ["#b8785e", "#56555c"],
+        "preview": {
+          "type": "round",
+          "width": 314,
+          "height": 314,
+          "radius": 157
+        }
+      },
       "gtr4": {
         "title": "GTR 4",
         "bg": "gtr4",
@@ -160,7 +220,31 @@
           "hasGlare": true
         }
       },
-      "gtrs": {
+      "gtrmini": {
+        "title": "GTR Mini",
+        "bg": "gtrmini",
+        "variants": ["midnight_black", "misty_pink", "ocean_blue"],
+        "accents": ["#3a3a3a", "#ebdfe3", "#3c4c59"],
+        "preview": {
+          "type": "round",
+          "width": 278,
+          "height": 278,
+          "radius": 139
+        }
+      },
+      "gts3": {
+        "title": "GTS 3",
+        "bg": "gts3",
+        "variants": ["graphite_black", "ivory_white", "terra_rosa"],
+        "accents": ["#3d3e42", "#e8dacc", "#b89383"],
+        "preview": {
+          "type": "square",
+          "width": 266,
+          "height": 307,
+          "radius": 60
+        }
+      },
+      "gts4": {
         "title": "GTS 4",
         "bg": "gts4",
         "variants": ["infinite_black", "autumn_brown"],
@@ -173,16 +257,67 @@
           "hasGlare": true
         }
       },
+      "gts4mini": {
+        "title": "GTS 4 Mini",
+        "bg": "gts4mini",
+        "variants": ["flamingo_pink", "midnight_black", "mint_blue", "moonlight_white"],
+        "accents": ["#fce3e0", "#343434", "#eaf7f0", "#f4ece3"],
+        "preview": {
+          "type": "square",
+          "width": 236,
+          "height": 270,
+          "radius": 48
+        }
+      },
+      "trex": {
+        "title": "T-Rex",
+        "bg": "trex",
+        "variants": ["black", "como", "khaki"],
+        "accents": ["#4e4e4e", "#7f8374", "#d1c9b6"],
+        "preview": {
+          "type": "round",
+          "width": 282,
+          "height": 282,
+          "radius": 141,
+          "hasGlare": true
+        }
+      },
+      "trex2": {
+        "title": "T-Rex 2",
+        "bg": "trex2",
+        "variants": ["astro_black", "desert_khaki", "ember_black", "wild_green"],
+        "accents": ["#404040", "#bbaa8c", "#5f5f5f", "#6b664c"],
+        "preview": {
+          "type": "round",
+          "width": 300,
+          "height": 300,
+          "radius": 150,
+          "hasGlare": true
+        }
+      },
       "trex3": {
         "title": "T-Rex 3",
         "bg": "trex3",
         "variants": ["haze_grey", "lava", "onyx"],
-        "accents": ["#ffc71d", "#be4531", "#96180f"],
+        "accents": ["#d9d9d9", "#be4531", "#6c6b6b"],
         "preview": {
           "type": "round",
           "width": 324,
           "height": 324,
           "radius": 162,
+          "hasGlare": true
+        }
+      },
+      "trexpro": {
+        "title": "T-Rex Pro",
+        "bg": "trexpro",
+        "variants": ["black", "blue", "desert_grey"],
+        "accents": ["#4e4e4e", "#4e6367", "#b5b2aa"],
+        "preview": {
+          "type": "round",
+          "width": 282,
+          "height": 282,
+          "radius": 141,
           "hasGlare": true
         }
       },
@@ -475,6 +610,23 @@
       }
     }
   },
+  "poco": {
+    "title": "Poco",
+    "deviceList": {
+      "watch": {
+        "title": "Watch",
+        "bg": "watch",
+        "variants": ["black", "blue", "white"],
+        "accents": ["#58595d", "#465b82", "#e9e0ca"],
+        "preview": {
+          "type": "square",
+          "width": 274,
+          "height": 308,
+          "radius": 32
+        }
+      }
+    }
+  },
   "realme": {
     "title": "Realme",
     "deviceList": {
@@ -553,6 +705,77 @@
   "redmi": {
     "title": "Redmi",
     "deviceList": {
+      "bandpro": {
+        "title": "Smart Band Pro",
+        "bg": "bandpro",
+        "accent": "#434549",
+        "preview": {
+          "type": "square",
+          "width": 148,
+          "height": 282,
+          "radius": 20
+        }
+      },
+      "band2": {
+        "title": "Smart Band 2",
+        "bg": "band2",
+        "variants": ["black", "ivory"],
+        "accents": ["#434549", "#f7f4f0"],
+        "preview": {
+          "type": "square",
+          "width": 150,
+          "height": 280,
+          "radius": 20
+        }
+      },
+      "watch2lite": {
+        "title": "Watch 2 Lite",
+        "bg": "watch2lite",
+        "variants": ["black", "blue", "white"],
+        "accents": ["#58595d", "#404e68", "#f7ebd5"],
+        "preview": {
+          "type": "square",
+          "width": 222,
+          "height": 250,
+          "radius": 30
+        }
+      },
+      "watch3": {
+        "title": "Watch 3",
+        "bg": "watch3",
+        "variants": ["black", "white"],
+        "accents": ["#3f3e43", "#ece6da"],
+        "preview": {
+          "type": "square",
+          "width": 266,
+          "height": 308,
+          "radius": 66
+        }
+      },
+      "watch3active": {
+        "title": "Watch 3 Active",
+        "bg": "watch3active",
+        "variants": ["black", "white"],
+        "accents": ["#3f3e43", "#ece6da"],
+        "preview": {
+          "type": "square",
+          "width": 266,
+          "height": 308,
+          "radius": 60
+        }
+      },
+      "watch4": {
+        "title": "Watch 4",
+        "bg": "watch4",
+        "variants": ["black", "yellow", "white"],
+        "accents": ["#3f3e43", "#ccd481", "#ece6da"],
+        "preview": {
+          "type": "square",
+          "width": 266,
+          "height": 308,
+          "radius": 60
+        }
+      },
       "watch5": {
         "title": "Watch 5",
         "bg": "watch5",
@@ -713,15 +936,100 @@
   "xiaomi": {
     "title": "Xiaomi",
     "deviceList": {
+      "mb4": {
+        "title": "Mi Band 4",
+        "bg": "mb4",
+        "variants": ["black", "orange", "violet"],
+        "accents": ["#434549", "#f26642", "#3e3963"],
+        "preview": {
+          "type": "band",
+          "width": 96,
+          "height": 192,
+          "radius": 0
+        }
+      },
+      "mb5": {
+        "title": "Mi Band 5",
+        "bg": "mb5",
+        "variants": ["black", "orange", "yellow"],
+        "accents": ["#434549", "#f26642", "#fbc45a"],
+        "preview": {
+          "type": "band",
+          "width": 96,
+          "height": 224,
+          "radius": 10
+        }
+      },
+      "mb6": {
+        "title": "Mi Band 6",
+        "bg": "mb6",
+        "variants": ["olive", "orange", "yellow"],
+        "accents": ["#839886", "#f26642", "#fbc45a"],
+        "preview": {
+          "type": "band",
+          "width": 112,
+          "height": 360,
+          "radius": 56
+        }
+      },
       "sb7": {
         "title": "Smart Band 7",
         "bg": "sb7",
-        "accent": "#434549",
+        "variants": ["black", "blue", "green"],
+        "accents": ["#434549", "#c4e1f5", "#597064"],
         "preview": {
           "type": "band",
           "width": 128,
           "height": 326,
           "radius": 64
+        }
+      },
+      "sb7pro": {
+        "title": "Smart Band 7 Pro",
+        "bg": "sb7pro",
+        "variants": ["black", "white"],
+        "accents": ["#434549", "#f9f5ef"],
+        "preview": {
+          "type": "square",
+          "width": 188,
+          "height": 308,
+          "radius": 22
+        }
+      },
+      "sb8": {
+        "title": "Smart Band 8",
+        "bg": "sb8",
+        "variants": ["black", "yellow", "white"],
+        "accents": ["#434549", "#fbc45a", "#cfd1d6"],
+        "preview": {
+          "type": "band",
+          "width": 128,
+          "height": 326,
+          "radius": 64
+        }
+      },
+      "sb8active": {
+        "title": "Smart Band 8 Active",
+        "bg": "sb8active",
+        "variants": ["black", "olive", "pink"],
+        "accents": ["#434549", "#174737", "#ffeeeb"],
+        "preview": {
+          "type": "square",
+          "width": 166,
+          "height": 308,
+          "radius": 20
+        }
+      },
+      "sb8pro": {
+        "title": "Smart Band 8 Pro",
+        "bg": "sb8pro",
+        "variants": ["black", "blue", "light_grey"],
+        "accents": ["#434549", "#4f5e73", "#dadbdf"],
+        "preview": {
+          "type": "square",
+          "width": 216,
+          "height": 308,
+          "radius": 30
         }
       },
       "sb9": {
@@ -763,8 +1071,8 @@
       "sb10": {
         "title": "Smart Band 10",
         "bg": "sb10",
-        "variants": ["black", "pink", "white"],
-        "accents": ["#3d3e40", "#edd9d8", "#dbdbdd"],
+        "variants": ["black", "ceramic", "pink"],
+        "accents": ["#3d3e40", "#dbdbdd", "#edd9d8"],
         "preview": {
           "type": "band",
           "width": 140,
@@ -772,11 +1080,98 @@
           "radius": 70
         }
       },
+      "miwatch": {
+        "title": "Mi Watch",
+        "bg": "miwatch",
+        "variants": ["black", "blue", "white"],
+        "accents": ["#4f4f4f", "#424760", "#ccc4b7"],
+        "preview": {
+          "type": "round",
+          "width": 314,
+          "height": 314,
+          "radius": 157
+        }
+      },
+      "watchs1": {
+        "title": "Watch S1",
+        "bg": "watchs1",
+        "variants": ["black", "silver"],
+        "accents": ["#44444c", "#8f5b34"],
+        "preview": {
+          "type": "round",
+          "width": 314,
+          "height": 314,
+          "radius": 157,
+          "hasGlare": true
+        }
+      },
+      "watchs1active": {
+        "title": "Watch S1 Active",
+        "bg": "watchs1active",
+        "variants": ["black", "yellow", "white"],
+        "accents": ["#44444c", "#ffca49", "#dfdfde"],
+        "preview": {
+          "type": "round",
+          "width": 314,
+          "height": 314,
+          "radius": 157,
+          "hasGlare": true
+        }
+      },
+      "watchs1pro": {
+        "title": "Watch S1 Pro",
+        "bg": "watchs1pro",
+        "variants": ["black", "brown"],
+        "accents": ["#44444c", "#8f5b34"],
+        "preview": {
+          "type": "round",
+          "width": 314,
+          "height": 314,
+          "radius": 157,
+          "hasGlare": true
+        }
+      },
+      "watch2": {
+        "title": "Watch 2",
+        "bg": "watch2",
+        "variants": ["black", "silver"],
+        "accents": ["#44444c", "#8b8c91"],
+        "preview": {
+          "type": "round",
+          "width": 314,
+          "height": 314,
+          "radius": 157
+        }
+      },
+      "watch2pro": {
+        "title": "Watch 2 Pro",
+        "bg": "watch2pro",
+        "variants": ["black", "brown"],
+        "accents": ["#393b3d", "#7a6c60"],
+        "preview": {
+          "type": "round",
+          "width": 314,
+          "height": 314,
+          "radius": 157
+        }
+      },
+      "watchs3": {
+        "title": "Watch S3",
+        "bg": "watchs3",
+        "variants": ["blue", "green", "yellow"],
+        "accents": ["#082048", "#014739", "#ffd044"],
+        "preview": {
+          "type": "round",
+          "width": 314,
+          "height": 314,
+          "radius": 157
+        }
+      },
       "watchs4": {
         "title": "Watch S4",
         "bg": "watchs4",
-        "variants": ["rainbow", "silver"],
-        "accents": ["#3ec698", "#d5d6d8"],
+        "variants": ["black", "rainbow", "silver"],
+        "accents": ["#393b3d", "#393b3d", "#d5d6d8"],
         "preview": {
           "type": "round",
           "width": 324,

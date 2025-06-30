@@ -477,6 +477,7 @@ document.addEventListener('DOMContentLoaded', () => {
     .then(data => {
       devices = data
       const devicesMenu = document.getElementById("devices")
+      let deviceCount = 0
       for (const [brandName, brand] of Object.entries(devices)) {
         const b = document.createElement('div')
         b.classList.add('brand')
@@ -534,9 +535,11 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!device?.variants) changeDevice({ brand: brandName, model: deviceModel })
           })
           b.appendChild(d)
+          deviceCount++
         }
         devicesMenu.appendChild(b)
       }
+      document.getElementById("openDevices").setAttribute('data-count', deviceCount)
       changeDevice(localDevice)
     })
 })
