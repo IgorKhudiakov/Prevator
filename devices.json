@@ -27,9 +27,9 @@
           "radius": 157
         }
       },
-      "active2": {
-        "title": "Active 2",
-        "bg": "active2",
+      "active2round": {
+        "title": "Active 2 Round",
+        "bg": "active2round",
         "variants": ["black_sport", "premium", "red_sport"],
         "accents": ["#63636c", "#686868", "#c0503b"],
         "preview": {
@@ -42,7 +42,8 @@
       "active2square": {
         "title": "Active 2 Square",
         "bg": "active2square",
-        "accent": "#67686a",
+        "variants": ["black", "red"],
+        "accents": ["#67686a", "#c0503b"],
         "preview": {
           "type": "square",
           "rounding": "hyperbolic",
@@ -56,7 +57,7 @@
         "title": "Balance",
         "bg": "balance",
         "variants": ["midnight_black", "sunset_grey"],
-        "accents": ["#606060", "#368a7f"],
+        "accents": ["#606060", "#b8b5b1"],
         "preview": {
           "type": "round",
           "width": 324,
@@ -211,7 +212,7 @@
         "title": "GTR 4",
         "bg": "gtr4",
         "variants": ["racetrack_grey", "vintage_brown_leather", "superspeed_black"],
-        "accents": ["#af2e24", "#6b3917", "#2b2b2b"],
+        "accents": ["#6b6b6b", "#6b3917", "#2b2b2b"],
         "preview": {
           "type": "round",
           "width": 314,
@@ -363,6 +364,35 @@
           "width": 258,
           "height": 308,
           "radius": 76
+        }
+      }
+    }
+  },
+  "garmin": {
+    "title": "Garmin",
+    "deviceList": {
+      "fenix8": {
+        "title": "Fenix 8",
+        "bg": "fenix8",
+        "variants": ["black_solar", "graphite_amoled", "yellow_solar"],
+        "accents": ["#454545", "#85563e", "#ecec39"],
+        "preview": {
+          "type": "round",
+          "width": 304,
+          "height": 304,
+          "radius": 152
+        }
+      },
+      "tactix8": {
+        "title": "Tactix 8",
+        "bg": "tactix8",
+        "variants": ["amoled", "solar"],
+        "accents": ["#555555", "#555555"],
+        "preview": {
+          "type": "round",
+          "width": 304,
+          "height": 304,
+          "radius": 152
         }
       }
     }

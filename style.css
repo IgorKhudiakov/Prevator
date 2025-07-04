@@ -130,12 +130,12 @@ body::before {
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  padding: 0 .5em;
+  padding: 0 1em;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  height: 2em;
-  min-width: 2em;
-  border-radius: .5em;
+  height: 3em;
+  min-width: 3em;
+  border-radius: 1em;
   background-color: var(--tran-bg-dark-color);
 }
 
@@ -153,8 +153,8 @@ body::before {
   opacity: 0;
 }
 
-#preview::before,
-#preview::after {
+.load::before,
+.load::after {
   content: "";
   display: block;
   position: absolute;
@@ -175,18 +175,18 @@ body::before {
   z-index: -1;
 }
 
-#preview.load::before,
-#preview.load::after {
+.load::before,
+.load::after {
   opacity: 1;
 }
 
-#preview.load::before {
+.load::before {
   height: 15%;
   -webkit-animation: rotateHand 10s linear infinite;
   animation: rotateHand 10s linear infinite;
 }
 
-#preview.load::after {
+.load::after {
   height: 20%;
   -webkit-animation: rotateHand 2s linear infinite;
   animation: rotateHand 2s linear infinite;
@@ -216,20 +216,21 @@ body::before {
   }
 }
 
-.controls {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
+.controls,
+.controls .buttons {
   display: flex;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
-  gap: 2em;
+  gap: 1em;
+}
+
+.controls {
+  flex-direction: column;
+  align-items: center;
   max-width: 600px;
+}
+
+.buttons {
+  flex-wrap: wrap;
 }
 
 #imagePicker {
@@ -266,12 +267,12 @@ input:focus-visible {
   outline: none;
 }
 
-.controls .button {
+.button {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  max-height: 3em;
+  height: 2em;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
@@ -281,6 +282,10 @@ input:focus-visible {
   -ms-flex-align: center;
   align-items: center;
   border-radius: 1em;
+}
+
+.controls .button {
+  height: 3em;
 }
 
 #saveContainer {
@@ -365,7 +370,7 @@ input:focus-visible {
   filter: brightness(1.1);
 }
 
-.checkbox {
+.checkbox label {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -382,10 +387,13 @@ input:focus-visible {
 }
 
 .checkbox input {
+  display: none;
+}
+
+.checkbox .input {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  width: 2em;
   aspect-ratio: 1;
   display: -webkit-box;
   display: -webkit-flex;
@@ -401,32 +409,21 @@ input:focus-visible {
   -ms-flex-align: center;
   align-items: center;
   margin: 0;
+  border-radius: 1em;
 }
 
-.checkbox input::before,
-.checkbox input::after {
-  display: block;
-  content: "";
-  position: absolute;
-  width: 2em;
-  aspect-ratio: 1;
-  border-radius: 25%;
+.controls .checkbox .input>* {
+  width: 50%;
+  opacity: .5;
+}
+
+.controls .checkbox input:checked+label .input>* {
+  opacity: 1;
+}
+
+.controls .checkbox .input {
+  height: 3em;
   background-color: var(--tran-bg-dark-color);
-  -webkit-transition: background-color 1s ease;
-  -o-transition: background-color 1s ease;
-  transition: background-color 1s ease;
-}
-
-.checkbox input::after {
-  width: 1.2em;
-}
-
-.checkbox input:checked::before {
-  background: var(--accent-color);
-}
-
-.checkbox input:checked::after {
-  background: white;
 }
 
 #header {
@@ -496,10 +493,8 @@ input:focus-visible {
   top: 0;
 }
 
-#openDevices,
-#closeDevices,
 .closeModal {
-  width: 2em;
+  aspect-ratio: 1;
   height: 2em;
 }
 
@@ -694,12 +689,8 @@ input:focus-visible {
 
 #devices .variants {
   display: none;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  gap: .25em;
+  flex-wrap: wrap;
+  gap: .75em;
 }
 
 #devices .title.active~.device.active .variants {
@@ -710,11 +701,10 @@ input:focus-visible {
 }
 
 #devices .variant {
+  aspect-ratio: 1;
   height: 0;
-  padding: 0 .75em;
-  background: var(--tran-bg-dark-color);
+  border: 1px solid var(--tran-bg-color);
   border-radius: .5em;
-  color: #ccc;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   opacity: 0;
@@ -725,10 +715,11 @@ input:focus-visible {
 }
 
 #devices .device.active .variant {
+  width: 2em;
   height: auto;
   opacity: 1;
-  padding: .5em .75em;
   pointer-events: auto;
+  transform: scale(.75);
 }
 
 #devices .variant:hover {
@@ -737,12 +728,7 @@ input:focus-visible {
 }
 
 #devices .variant.active {
-  background-color: var(--accent-color);
-  color: white;
-}
-
-#devices .variant.active span {
-  mix-blend-mode: difference;
+  transform: scale(1) !important;
 }
 
 #devices .title.active~.device {
@@ -862,6 +848,14 @@ input:focus-visible {
   line-height: 2em;
 }
 
+.modal .load {
+  width: 20em;
+  font-size: .5em;
+  aspect-ratio: .75;
+  margin: 0 auto;
+  position: relative;
+}
+
 #versions {
   display: -webkit-box;
   display: -webkit-flex;
@@ -905,8 +899,8 @@ input:focus-visible {
   display: flex;
   gap: 1em 2em;
   -webkit-flex-wrap: wrap;
-      -ms-flex-wrap: wrap;
-          flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
 .donationButtons a {
@@ -919,12 +913,12 @@ input:focus-visible {
   text-decoration: none;
   -webkit-box-align: center;
   -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .donationButtons svg {
@@ -951,6 +945,28 @@ input:focus-visible {
 
   #devices {
     max-height: calc(100dvh - 2em);
+  }
+
+  .container {
+    margin: 1em;
+    gap: 1em 0;
+  }
+
+  .controls {
+    gap: 1em;
+  }
+
+  .controls .label {
+    display: none;
+  }
+
+  #imagePicker {
+    width: auto;
+    aspect-ratio: 1;
+  }
+
+  #saveContainer {
+    width: 100%;
   }
 }
 

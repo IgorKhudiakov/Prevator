@@ -163,11 +163,12 @@ class Modal {
       if (e.target !== this.modalContainer) return
       this.hide()
     })
+    this.clear()
     this.modalContainer.appendChild(this.modal)
   }
 
   clear() {
-    this.content.innerHTML = ''
+    this.content.innerHTML = '<div class="load"></div>'
   }
 
   insertData(type, isLocalize) {
@@ -186,6 +187,7 @@ class Modal {
     document.querySelector('body').style.overflow = "auto"
     setTimeout(() => {
       this.modalContainer.classList.add('hidden')
+      this.clear()
     }, 500);
   }
 
@@ -436,8 +438,8 @@ document.addEventListener('DOMContentLoaded', () => {
     Object.assign(images.watchface, device.preview)
     if (!device.preview?.power) delete images.watchface.power
     const input = document.getElementById('fileName')
-    input.setAttribute('placeholder', `${model}_preview`)
-    input.setAttribute('data-default', `${model}_preview`)
+    input.setAttribute('placeholder', `${model}${variant ? `_${variant}` : ''}_preview`)
+    input.setAttribute('data-default', `${model}${variant ? `_${variant}` : ''}_preview`)
     if (lastType != device.preview.type) {
       lastType = device.preview.type
       images.watchface.src = `./images/defaults/${lastType}.png`
@@ -483,7 +485,7 @@ document.addEventListener('DOMContentLoaded', () => {
         b.classList.add('brand')
         const brandTitle = document.createElement('div')
         brandTitle.innerHTML = brand.title
-        brandTitle.classList.add('title', 'button')
+        brandTitle.classList.add('title')
         brandTitle.addEventListener('click', e => {
           b.parentNode.querySelectorAll('.title').forEach(t => {
             if (t != e.target) t.classList.remove('active')
@@ -493,7 +495,7 @@ document.addEventListener('DOMContentLoaded', () => {
         b.appendChild(brandTitle)
         for (const [deviceModel, device] of Object.entries(brand.deviceList)) {
           const d = document.createElement('div')
-          d.classList.add('device', 'button')
+          d.classList.add('device')
           if (localDevice.brand == brandName && localDevice.model == deviceModel) d.classList.add('active')
           d.setAttribute('data-device', deviceModel)
           const display = document.createElement('div')
@@ -506,14 +508,13 @@ document.addEventListener('DOMContentLoaded', () => {
           model.appendChild(title)
           d.appendChild(model)
           if (device?.variants) {
-            d.classList.remove('button')
             const variants = document.createElement('div')
             variants.classList.add('variants')
             device?.variants.forEach((v, i) => {
               let variant = document.createElement('div')
-              variant.classList.add('variant', 'button')
+              variant.classList.add('variant')
+              variant.style.backgroundColor = device.accents[i]
               if (localDevice.brand == brandName && localDevice.model == deviceModel && localDevice?.variant == v) variant.classList.add('active')
-              variant.innerHTML = '<span>' + formatVariantName(v) + '</span>'
               variant.addEventListener('click', () => {
                 document.getElementById('devices').querySelectorAll('.variant').forEach(t => {
                   if (t != variant) t.classList.remove('active')
