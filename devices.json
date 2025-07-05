@@ -383,6 +383,42 @@
           "radius": 152
         }
       },
+      "lily2": {
+        "title": "Lily 2",
+        "bg": "lily2",
+        "variants": ["cream", "purple"],
+        "accents": ["#f3edd9", "#d8c8e3"],
+        "preview": {
+          "type": "round",
+          "width": 218,
+          "height": 218,
+          "radius": 109
+        }
+      },
+      "lily2active": {
+        "title": "Lily 2 Active",
+        "bg": "lily2active",
+        "variants": ["jasper_green", "lunar_gold", "purple_jasmine"],
+        "accents": ["#476257", "#d6d0c0", "#d8c8e3"],
+        "preview": {
+          "type": "round",
+          "width": 218,
+          "height": 218,
+          "radius": 109
+        }
+      },
+      "lily2classic": {
+        "title": "Lily 2 Classic",
+        "bg": "lily2classic",
+        "variants": ["cream_gold_coffee", "cream_gold_tan", "dark_bronse", "silver"],
+        "accents": ["#968273", "#bb7f53", "#8e5a5b", "#ced7c5"],
+        "preview": {
+          "type": "round",
+          "width": 218,
+          "height": 218,
+          "radius": 109
+        }
+      },
       "tactix8": {
         "title": "Tactix 8",
         "bg": "tactix8",
@@ -393,6 +429,18 @@
           "width": 304,
           "height": 304,
           "radius": 152
+        }
+      },
+      "venux1": {
+        "title": "Venu X1",
+        "bg": "venux1",
+        "variants": ["black", "moss"],
+        "accents": ["#67645e", "#7a7b72"],
+        "preview": {
+          "type": "square",
+          "width": 293,
+          "height": 318,
+          "radius": 44
         }
       }
     }
