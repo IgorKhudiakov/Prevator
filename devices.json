@@ -445,6 +445,47 @@
       }
     }
   },
+  "google": {
+    "title": "Google",
+    "deviceList": {
+      "pixelwatch": {
+        "title": "Pixel Watch",
+        "bg": "pixelwatch",
+        "variants": ["chalk", "charcoal", "hazel", "obsidian"],
+        "accents": ["#ded8d5", "#656565", "#979d9b", "#2b2b2b"],
+        "preview": {
+          "type": "round",
+          "width": 260,
+          "height": 260,
+          "radius": 130
+        }
+      },
+      "pixelwatch2": {
+        "title": "Pixel Watch 2",
+        "bg": "pixelwatch2",
+        "variants": ["bay", "obsidian"],
+        "accents": ["#a8cde8", "#323232"],
+        "preview": {
+          "type": "round",
+          "width": 260,
+          "height": 260,
+          "radius": 130
+        }
+      },
+      "pixelwatch3": {
+        "title": "Pixel Watch 3",
+        "bg": "pixelwatch3",
+        "variants": ["hazel", "obsidian", "porcelain"],
+        "accents": ["#8f9391", "#414141", "#e1dbd8"],
+        "preview": {
+          "type": "round",
+          "width": 310,
+          "height": 310,
+          "radius": 155
+        }
+      }
+    }
+  },
   "huawei": {
     "title": "Huawei",
     "deviceList": {

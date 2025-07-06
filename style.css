@@ -925,8 +925,6 @@ input:focus-visible {
   height: 2em;
 }
 
-
-
 @media (max-width: 600px) {
   #header {
     margin: 1em;
@@ -948,7 +946,7 @@ input:focus-visible {
   }
 
   .container {
-    margin: 1em;
+    margin: 2em 1em;
     gap: 1em 0;
   }
 
