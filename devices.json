@@ -683,6 +683,19 @@
           "radius": 145,
           "hasGlare": true
         }
+      },
+      "cmfwatchpro3": {
+        "title": "CMF Watch Pro 3",
+        "bg": "cmfwatchpro3",
+        "variants": ["dark_grey", "light_grey", "orange"],
+        "accents": ["#444850", "#cecfd3", "#fb461f"],
+        "preview": {
+          "type": "round",
+          "width": 314,
+          "height": 314,
+          "radius": 157,
+          "hasGlare": true
+        }
       }
     }
   },
