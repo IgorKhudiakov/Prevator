@@ -322,6 +322,32 @@
           "hasGlare": true
         }
       },
+      "trex3pro48mm": {
+        "title": "T-Rex 3 Pro 48mm",
+        "bg": "trex3pro48mm",
+        "variants": ["black_gold", "tactical_black"],
+        "accents": ["#c89d59", "#4e4e4e"],
+        "preview": {
+          "type": "round",
+          "width": 324,
+          "height": 324,
+          "radius": 162,
+          "hasGlare": false
+        }
+      },
+      "trex3pro44mm": {
+        "title": "T-Rex 3 Pro 44mm",
+        "bg": "trex3pro44mm",
+        "variants": ["arctic_gold", "black_gold"],
+        "accents": ["#b8b7b3", "#c89d59"],
+        "preview": {
+          "type": "round",
+          "width": 282,
+          "height": 282,
+          "radius": 141,
+          "hasGlare": false
+        }
+      },
       "trexultra": {
         "title": "T-Rex Ultra",
         "bg": "trexultra",
@@ -616,6 +642,32 @@
           "height": 324,
           "radius": 162,
           "hasGlare": true
+        }
+      },
+      "gt6": {
+        "title": "GT 6",
+        "bg": "gt6",
+        "variants": ["black", "green", "grey"],
+        "accents": ["#535353", "#98b0a1", "#76675e"],
+        "preview": {
+          "type": "round",
+          "width": 318,
+          "height": 318,
+          "radius": 159,
+          "hasGlare": false
+        }
+      },
+      "gt6pro": {
+        "title": "GT 6 Pro",
+        "bg": "gt6pro",
+        "variants": ["black", "brown", "titanium"],
+        "accents": ["#767676", "#b7a491", "#d4d0cb"],
+        "preview": {
+          "type": "round",
+          "width": 318,
+          "height": 318,
+          "radius": 159,
+          "hasGlare": false
         }
       },
       "watch4": {
