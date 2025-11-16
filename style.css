@@ -97,6 +97,11 @@ body::before {
   aspect-ratio: 2/3;
 }
 
+#qr-preview {
+  width: 100%;
+  border-radius: 1em
+}
+
 #wfcontrols {
   display: -webkit-box;
   display: -webkit-flex;
@@ -288,7 +293,7 @@ input:focus-visible {
   height: 3em;
 }
 
-#saveContainer {
+.inputContainer {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -299,9 +304,10 @@ input:focus-visible {
   backdrop-filter: blur(5px);
   border-radius: 1em;
   border: 1px solid var(--tran-bg-color);
+  box-sizing: border-box;
 }
 
-#fileName {
+.text-input {
   width: 100%;
   height: 100%;
   border: none;
@@ -310,27 +316,27 @@ input:focus-visible {
   background: none;
 }
 
-#fileName::-webkit-input-placeholder {
+.text-input::-webkit-input-placeholder {
   color: white;
   opacity: .3;
 }
 
-#fileName::-moz-placeholder {
+.text-input::-moz-placeholder {
   color: white;
   opacity: .3;
 }
 
-#fileName:-ms-input-placeholder {
+.text-input:-ms-input-placeholder {
   color: white;
   opacity: .3;
 }
 
-#fileName::-ms-input-placeholder {
+.text-input::-ms-input-placeholder {
   color: white;
   opacity: .3;
 }
 
-#fileName::placeholder {
+.text-input::placeholder {
   color: white;
   opacity: .3;
 }
@@ -370,7 +376,8 @@ input:focus-visible {
   filter: brightness(1.1);
 }
 
-.checkbox label {
+.checkbox label, .buttonContainer {
+  cursor: pointer;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -390,7 +397,7 @@ input:focus-visible {
   display: none;
 }
 
-.checkbox .input {
+.checkbox .input, .buttonContainer .icon {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -421,7 +428,7 @@ input:focus-visible {
   opacity: 1;
 }
 
-.controls .checkbox .input {
+.controls .checkbox .input, .buttonContainer .icon {
   height: 3em;
   background-color: var(--tran-bg-dark-color);
 }
@@ -925,6 +932,30 @@ input:focus-visible {
   height: 2em;
 }
 
+#preview-chooser {
+  display: flex;
+  gap: 1em;
+  margin-bottom: 1em;
+}
+
+#preview-chooser .variant {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 3em;
+  aspect-ratio: 1;
+  background: rgba(0, 0, 0, .3);
+  backdrop-filter: blur(3px);
+  border-radius: 1em;
+  cursor: pointer;
+  transition: all .5s;
+  box-sizing: border-box;
+  border: 1px solid rgba(255, 255, 255, .2);
+}
+#preview-chooser .variant:hover {
+  border: 1px solid rgba(255, 255, 255, .5);
+}
+
 @media (max-width: 600px) {
   #header {
     margin: 1em;
@@ -963,7 +994,7 @@ input:focus-visible {
     aspect-ratio: 1;
   }
 
-  #saveContainer {
+  .inputContainer {
     width: 100%;
   }
 }

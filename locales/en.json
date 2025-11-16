@@ -9,13 +9,18 @@
     "edit": "Editing",
     "scale": "Zoom in screenshot",
     "reser": "Reset",
-    "qr": "QR"
+    "qr": "QR (beta)",
+    "visibility": "Visibility",
+    "title": "Title",
+    "subtitle": "Subtitle",
+    "link": "Link"
   },
   "titles": {
     "lang": "Language",
     "donate": "Donate",
     "faq": "How it works",
-    "history": "Version history"
+    "history": "Version history",
+    "qr": "QR Generator (beta)"
   },
   "donate": {
     "descSNG": "Relevant for Russia, Belarus and Kazakhstan:",
