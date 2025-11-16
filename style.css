@@ -305,6 +305,64 @@ input:focus-visible {
   border-radius: 1em;
   border: 1px solid var(--tran-bg-color);
   box-sizing: border-box;
+  align-items: center;
+  gap: .25em;
+}
+.inputContainer input.checkbox:not(:checked) + label {
+  opacity: .1;
+}
+
+#dataContainer {
+  display: flex;
+  flex-direction: column;
+  gap: .25em;
+}
+#dataContainer .inputContainer {
+  padding-right: .25em;
+}
+#dataContainer input[type="checkbox"] + label .icon {
+  background: none !important;
+}
+
+
+#bgColors {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  margin-bottom: 1em;
+}
+#colorsList {
+  display: flex;
+  gap: .5em;
+}
+.color {
+  width: 3em;
+  height: 3em;
+  border-radius: 1em;
+  box-sizing: border-box;
+}
+input[type="color" i] {
+  box-sizing: border-box;
+  background-color: unset;
+  border: none;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+input[type="color"]::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+input[type="color"]::-webkit-color-swatch {
+  border: none;
+  border-radius: 0;
+}
+input[type="color"]::-moz-focus-inner {
+  border: none;
+  padding: 0;
+}
+
+input[type="color"]::-moz-color-swatch {
+  border: none;
 }
 
 .text-input {
@@ -341,12 +399,13 @@ input:focus-visible {
   opacity: .3;
 }
 
-#save {
+.icon {
   -webkit-flex-shrink: 0;
   -ms-flex-negative: 0;
   flex-shrink: 0;
   aspect-ratio: 1;
-  height: 100%;
+  height: 3em;
+  box-sizing: border-box;
   background-color: var(--tran-bg-dark-color);
   -webkit-transition: background-color 1s ease;
   -o-transition: background-color 1s ease;
@@ -367,7 +426,7 @@ input:focus-visible {
 }
 
 #imagePicker svg,
-#save svg {
+.icon svg {
   width: 50%;
 }
 
@@ -393,7 +452,7 @@ input:focus-visible {
   display: none;
 }
 
-.checkbox input {
+.checkbox input, input.checkbox {
   display: none;
 }
 

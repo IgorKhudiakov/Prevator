@@ -5,29 +5,46 @@
     <div class="variant" data-num="2">2</div>
     <div class="variant" data-num="3">3</div>
   </div>
+  <div id="bgColors">
+    <div data-i18n-title="other.bg">Фон</div>
+    <div id="colorsList"></div>
+  </div>
   <div id="dataContainer">
     <div class="inputContainer">
       <input class="text-input" id="qr-link" type="text" data-i18n-title="buttons.link" placeholder="Ссылка">
-      <div id="save" class="checkbox button" data-i18n-title="buttons.visibility" title="Видимость">
-        <svg id="_x30_1" style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M256,36C143.903,36,55.019,144.529,18.291,197.539C6.389,214.716,0,235.102,0,256v0c0,20.898,6.389,41.284,18.291,58.461   C55.019,367.471,143.903,476,256,476s200.981-108.529,237.709-161.539C505.611,297.284,512,276.898,512,256v0   c0-20.898-6.389-41.284-18.291-58.461C456.981,144.529,368.097,36,256,36z M256,396c-77.196,0-140-62.804-140-140   s62.804-140,140-140s140,62.804,140,140S333.196,396,256,396z"/><circle cx="256" cy="256" r="80"/></svg>
-      </div>
+      <input class="checkbox" id="linkVisibility" data-type="link" type="checkbox" checked="true">
+      <label for="linkVisibility">
+        <div class="checkbox button icon" data-i18n-title="buttons.visibility" title="Видимость">
+          <svg style="enable-background:new 0 0 512 512; fill: currentColor" version="1.1" viewBox="0 0 512 512" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M256,36C143.903,36,55.019,144.529,18.291,197.539C6.389,214.716,0,235.102,0,256v0c0,20.898,6.389,41.284,18.291,58.461   C55.019,367.471,143.903,476,256,476s200.981-108.529,237.709-161.539C505.611,297.284,512,276.898,512,256v0   c0-20.898-6.389-41.284-18.291-58.461C456.981,144.529,368.097,36,256,36z M256,396c-77.196,0-140-62.804-140-140   s62.804-140,140-140s140,62.804,140,140S333.196,396,256,396z"/><circle cx="256" cy="256" r="80"/></svg>
+        </div>
+      </label>
+      <input type="color" class="color" data-type="qr" data-subtype="bg">
+      <input type="color" class="color" data-type="qr" data-subtype="fg">
     </div>
     <div class="inputContainer">
       <input class="text-input" id="qr-title" type="text" data-i18n-title="buttons.title" placeholder="Заголовок">
-      <div id="save" class="checkbox button" data-i18n-title="buttons.visibility" title="Видимость">
-        <svg id="_x30_1" style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M256,36C143.903,36,55.019,144.529,18.291,197.539C6.389,214.716,0,235.102,0,256v0c0,20.898,6.389,41.284,18.291,58.461   C55.019,367.471,143.903,476,256,476s200.981-108.529,237.709-161.539C505.611,297.284,512,276.898,512,256v0   c0-20.898-6.389-41.284-18.291-58.461C456.981,144.529,368.097,36,256,36z M256,396c-77.196,0-140-62.804-140-140   s62.804-140,140-140s140,62.804,140,140S333.196,396,256,396z"/><circle cx="256" cy="256" r="80"/></svg>
-      </div>
+      <input class="checkbox" id="titleVisibility" data-type="title" type="checkbox" checked="true">
+      <label for="titleVisibility">
+        <div class="checkbox button icon" data-i18n-title="buttons.visibility" title="Видимость">
+          <svg style="enable-background:new 0 0 512 512; fill: currentColor"" version="1.1" viewBox="0 0 512 512" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M256,36C143.903,36,55.019,144.529,18.291,197.539C6.389,214.716,0,235.102,0,256v0c0,20.898,6.389,41.284,18.291,58.461   C55.019,367.471,143.903,476,256,476s200.981-108.529,237.709-161.539C505.611,297.284,512,276.898,512,256v0   c0-20.898-6.389-41.284-18.291-58.461C456.981,144.529,368.097,36,256,36z M256,396c-77.196,0-140-62.804-140-140   s62.804-140,140-140s140,62.804,140,140S333.196,396,256,396z"/><circle cx="256" cy="256" r="80"/></svg>
+        </div>
+      </label>
+      <input id="titleColor" type="color" class="color" data-type="title">
     </div>
     <div class="inputContainer">
       <input class="text-input" id="qr-subtitle" type="text" data-i18n-title="buttons.subtitle" placeholder="Подзаголовок">
-      <div id="save" class="checkbox button" data-i18n-title="buttons.visibility">
-        <svg id="_x30_1" style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M256,36C143.903,36,55.019,144.529,18.291,197.539C6.389,214.716,0,235.102,0,256v0c0,20.898,6.389,41.284,18.291,58.461   C55.019,367.471,143.903,476,256,476s200.981-108.529,237.709-161.539C505.611,297.284,512,276.898,512,256v0   c0-20.898-6.389-41.284-18.291-58.461C456.981,144.529,368.097,36,256,36z M256,396c-77.196,0-140-62.804-140-140   s62.804-140,140-140s140,62.804,140,140S333.196,396,256,396z"/><circle cx="256" cy="256" r="80"/></svg>
-      </div>
+      <input class="checkbox" id="subtitleVisibility" data-type="subtitle" type="checkbox" checked="true">
+      <label for="subtitleVisibility">
+        <div class="checkbox button icon" data-i18n-title="buttons.visibility">
+          <svg style="enable-background:new 0 0 512 512; fill: currentColor"" version="1.1" viewBox="0 0 512 512" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M256,36C143.903,36,55.019,144.529,18.291,197.539C6.389,214.716,0,235.102,0,256v0c0,20.898,6.389,41.284,18.291,58.461   C55.019,367.471,143.903,476,256,476s200.981-108.529,237.709-161.539C505.611,297.284,512,276.898,512,256v0   c0-20.898-6.389-41.284-18.291-58.461C456.981,144.529,368.097,36,256,36z M256,396c-77.196,0-140-62.804-140-140   s62.804-140,140-140s140,62.804,140,140S333.196,396,256,396z"/><circle cx="256" cy="256" r="80"/></svg>
+        </div>
+      </label>
+      <input type="color" class="color" data-type="subtitle">
     </div>
   </div>
   <div class="inputContainer" style="margin-top: 1em">
     <input class="text-input" id="qr-filename" type="text" data-i18n-title="buttons.download" placeholder="">
-    <div id="save" onclick="javascript:qrCanvas.save()" class="checkbox button"
+    <div id="save" class="button icon" onclick="javascript:qrCanvas.save()" class="checkbox button"
       title="Скачать">
       <svg version="1.1" viewBox="0 0 24 24" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
         xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -43,12 +60,26 @@
   document.getElementById('preview-chooser').querySelectorAll('.variant').forEach(v => {
     v.addEventListener('click', () => qrCanvas.changeType(v.getAttribute('data-num')))
   })
+  document.getElementById('dataContainer').querySelectorAll('[type="checkbox"]').forEach(v => {
+    v.addEventListener('click', e => {
+      qrCanvas.v[e.target.getAttribute('data-type')] = e.target.checked
+      qrCanvas.clear()
+      qrCanvas.update()
+    })
+  })
   document.getElementById('qr-filename').setAttribute('placeholder', `${document.getElementById('fileName').value ? document.getElementById('fileName').value : document.getElementById('fileName').getAttribute('data-default')}` + `_qr`)
+
   const pc = {
     1: {
       bg: {
         type: 'gradient',
-        colors: ['#3e3e3e', '#000000']
+        colors: [{
+            c: '#3e3e3e'
+          },
+          {
+            c: '#000000'
+          }
+        ]
       },
       preview: {
         x: 48,
@@ -58,7 +89,11 @@
       qr: {
         x: 480,
         y: 160,
-        size: 200
+        size: 200,
+        c: {
+          bg: '#ffffff',
+          fg: '#000000'
+        }
       },
       title: {
         x: 480,
@@ -99,7 +134,11 @@
       qr: {
         x: 80,
         y: 100,
-        size: 280
+        size: 280,
+        c: {
+          bg: '#ffffff',
+          fg: '#000000'
+        }
       },
       title: {
         x: 50,
@@ -135,7 +174,11 @@
       qr: {
         x: 400,
         y: 250,
-        size: 200
+        size: 200,
+        c: {
+          bg: '#ffffff',
+          fg: '#000000'
+        }
       },
       title: {
         x: 400,
@@ -165,15 +208,18 @@
       this.height = 600
       this.type = 1 // default 1, see 'pc' object
       this.params = pc[this.type]
-      this.linkv = true
-      this.titlev = true
-      this.subtitlev = true
+      this.v = {
+        link: true,
+        title: true,
+        subtitle: true
+      }
     }
 
     init() {
       this.canvas.width = this.width
       this.canvas.height = this.height
       this.updateData()
+      this.updateColors()
     }
 
     clear() {
@@ -182,11 +228,12 @@
     }
 
     update() {
+      this.clear()
       if (this.params.bg.type == 'gradient') {
         const gradient = this.ctx.createRadialGradient(this.width / 2, this.height / 2, this.height / 4, this.width / 2, this.height / 2, this.width)
         let colorsLength = this.params.bg.colors.length
         this.params.bg.colors.forEach((c, i) => {
-          gradient.addColorStop(1 / colorsLength * i, c)
+          gradient.addColorStop(1 / colorsLength * i, c.c)
         })
         this.ctx.fillStyle = gradient
         this.ctx.fillRect(0, 0, this.width, this.height)
@@ -203,32 +250,38 @@
       }
       this.ctx.drawImage(this.wf, this.params.preview.x, this.params.preview.y, this.wf.width * this.params.preview.size, this.wf.height * this.params.preview.size)
 
-      this.qr = document.createElement('canvas')
-      this.qrCode = new QRCode(this.qr, {
-        text: this.link,
-        width: 256,
-        height: 256,
-        colorDark: "#000000",
-        colorLight: "#ffffff",
-        correctLevel: QRCode.CorrectLevel.H
-      })
-      this.ctx.fillStyle = '#ffffff'
-      this.ctx.fillRect(this.params.qr.x, this.params.qr.y, this.params.qr.size, this.params.qr.size)
-      setTimeout(() => this.ctx.drawImage(this.qrCode._el.querySelector('img'), this.params.qr.x + 10, this.params.qr.y + 10, this.params.qr.size - 20, this.params.qr.size - 20), 50)
+      if (this.v.link) {
+        this.qr = document.createElement('canvas')
+        this.qrCode = new QRCode(this.qr, {
+          text: this.link,
+          width: 256,
+          height: 256,
+          colorDark: this.params.qr.c.fg,
+          colorLight: this.params.qr.c.bg,
+          correctLevel: QRCode.CorrectLevel.H
+        })
+        this.ctx.fillStyle = this.params.qr.c.bg
+        this.ctx.fillRect(this.params.qr.x, this.params.qr.y, this.params.qr.size, this.params.qr.size)
+        setTimeout(() => this.ctx.drawImage(this.qrCode._el.querySelector('img'), this.params.qr.x + 10, this.params.qr.y + 10, this.params.qr.size - 20, this.params.qr.size - 20), 50)
+      }
 
-      this.ctx.fillStyle = this.params.title.c
-      this.ctx.font = this.params.title.s
-      this.ctx.fillText(this.title, this.params.title.x, this.params.title.y, this.params.title.w)
-      this.ctx.fillStyle = this.params.subtitle.c
-      this.ctx.font = this.params.subtitle.s
-      this.ctx.fillText(this.subtitle, this.params.subtitle.x, this.params.subtitle.y, this.params.subtitle.w)
+      if (this.v.title) {
+        this.ctx.fillStyle = this.params.title.c
+        this.ctx.font = this.params.title.s
+        this.ctx.fillText(this.title, this.params.title.x, this.params.title.y, this.params.title.w)
+      }
+      if (this.v.subtitle) {
+        this.ctx.fillStyle = this.params.subtitle.c
+        this.ctx.font = this.params.subtitle.s
+        this.ctx.fillText(this.subtitle, this.params.subtitle.x, this.params.subtitle.y, this.params.subtitle.w)
+      }
     }
 
     changeType(t) {
-      this.clear()
       this.type = t
       this.params = pc[this.type]
       this.update()
+      this.updateColors()
     }
 
     updateData() {
@@ -236,6 +289,22 @@
       this.title = document.getElementById('qr-title').value == '' ? document.getElementById('qr-title').getAttribute('placeholder') : document.getElementById('qr-title').value
       this.subtitle = document.getElementById('qr-subtitle').value == '' ? document.getElementById('qr-subtitle').getAttribute('placeholder') : document.getElementById('qr-subtitle').value
       this.update()
+    }
+
+    updateColors() {
+      const colorsList = document.getElementById("colorsList")
+      colorsList.innerHTML = ""
+      this.params.bg.colors.forEach((c, index) => {
+        let colorElem = document.createElement('input')
+        colorElem.classList.add('color')
+        colorElem.type = "color"
+        colorElem.value = c.c
+        colorElem.addEventListener('input', e => {
+          c.c = e.target.value
+          this.update()
+        })
+        colorsList.appendChild(colorElem)
+      })
     }
 
     save() {
@@ -251,6 +320,15 @@
   qrCanvas.init()
 
   document.getElementById('dataContainer').querySelectorAll('input').forEach(e => {
-    e.addEventListener('change', () => qrCanvas.updateData())
+    let type = e.getAttribute('data-type')
+    let subtype = e.getAttribute('data-subtype')
+    if (e.getAttribute('type') == 'color') e.value = subtype ? qrCanvas.params[type].c[subtype] : qrCanvas.params[type].c
+    e.addEventListener('input', () => {
+      if (e.getAttribute('type') == 'color') {
+        e.getAttribute('data-subtype') ? qrCanvas.params[type].c[subtype] = e.value : qrCanvas.params[type].c = e.value
+        qrCanvas.update()
+      }
+      qrCanvas.updateData()
+    })
   })
 </script>

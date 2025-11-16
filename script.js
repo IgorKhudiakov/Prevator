@@ -155,13 +155,17 @@ class Modal {
     this.modal.appendChild(this.titleContainer)
     this.content = document.createElement('div')
     this.modal.appendChild(this.content)
+    this.loadedScripts = []
   }
 
   init() {
     this.modalContainer = document.getElementById('modalContainer')
     this.modalContainer.addEventListener('click', e => {
       if (e.target !== this.modalContainer) return
-      this.hide()
+      if (this.important) {
+        const result = confirm(i18n.t(`q.${this.type}`))
+        if (result) this.hide()
+      } else this.hide()
     })
     this.clear()
     this.modalContainer.appendChild(this.modal)
@@ -169,9 +173,12 @@ class Modal {
 
   clear() {
     this.content.innerHTML = '<div class="load"></div>'
+    this.cleanupScripts()
   }
 
-  insertData(type, isLocalize) {
+  insertData(type, isLocalize, isImportant = false, dataType) {
+    this.important = isImportant
+    this.type = dataType
     this.title.setAttribute('data-i18n', `titles.${type}`)
     this.title.innerText = i18n.t(`titles.${type}`)
     const url = `./modals/${type}${isLocalize ? `_${i18n.lang}` : ''}.html`
@@ -188,24 +195,43 @@ class Modal {
     setTimeout(() => {
       this.modalContainer.classList.add('hidden')
       this.clear()
-    }, 500);
+    }, 500)
+  }
+  
+  cleanupScripts() {
+    this.loadedScripts.forEach(script => {
+      if (script && script.parentNode) script.parentNode.removeChild(script)
+    })
+    this.loadedScripts = []
   }
 
   async loadAndProcessHTML(url, targetElement) {
     try {
-      const response = await fetch(url);
+      const response = await fetch(url)
       if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`)
 
       let html = await response.text()
 
+      this.cleanupScripts()
       targetElement.innerHTML = html
 
       const scripts = targetElement.querySelectorAll('script')
+      const newScripts = []
       scripts.forEach(oldScript => {
         const newScript = document.createElement('script')
         Array.from(oldScript.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
-        if (oldScript.textContent) newScript.textContent = oldScript.textContent
+        if (oldScript.textContent) {
+          const wrappedCode = `(function() {${oldScript.textContent}})()`
+          newScript.textContent = wrappedCode
+        }
+        
+        newScripts.push(newScript)
+      })
+
+      scripts.forEach((oldScript, index) => {
+        const newScript = newScripts[index]
         oldScript.parentNode.replaceChild(newScript, oldScript)
+        this.loadedScripts.push(newScript)
       })
     } catch (error) {
       targetElement.innerHTML = `Error loading content: ${error.message}`
@@ -421,7 +447,7 @@ document.addEventListener('DOMContentLoaded', () => {
     o.addEventListener('click', () => {
       document.querySelector('body').style.overflow = 'hidden'
       modal.clear()
-      modal.insertData(o.getAttribute('data-type'), !(o.getAttribute('data-dnl') ?? false))
+      modal.insertData(o.getAttribute('data-type'), !(o.getAttribute('data-dnl') ?? false), o.getAttribute('data-important'), o.getAttribute('data-type'))
     })
   })
 

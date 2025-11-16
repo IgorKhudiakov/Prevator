@@ -9,7 +9,7 @@
     "edit": "Editing",
     "scale": "Zoom in screenshot",
     "reser": "Reset",
-    "qr": "QR (beta)",
+    "qr": "QR",
     "visibility": "Visibility",
     "title": "Title",
     "subtitle": "Subtitle",
@@ -20,10 +20,16 @@
     "donate": "Donate",
     "faq": "How it works",
     "history": "Version history",
-    "qr": "QR Generator (beta)"
+    "qr": "QR Generator"
   },
   "donate": {
     "descSNG": "Relevant for Russia, Belarus and Kazakhstan:",
     "descOthers": "For other countries:"
+  },
+  "other": {
+    "bg": "Background"
+  },
+  "q": {
+    "qr": "Cancel preview generation? All settings will be lost."
   }
 }
