@@ -129,7 +129,8 @@
       "bip6": {
         "title": "Bip 6",
         "bg": "bip6",
-        "accent": "#f74c22",
+        "variants": ["black", "blush", "charcoal", "red", "stone"],
+        "accents": ["#4d4d58", "#e0b2a3", "#696769", "#f74c22", "#bfbfb3"],
         "preview": {
           "type": "square",
           "width": 266,
@@ -389,6 +390,44 @@
           "rounding": "hyperbolic",
           "width": 258,
           "height": 308,
+          "radius": 76
+        }
+      },
+      "hermesseries11": {
+        "title": "Watch Hermes Series 11",
+        "bg": "watchhermesseries11",
+        "accent": "#333347",
+        "preview": {
+          "type": "square",
+          "rounding": "hyperbolic",
+          "width": 258,
+          "height": 308,
+          "radius": 76
+        }
+      },
+      "ultra3": {
+        "title": "Watch Ultra 3",
+        "bg": "watchultra3",
+        "variants": ["black", "blue", "green"],
+        "accents": ["#332f2e", "#464f66", "#535a4a"],
+        "preview": {
+          "type": "square",
+          "rounding": "hyperbolic",
+          "width": 257,
+          "height": 312,
+          "radius": 76
+        }
+      },
+      "hermesultra3": {
+        "title": "Watch Hermes Ultra 3",
+        "bg": "watchhermesultra3",
+        "variants": ["blank", "gris_titane"],
+        "accents": ["#f4f4f4", "#6b605a"],
+        "preview": {
+          "type": "square",
+          "rounding": "hyperbolic",
+          "width": 257,
+          "height": 312,
           "radius": 76
         }
       }
