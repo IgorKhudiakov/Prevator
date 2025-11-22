@@ -4,6 +4,7 @@
     <div class="variant" data-num="1">1</div>
     <div class="variant" data-num="2">2</div>
     <div class="variant" data-num="3">3</div>
+    <div class="variant" data-num="4">4</div>
   </div>
   <div id="bgColors">
     <div data-i18n-title="other.bg">Фон</div>
@@ -193,6 +194,51 @@
         w: '200',
         s: '30px Arial',
         c: '#ffffff'
+      }
+    },
+    4: {
+      bg: {
+        type: 'steps',
+        colors: [
+          {
+            c: '#000000',
+            x: 0,
+            y: 0
+          },
+          {
+            c: '#ffffff',
+            x: 290,
+            y: 0
+          }
+        ]
+      },
+      preview: {
+        x: 50,
+        y: -100,
+        size: 1
+      },
+      qr: {
+        x: 540,
+        y: 150,
+        size: 200,
+        c: {
+          bg: '#ffffff',
+          fg: '#000000'
+        }
+      },
+      title: {
+        x: 550,
+        y: 450,
+        w: '200',
+        s: '40px Arial',
+        c: '#000000'
+      },
+      subtitle: {
+        x: 550,
+        y: 500,
+        w: '200',
+        s: '30px Arial',
+        c: '#000000'
       }
     }
   }

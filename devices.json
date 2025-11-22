@@ -1034,6 +1034,18 @@
           "height": 308,
           "radius": 65
         }
+      },
+      "watch6": {
+        "title": "Watch 6",
+        "bg": "watch6",
+        "variants": ["classic_black", "misty_blue", "moonlight_silver"],
+        "accents": ["#404040", "#c3dbe5", "#e3e3e3"],
+        "preview": {
+          "type": "square",
+          "width": 260,
+          "height": 308,
+          "radius": 62
+        }
       }
     }
   },
