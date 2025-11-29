@@ -1087,9 +1087,9 @@
           "radius": 157
         }
       },
-      "galaxywatchultra": {
+      "galaxywatchultra2024": {
         "title": "Galaxy Watch Ultra 2024",
-        "bg": "galaxywatchultra",
+        "bg": "galaxywatchultra2024",
         "variants": ["black", "gray", "white"],
         "accents": ["#e5761c", "#b4b0a7", "#dadbd5"],
         "preview": {
@@ -1097,6 +1097,35 @@
           "width": 324,
           "height": 324,
           "radius": 162
+        }
+      },
+      "galaxywatchultra2025": {
+        "title": "Galaxy Watch Ultra 2025",
+        "bg": "galaxywatchultra2025",
+        "variants": ["blue", "dark_gray", "green", "orange", "white"],
+        "accents": ["#314561", "#4a5057", "#52584e", "#ff7337", "#f0f0f0"],
+        "preview": {
+          "type": "round",
+          "width": 330,
+          "height": 330,
+          "radius": 165
+        }
+      }
+    }
+  },
+  "tag_heuer": {
+    "title": "Tag Heuer",
+    "deviceList": {
+      "connectedcalibree5": {
+        "title": "Connected Calibre E5",
+        "bg": "connectedcalibree5",
+        "variants": ["black", "black_orange", "steel", "steel_black", "steel_orange", "golf_edition"],
+        "accents": ["#212121", "#ff6600", "#f2f2f2", "#212121", "#ff6600", "#4ba16a"],
+        "preview": {
+          "type": "round",
+          "width": 304,
+          "height": 304,
+          "radius": 152
         }
       }
     }
