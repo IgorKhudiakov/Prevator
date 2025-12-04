@@ -745,6 +745,42 @@
           "radius": 162,
           "hasGlare": true
         }
+      },
+      "watchultimate": {
+        "title": "Watch Ultimate",
+        "bg": "watchultimate",
+        "variants": ["black", "blue", "green"],
+        "accents": ["#303031", "#233f6c", "#103e2f"],
+        "preview": {
+          "type": "round",
+          "width": 330,
+          "height": 330,
+          "radius": 165
+        }
+      },
+      "watchultimatedesign": {
+        "title": "Watch Ultimate Design",
+        "bg": "watchultimatedesign",
+        "variants": ["gold", "purple_gold", "sapphire"],
+        "accents": ["#f1dcb6", "#6e5c72", "#677585"],
+        "preview": {
+          "type": "round",
+          "width": 330,
+          "height": 330,
+          "radius": 165
+        }
+      },
+      "watchultimate2": {
+        "title": "Watch Ultimate 2",
+        "bg": "watchultimate2",
+        "variants": ["black", "blue"],
+        "accents": ["#3f3f41", "#183560"],
+        "preview": {
+          "type": "round",
+          "width": 330,
+          "height": 330,
+          "radius": 165
+        }
       }
     }
   },
