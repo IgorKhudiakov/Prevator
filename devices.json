@@ -869,6 +869,47 @@
       }
     }
   },
+  "pebble": {
+    "title": "Pebble",
+    "deviceList": {
+      "time": {
+        "title": "Time",
+        "bg": "time",
+        "variants": ["black", "red", "white"],
+        "accents": ["#343434", "#c83c3d", "#f5f5f5"],
+        "preview": {
+          "type": "square",
+          "width": 180,
+          "height": 210,
+          "radius": 10
+        }
+      },
+      "timesteel": {
+        "title": "Time Steel",
+        "bg": "timesteel",
+        "variants": ["black", "red", "white"],
+        "accents": ["#5f5954", "#ad3132", "#c8c1af"],
+        "preview": {
+          "type": "square",
+          "width": 180,
+          "height": 210,
+          "radius": 10
+        }
+      },
+      "2duo": {
+        "title": "2 Duo",
+        "bg": "2duo",
+        "variants": ["black", "white"],
+        "accents": ["#363636", "#f5f5f5"],
+        "preview": {
+          "type": "square",
+          "width": 180,
+          "height": 210,
+          "radius": 10
+        }
+      }
+    }
+  },
   "poco": {
     "title": "Poco",
     "deviceList": {
