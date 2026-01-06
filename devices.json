@@ -27,6 +27,17 @@
           "radius": 157
         }
       },
+      "activemax": {
+        "title": "Active Max",
+        "bg": "activemax",
+        "accent": "#232323",
+        "preview": {
+          "type": "round",
+          "width": 328,
+          "height": 328,
+          "radius": 164
+        }
+      },
       "active2round": {
         "title": "Active 2 Round",
         "bg": "active2round",
