@@ -402,6 +402,8 @@ document.addEventListener('DOMContentLoaded', () => {
       if (type == 'scale') {
         document.getElementById('wfcontrols').classList.toggle('hidden')
         updateCanvas()
+      } else if (type == 'displayInfo') {
+        document.getElementById('displaySpecs').classList.toggle('hidden')
       } else images[type].visibility = event.target.checked
       loadImages()
     })
@@ -482,6 +484,16 @@ document.addEventListener('DOMContentLoaded', () => {
       images.glare.visibility = false
     }
     if (!device.preview?.rounding) delete images.watchface.rounding
+    
+    const displayInfo = document.getElementById('displayInfo')
+    const displaySpecs = document.getElementById('displaySpecs')
+    device?.displaySpecs ? displayInfo.parentNode.classList.remove('disable') : displayInfo.parentNode.classList.add('disable')
+    device?.displaySpecs && displayInfo.checked ? displaySpecs.classList.remove('hidden') : displaySpecs.classList.add('hidden')
+    if (device?.displaySpecs) {
+      displaySpecs.querySelector('[data-type="display"]').setAttribute('style',
+        `width:${device.preview.width}px;height:${device.preview?.height ?? device.preview.width}px;border-radius:${device.preview?.radius ?? Math.floor(device.preview.width / 2)}px`)
+      displaySpecs.querySelector('[data-type="size"]').innerHTML = device?.displaySpecs.size
+    }
 
     const colorIndex = variant ? device.variants.indexOf(variant) : device?.variants ? 0 : -1
     const newInnerColor = colorIndex >= 0 ? device?.accents[colorIndex] : device?.accent ?? DEFAULT_BG_COLOR

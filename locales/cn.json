@@ -13,7 +13,8 @@
     "visibility": "可见性",
     "title": "标题",
     "subtitle": "副标题",
-    "link": "链接"
+    "link": "链接",
+    "displayInfo": "有关显示器的信息"
   },
   "titles": {
     "lang": "语言",

@@ -62,6 +62,12 @@
           "height": 308,
           "radius": 154,
           "power": 0.03
+        },
+        "displaySpecs": {
+          "size": "1.75",
+          "width": "390",
+          "height": "450",
+          "radius": "86"
         }
       },
       "balance": {
@@ -231,6 +237,11 @@
           "height": 314,
           "radius": 157,
           "hasGlare": true
+        },
+        "displaySpecs": {
+          "size": "1.43",
+          "width": "466",
+          "height": "466"
         }
       },
       "gtrmini": {
@@ -371,6 +382,23 @@
           "height": 324,
           "radius": 162,
           "hasGlare": true
+        }
+      },
+      "trexultra2": {
+        "title": "T-Rex Ultra 2",
+        "bg": "trexultra2",
+        "accent": "#3b3b3b",
+        "preview": {
+          "type": "round",
+          "width": 330,
+          "height": 330,
+          "radius": 165,
+          "hasGlare": false
+        },
+        "displaySpecs": {
+          "size": "1.5",
+          "width": "480",
+          "height": "480"
         }
       }
     }
@@ -589,6 +617,42 @@
           "radius": 24
         }
       },
+      "band11": {
+        "title": "Band 11",
+        "bg": "band11",
+        "variants": ["beige", "black", "green", "purple", "white"],
+        "accents": ["#e9cbb7", "#242424", "#c9cdba", "#d8cddd", "#e8e0d6"],
+        "preview": {
+          "type": "band",
+          "width": 182,
+          "height": 306,
+          "radius": 32
+        },
+        "displaySpecs": {
+          "size": "1.62",
+          "width": "286",
+          "height": "482",
+          "radius": "50"
+        }
+      },
+      "band11pro": {
+        "title": "Band 11 Pro",
+        "bg": "band11pro",
+        "variants": ["black", "blue", "green"],
+        "accents": ["#222222", "#cdd9df", "#c4d35c"],
+        "preview": {
+          "type": "band",
+          "width": 182,
+          "height": 306,
+          "radius": 32
+        },
+        "displaySpecs": {
+          "size": "1.62",
+          "width": "286",
+          "height": "482",
+          "radius": "50"
+        }
+      },
       "d2": {
         "title": "D 2",
         "bg": "d2",
@@ -718,6 +782,42 @@
           "height": 318,
           "radius": 159,
           "hasGlare": false
+        }
+      },
+      "gt_runner": {
+        "title": "GT Runner",
+        "bg": "gt_runner",
+        "variants": ["black", "grey"],
+        "accents": ["#4c4c4c", "#ababab"],
+        "preview": {
+          "type": "round",
+          "width": 314,
+          "height": 314,
+          "radius": 157,
+          "hasGlare": false
+        },
+        "displaySpecs": {
+          "size": "1.43",
+          "width": "466",
+          "height": "466"
+        }
+      },
+      "gt_runner2": {
+        "title": "GT Runner 2",
+        "bg": "gt_runner2",
+        "variants": ["black", "blue", "orange"],
+        "accents": ["#767676", "#003fd4", "#f55200"],
+        "preview": {
+          "type": "round",
+          "width": 290,
+          "height": 290,
+          "radius": 145,
+          "hasGlare": false
+        },
+        "displaySpecs": {
+          "size": "1.32",
+          "width": "466",
+          "height": "466"
         }
       },
       "watch4": {
@@ -1430,6 +1530,11 @@
           "width": 140,
           "height": 344,
           "radius": 70
+        },
+        "displaySpecs": {
+          "size": "1.72",
+          "width": "212",
+          "height": "520"
         }
       },
       "miwatch": {
@@ -1529,6 +1634,23 @@
           "width": 324,
           "height": 324,
           "radius": 162
+        }
+      },
+      "watch5": {
+        "title": "Watch 5",
+        "bg": "watch5",
+        "variants": ["black", "juniper_green"],
+        "accents": ["#212121", "#739278"],
+        "preview": {
+          "type": "round",
+          "width": 338,
+          "height": 338,
+          "radius": 169
+        },
+        "displaySpecs": {
+          "size": "1.54",
+          "width": "480",
+          "height": "480"
         }
       }
     }

@@ -13,7 +13,8 @@
     "visibility": "Visibility",
     "title": "Title",
     "subtitle": "Subtitle",
-    "link": "Link"
+    "link": "Link",
+    "displayInfo": "Display Info"
   },
   "titles": {
     "lang": "Language",

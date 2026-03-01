@@ -13,7 +13,8 @@
     "visibility": "Видимость",
     "title": "Заголовок",
     "subtitle": "Подзаголовок",
-    "link": "Ссылка"
+    "link": "Ссылка",
+    "displayInfo": "О дисплее"
   },
   "titles": {
     "lang": "Язык",
