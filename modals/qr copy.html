@@ -249,17 +249,16 @@
       this.ctx = this.canvas.getContext('2d')
       this.wf = document.getElementById('canvas')
       this.wfctx = this.wf.getContext('2d')
+      this.qrCode = {}
       this.width = 800
       this.height = 600
-      this.type = 1
+      this.type = 1 // default 1, see 'pc' object
       this.params = pc[this.type]
       this.v = {
         link: true,
         title: true,
         subtitle: true
       }
-      this.qrModulesCache = {}
-      this.lastLink = ''
     }
 
     init() {
@@ -274,67 +273,6 @@
       this.ctx.clearRect(0, 0, this.width, this.height)
     }
 
-    getQRModules(link) {
-      if (this.qrModulesCache[link]) {
-        return this.qrModulesCache[link]
-      }
-
-      const tempDiv = document.createElement('div')
-      tempDiv.style.position = 'absolute'
-      tempDiv.style.left = '-9999px'
-      document.body.appendChild(tempDiv)
-
-      // Генерируем QR-код
-      const qr = new QRCode(tempDiv, {
-        text: link,
-        width: 256,
-        height: 256,
-        colorDark: '#000000',
-        colorLight: '#ffffff',
-        correctLevel: QRCode.CorrectLevel.H
-      })
-
-      // Получаем доступ к внутренним данным QR-кода
-      const qrData = qr._oQRCode
-      const moduleCount = qrData.getModuleCount()
-      
-      // Создаем матрицу модулей (true - темный, false - светлый)
-      const modules = []
-      for (let row = 0; row < moduleCount; row++) {
-        modules[row] = []
-        for (let col = 0; col < moduleCount; col++) {
-          modules[row][col] = qrData.isDark(row, col)
-        }
-      }
-
-      document.body.removeChild(tempDiv)
-
-      // Сохраняем в кэш
-      this.qrModulesCache[link] = modules
-      return modules
-    }
-
-    drawQRFromModules(modules, x, y, size, bgColor, fgColor) {
-      const moduleCount = modules.length
-      const moduleSize = Math.floor(size / moduleCount)
-      
-      this.ctx.imageSmoothingEnabled = false
-      
-      for (let row = 0; row < moduleCount; row++) {
-        for (let col = 0; col < moduleCount; col++) {
-          const moduleX = x + col * moduleSize
-          const moduleY = y + row * moduleSize
-          let moduleW = moduleX + moduleSize - moduleX
-          let moduleH = moduleY + moduleSize - moduleY
-          moduleW = Math.max(1, moduleW)
-          moduleH = Math.max(1, moduleH)
-          
-          this.ctx.fillStyle = modules[row][col] ? fgColor : bgColor
-          this.ctx.fillRect(moduleX, moduleY, moduleW, moduleH)
-        }
-      }
-    }
-
     update() {
       this.clear()
       if (this.params.bg.type == 'gradient') {
@@ -346,7 +284,7 @@
         this.ctx.fillStyle = gradient
         this.ctx.fillRect(0, 0, this.width, this.height)
       } else {
-        this.params.bg.colors.forEach((c) => {
+        this.params.bg.colors.forEach((c, index) => {
           this.ctx.fillStyle = c.c
           this.ctx.fillRect(c.x, c.y, this.width, this.height)
         })
@@ -358,29 +296,19 @@
       }
       this.ctx.drawImage(this.wf, this.params.preview.x, this.params.preview.y, this.wf.width * this.params.preview.size, this.wf.height * this.params.preview.size)
 
-      // Отрисовка QR-кода
       if (this.v.link) {
-        // Проверяем, изменилась ли ссылка
-        if (this.link !== this.lastLink) {
-          this.qrModulesCache = {}
-          this.lastLink = this.link
-        }
-
-        // Получаем структуру QR-кода из кэша
-        const modules = this.getQRModules(this.link)
-        
+        this.qr = document.createElement('canvas')
+        this.qrCode = new QRCode(this.qr, {
+          text: this.link,
+          width: 256,
+          height: 256,
+          colorDark: this.params.qr.c.fg,
+          colorLight: this.params.qr.c.bg,
+          correctLevel: QRCode.CorrectLevel.H
+        })
         this.ctx.fillStyle = this.params.qr.c.bg
-        this.params.qr.size = Math.floor((this.params.qr.size - 20) / modules.length) * modules.length + 20
         this.ctx.fillRect(this.params.qr.x, this.params.qr.y, this.params.qr.size, this.params.qr.size)
-        
-        this.drawQRFromModules(
-          modules,
-          this.params.qr.x + 10,
-          this.params.qr.y + 10,
-          this.params.qr.size - 20,
-          this.params.qr.c.bg,
-          this.params.qr.c.fg
-        )
+        setTimeout(() => this.ctx.drawImage(this.qrCode._el.querySelector('img'), this.params.qr.x + 10, this.params.qr.y + 10, this.params.qr.size - 20, this.params.qr.size - 20), 50)
       }
 
       if (this.v.title) {
@@ -393,8 +321,6 @@
         this.ctx.font = this.params.subtitle.s
         this.ctx.fillText(this.subtitle, this.params.subtitle.x, this.params.subtitle.y, this.params.subtitle.w)
       }
-
-      if (this.type == 3) this.ctx.restore()
     }
 
     changeType(t) {
@@ -405,20 +331,9 @@
     }
 
     updateData() {
-      const newLink = document.getElementById('qr-link').value || 'https://example.com'
-      const newTitle = document.getElementById('qr-title').value || document.getElementById('qr-title').getAttribute('placeholder')
-      const newSubtitle = document.getElementById('qr-subtitle').value || document.getElementById('qr-subtitle').getAttribute('placeholder')
-      
-      // Проверяем, изменилась ли ссылка
-      if (newLink !== this.link) {
-        this.qrModulesCache = {}
-        this.lastLink = newLink
-      }
-      
-      this.link = newLink
-      this.title = newTitle
-      this.subtitle = newSubtitle
-      
+      this.link = document.getElementById('qr-link').value == '' ? 'https://example.com' : document.getElementById('qr-link').value
+      this.title = document.getElementById('qr-title').value == '' ? document.getElementById('qr-title').getAttribute('placeholder') : document.getElementById('qr-title').value
+      this.subtitle = document.getElementById('qr-subtitle').value == '' ? document.getElementById('qr-subtitle').getAttribute('placeholder') : document.getElementById('qr-subtitle').value
       this.update()
     }
 
@@ -441,7 +356,7 @@
     save() {
       const link = document.createElement('a')
       const input = document.getElementById('qr-filename')
-      link.download = `${input.value || input.getAttribute('placeholder')}.png`
+      link.download = `${input.value ? input.value : input.getAttribute('placeholder')}.png`
       link.href = this.canvas.toDataURL('image/png')
       link.click()
     }
@@ -456,8 +371,7 @@
     if (e.getAttribute('type') == 'color') e.value = subtype ? qrCanvas.params[type].c[subtype] : qrCanvas.params[type].c
     e.addEventListener('input', () => {
       if (e.getAttribute('type') == 'color') {
-        if (e.getAttribute('data-subtype')) qrCanvas.params[type].c[subtype] = e.value
-        else qrCanvas.params[type].c = e.value
+        e.getAttribute('data-subtype') ? qrCanvas.params[type].c[subtype] = e.value : qrCanvas.params[type].c = e.value
         qrCanvas.update()
       }
       qrCanvas.updateData()

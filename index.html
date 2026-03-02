@@ -15,16 +15,16 @@
   <div class="container">
     <div id="preview" class="load">
       <canvas id="canvas"></canvas>
+      <div class="hidden" id="displaySpecs">
+        <div data-type="display">
+          <span data-type="size"></span> "
+        </div>
+      </div>
       <div id="wfcontrols" class="hidden">
         <div class="button" data-type="minus">-</div>
         <div id="scale" contenteditable="true" data-val="0">0</div>
         <div class="button" data-type="plus">+</div>
         <div class="button" data-type="reset" data-i18n="buttons.reset">Сброс</div>
-      </div>
-      <div class="hidden" id="displaySpecs">
-        <div data-type="display">
-          <span data-type="size"></span> "
-        </div>
       </div>
     </div>
     <div class="controls">
@@ -174,7 +174,7 @@
   </div>
   <div id="version" class="button openModal" data-type="history" data-i18n-title="titles.history"
     title="История версий">
-    1.3.8</div>
+    1.3.9</div>
   <div id="openFaq" class="button openModal" data-type="faq" data-i18n-title="titles.faq" title="Как пользоваться">
     <svg viewBox="0 0 24 24">
       <path fill="currentColor"
