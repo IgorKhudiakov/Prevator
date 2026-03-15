@@ -70,6 +70,25 @@
           "radius": "86"
         }
       },
+      "active3premium": {
+        "title": "Active 3 Premium",
+        "bg": "active3premium",
+        "variants": ["aero_white", "apex_silver", "atlas_blue"],
+        "accents": ["#e1e1e1", "#2c2c2c", "#293043"],
+        "preview": {
+          "type": "round",
+          "width": 290,
+          "height": 290,
+          "radius": 145,
+          "hasGlare": true
+        },
+        "displaySpecs": {
+          "size": "1.32",
+          "width": "466",
+          "height": "466",
+          "radius": "233"
+        }
+      },
       "balance": {
         "title": "Balance",
         "bg": "balance",
@@ -891,6 +910,30 @@
           "width": 330,
           "height": 330,
           "radius": 165
+        }
+      }
+    }
+  },
+  "motorola": {
+    "title": "Motorola",
+    "deviceList": {
+      "motowatch": {
+        "title": "Moto Watch",
+        "bg": "motowatch",
+        "variants": ["black", "silver"],
+        "accents": ["#363636", "#969496"],
+        "preview": {
+          "type": "round",
+          "width": 314,
+          "height": 314,
+          "radius": 157,
+          "hasGlare": true
+        },
+        "displaySpecs": {
+          "size": "1.43",
+          "width": "464",
+          "height": "464",
+          "radius": "232"
         }
       }
     }
