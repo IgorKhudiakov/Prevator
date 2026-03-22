@@ -491,6 +491,29 @@
       }
     }
   },
+  "blackview": {
+    "title": "Blackview",
+    "deviceList": {
+      "w90pro": {
+        "title": "W90 Pro",
+        "bg": "w90pro",
+        "variants": ["black", "silver"],
+        "accents": ["#4c4c4c", "#b5b5b5"],
+        "preview": {
+          "type": "round",
+          "width": 314,
+          "height": 314,
+          "radius": 157
+        },
+        "displaySpecs": {
+          "size": "1.43",
+          "width": "466",
+          "height": "466",
+          "radius": "233"
+        }
+      }
+    }
+  },
   "garmin": {
     "title": "Garmin",
     "deviceList": {
@@ -554,6 +577,23 @@
           "radius": 152
         }
       },
+      "quatix8": {
+        "title": "Quatix 8",
+        "bg": "quatix8",
+        "accent": "#3a4b62",
+        "preview": {
+          "type": "round",
+          "width": 308,
+          "height": 308,
+          "radius": 154
+        },
+        "displaySpecs": {
+          "size": "1.4",
+          "width": "454",
+          "height": "454",
+          "radius": "227"
+        }
+      },
       "venux1": {
         "title": "Venu X1",
         "bg": "venux1",
@@ -605,6 +645,47 @@
           "width": 310,
           "height": 310,
           "radius": 155
+        }
+      }
+    }
+  },
+  "honor": {
+    "title": "Honor",
+    "deviceList": {
+      "band10": {
+        "title": "Band 10",
+        "bg": "band10",
+        "variants": ["black", "blue"],
+        "accents": ["#525356", "#4181c4"],
+        "preview": {
+          "type": "band",
+          "width": 184,
+          "height": 290,
+          "radius": 20
+        },
+        "displaySpecs": {
+          "size": "1.57",
+          "width": "256",
+          "height": "402",
+          "radius": "28"
+        }
+      },
+      "watch5ultra": {
+        "title": "Watch 5 Ultra",
+        "bg": "watch5ultra",
+        "variants": ["black", "brown", "silver"],
+        "accents": ["#414344", "#442a21", "#d7d7d5"],
+        "preview": {
+          "type": "round",
+          "width": 330,
+          "height": 330,
+          "radius": 165
+        },
+        "displaySpecs": {
+          "size": "1.5",
+          "width": "466",
+          "height": "466",
+          "radius": "233"
         }
       }
     }
@@ -903,8 +984,8 @@
       "watchultimate2": {
         "title": "Watch Ultimate 2",
         "bg": "watchultimate2",
-        "variants": ["black", "blue"],
-        "accents": ["#3f3f41", "#183560"],
+        "variants": ["black", "blue", "green"],
+        "accents": ["#3f3f41", "#183560", "#154334"],
         "preview": {
           "type": "round",
           "width": 330,
@@ -1117,6 +1198,48 @@
           "width": 258,
           "height": 308,
           "radius": 50
+        },
+        "displaySpecs": {
+          "size": "1.8",
+          "width": "240",
+          "height": "286",
+          "radius": "50"
+        }
+      },
+      "watch3pro": {
+        "title": "Watch 3 Pro",
+        "bg": "watch3pro",
+        "variants": ["black", "gray"],
+        "accents": ["#44454a", "#cccdd1"],
+        "preview": {
+          "type": "square",
+          "width": 248,
+          "height": 302,
+          "radius": 50
+        },
+        "displaySpecs": {
+          "size": "1.78",
+          "width": "368",
+          "height": "448",
+          "radius": "50"
+        }
+      },
+      "watch5": {
+        "title": "Watch 5",
+        "bg": "watch5",
+        "variants": ["black", "gray"],
+        "accents": ["#44454a", "#cccdd1"],
+        "preview": {
+          "type": "square",
+          "width": 282,
+          "height": 326,
+          "radius": 50
+        },
+        "displaySpecs": {
+          "size": "1.97",
+          "width": "390",
+          "height": "450",
+          "radius": "50"
         }
       },
       "watchs": {
@@ -1692,6 +1815,23 @@
         },
         "displaySpecs": {
           "size": "1.54",
+          "width": "480",
+          "height": "480"
+        }
+      },
+      "watchs5": {
+        "title": "Watch S5",
+        "bg": "watchs5",
+        "variants": ["black", "blue", "white"],
+        "accents": ["#212121", "#212121", "#739278"],
+        "preview": {
+          "type": "round",
+          "width": 324,
+          "height": 324,
+          "radius": 162
+        },
+        "displaySpecs": {
+          "size": "1.48",
           "width": "480",
           "height": "480"
         }
