@@ -1104,6 +1104,29 @@
       }
     }
   },
+  "oppo": {
+    "title": "Oppo",
+    "deviceList": {
+      "watchx3": {
+        "title": "Watch X3",
+        "bg": "watchx3",
+        "variants": ["black", "orange", "titanium"],
+        "accents": ["#5a5a59", "#dd602e", "#99948f"],
+        "preview": {
+          "type": "round",
+          "width": 330,
+          "height": 330,
+          "radius": 165
+        },
+        "displaySpecs": {
+          "size": "1.5",
+          "width": "466",
+          "height": "466",
+          "radius": "233"
+        }
+      }
+    }
+  },
   "pebble": {
     "title": "Pebble",
     "deviceList": {
