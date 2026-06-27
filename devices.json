@@ -1019,6 +1019,28 @@
       }
     }
   },
+  "meizu": {
+    "title": "Meizu",
+    "deviceList": {
+      "motowatch": {
+        "title": "Watch M1",
+        "bg": "watchm1",
+        "accent": "#363636",
+        "preview": {
+          "type": "square",
+          "width": 280,
+          "height": 344,
+          "radius": 70
+        },
+        "displaySpecs": {
+          "size": "2.01",
+          "width": "410",
+          "height": "502",
+          "radius": "104"
+        }
+      }
+    }
+  },
   "nothing": {
     "title": "Nothing",
     "deviceList": {
@@ -1724,6 +1746,25 @@
           "size": "1.72",
           "width": "212",
           "height": "520"
+        }
+      },
+      "sb10pro": {
+        "title": "Smart Band 10 Pro",
+        "bg": "sb10pro",
+        "variants": ["black", "lavender_pink", "silver"],
+        "accents": ["#434549", "#fae0eb", "#eaeaec"],
+        "preview": {
+          "type": "square",
+          "width": 220,
+          "height": 314,
+          "radius": 32
+        },
+        "displaySpecs": {
+          "size": "1.74",
+          "width": "336",
+          "height": "480",
+          "radius": "50",
+          "frequency": "60"
         }
       },
       "miwatch": {
