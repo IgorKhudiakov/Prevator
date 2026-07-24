@@ -1486,6 +1486,23 @@
           "radius": 157
         }
       },
+      "galaxywatch9": {
+        "title": "Galaxy Watch 9",
+        "bg": "galaxywatch9",
+        "variants": ["graphite", "silver"],
+        "accents": ["#606367", "#6f7669"],
+        "preview": {
+          "type": "round",
+          "width": 330,
+          "height": 330,
+          "radius": 165
+        },
+        "displaySpecs": {
+          "size": "1.5",
+          "width": "480",
+          "height": "480"
+        }
+      },
       "galaxywatchultra2024": {
         "title": "Galaxy Watch Ultra 2024",
         "bg": "galaxywatchultra2024",
@@ -1886,8 +1903,8 @@
       "watchs5": {
         "title": "Watch S5",
         "bg": "watchs5",
-        "variants": ["black", "blue", "white"],
-        "accents": ["#212121", "#212121", "#739278"],
+        "variants": ["black", "ceramic_blue", "green_jungle", "silver"],
+        "accents": ["#72767b", "#60697e", "#8f9b87", "#eff0f5"],
         "preview": {
           "type": "round",
           "width": 324,
