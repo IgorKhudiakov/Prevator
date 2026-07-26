@@ -806,6 +806,48 @@
           "hasGlare": true
         }
       },
+      "fit5": {
+        "title": "Fit 5",
+        "bg": "fit5",
+        "variants": ["black", "green", "purple", "silver", "white"],
+        "accents": ["#37363b", "#429279", "#ebe4f4", "#e5e495", "#f7f2ec"],
+        "preview": {
+          "type": "square",
+          "rounding": "hyperbolic",
+          "width": 260,
+          "height": 306,
+          "radius": 75
+        },
+        "displaySpecs": {
+          "type": "AMOLED",
+          "size": "1.82",
+          "width": "480",
+          "height": "408",
+          "brightness": "2500",
+          "ppi": "347"
+        }
+      },
+      "fit5pro": {
+        "title": "Fit 5 Pro",
+        "bg": "fit5pro",
+        "variants": ["black", "orange", "white"],
+        "accents": ["#49494b", "#db3a18", "#e8e7e8"],
+        "preview": {
+          "type": "square",
+          "rounding": "hyperbolic",
+          "width": 273,
+          "height": 321,
+          "radius": 75
+        },
+        "displaySpecs": {
+          "type": "AMOLED",
+          "size": "1.92",
+          "width": "480",
+          "height": "408",
+          "brightness": "3000",
+          "ppi": "328"
+        }
+      },
       "gt3": {
         "title": "GT 3",
         "bg": "gt3",
@@ -1123,12 +1165,140 @@
           "height": 324,
           "radius": 162
         }
+      },
+      "watchlite": {
+        "title": "Watch Lite",
+        "bg": "watchlite",
+        "variants": ["black_steel", "silver_steel"],
+        "accents": ["#3b3b3a", "#fef6f0"],
+        "preview": {
+          "type": "round",
+          "width": 320,
+          "height": 320,
+          "radius": 160
+        },
+        "displaySpecs": {
+          "type": "AMOLED",
+          "size": "1.46",
+          "width": "464",
+          "height": "464",
+          "brightness": "3000",
+          "ppi": "317"
+        }
+      },
+      "watch4": {
+        "title": "Watch 4",
+        "bg": "watch4",
+        "variants": ["evergreen_titanium", "midnight_titanium"],
+        "accents": ["#677664", "#393939"],
+        "preview": {
+          "type": "round",
+          "width": 330,
+          "height": 330,
+          "radius": 165
+        },
+        "displaySpecs": {
+          "type": "LTPO OLED",
+          "size": "1.5",
+          "width": "466",
+          "height": "466",
+          "brightness": "3000",
+          "ppi": "310",
+          "frequency": "60"
+        }
       }
     }
   },
   "oppo": {
     "title": "Oppo",
     "deviceList": {
+      "watchx": {
+        "title": "Watch X",
+        "bg": "watchx",
+        "variants": ["azure_blue", "glacier_gray", "midnight_black"],
+        "accents": ["#2c3c5f", "#f8faf9", "#2f3035"],
+        "preview": {
+          "type": "round",
+          "width": 314,
+          "height": 314,
+          "radius": 157
+        },
+        "displaySpecs": {
+          "type": "AMOLED",
+          "size": "1.43",
+          "width": "466",
+          "height": "466",
+          "radius": "233",
+          "brightness": "",
+          "frequency": "",
+          "ppi": "326"
+        }
+      },
+      "watchsport": {
+        "title": "Watch Sport",
+        "bg": "watchsport",
+        "accent": "#535454",
+        "preview": {
+          "type": "round",
+          "width": 314,
+          "height": 314,
+          "radius": 157
+        },
+        "displaySpecs": {
+          "type": "AMOLED",
+          "size": "1.43",
+          "width": "466",
+          "height": "466",
+          "radius": "233",
+          "brightness": "1000",
+          "frequency": "",
+          "ppi": "326"
+        }
+      },
+      "watchx2": {
+        "title": "Watch X2",
+        "bg": "watchx2",
+        "variants": ["azure", "desert_moon", "graphite_black"],
+        "accents": ["#374f73", "#93897d", "#333437"],
+        "preview": {
+          "type": "round",
+          "width": 330,
+          "height": 330,
+          "radius": 165
+        },
+        "displaySpecs": {
+          "type": "LTPO AMOLED",
+          "size": "1.5",
+          "width": "466",
+          "height": "466",
+          "radius": "233",
+          "brightness": "2200",
+          "frequency": "",
+          "ppi": "310"
+        }
+      },
+      "watchs": {
+        "title": "Watch S",
+        "bg": "watchs",
+        "variants": ["racing_black", "silver_rhythm", "sport_lawn"],
+        "accents": ["#434342", "#f9f2ed", "#eeeeee"],
+        "preview": {
+          "type": "round",
+          "width": 320,
+          "height": 320,
+          "radius": 160
+        },
+        "displaySpecs": {
+          "type": "AMOLED",
+          "size": "1.46",
+          "width": "464",
+          "height": "464",
+          "radius": "232",
+          "brightness": "3000",
+          "frequency": "",
+          "ppi": "317"
+        }
+      },
       "watchx3": {
         "title": "Watch X3",
         "bg": "watchx3",
@@ -1141,10 +1311,14 @@
           "radius": 165
         },
         "displaySpecs": {
+          "type": "LTPO OLED",
           "size": "1.5",
           "width": "466",
           "height": "466",
-          "radius": "233"
+          "radius": "233",
+          "brightness": "3000",
+          "frequency": "",
+          "ppi": "310"
         }
       }
     }
@@ -1320,6 +1494,28 @@
           "width": 300,
           "height": 300,
           "radius": 150
+        }
+      },
+      "watchs5": {
+        "title": "Watch S5",
+        "bg": "watchs5",
+        "variants": ["beige", "gray"],
+        "accents": ["#e3dfd7", "#6c727b"],
+        "preview": {
+          "type": "round",
+          "width": 314,
+          "height": 314,
+          "radius": 157
+        },
+        "displaySpecs": {
+          "type": "AMOLED",
+          "size": "1.43",
+          "width": "466",
+          "height": "466",
+          "radius": "233",
+          "brightness": "",
+          "frequency": "",
+          "ppi": "600"
         }
       }
     }
@@ -1525,6 +1721,26 @@
           "width": 330,
           "height": 330,
           "radius": 165
+        }
+      },
+      "galaxywatchultra2": {
+        "title": "Galaxy Watch Ultra 2",
+        "bg": "galaxywatchultra2",
+        "variants": ["titan", "titan_black"],
+        "accents": ["#797c76", "#6b6f77"],
+        "preview": {
+          "type": "round",
+          "width": 330,
+          "height": 330,
+          "radius": 165
+        },
+        "displaySpecs": {
+          "type": "Super AMOLED",
+          "size": "1.5",
+          "width": "498",
+          "height": "498",
+          "brightness": "5000",
+          "ppi": "332"
         }
       }
     }
@@ -1768,8 +1984,8 @@
       "sb10pro": {
         "title": "Smart Band 10 Pro",
         "bg": "sb10pro",
-        "variants": ["black", "lavender_pink", "silver"],
-        "accents": ["#434549", "#fae0eb", "#eaeaec"],
+        "variants": ["ceramic", "midnight_black", "glacier_silver", "lavender_pink"],
+        "accents": ["#ffffff", "#434549", "#eaeaec", "#fae0eb"],
         "preview": {
           "type": "square",
           "width": 220,
