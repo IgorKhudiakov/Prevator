@@ -115,6 +115,48 @@
           "hasGlare": true
         }
       },
+      "balance3": {
+        "title": "Balance 3",
+        "bg": "balance3",
+        "accent": "#42433e",
+        "preview": {
+          "type": "round",
+          "width": 330,
+          "height": 330,
+          "radius": 165
+        },
+        "displaySpecs": {
+          "type": "AMOLED",
+          "size": "1.5",
+          "width": "480",
+          "height": "480",
+          "radius": "240",
+          "brightness": "3000",
+          "frequency": "",
+          "ppi": ""
+        }
+      },
+      "balanceultra": {
+        "title": "Balance Ultra",
+        "bg": "balanceultra",
+        "accent": "#42433e",
+        "preview": {
+          "type": "round",
+          "width": 330,
+          "height": 330,
+          "radius": 165
+        },
+        "displaySpecs": {
+          "type": "AMOLED",
+          "size": "1.5",
+          "width": "480",
+          "height": "480",
+          "radius": "240",
+          "brightness": "3000",
+          "frequency": "",
+          "ppi": "323"
+        }
+      },
       "band7": {
         "title": "Band 7",
         "bg": "band7",
@@ -175,6 +217,28 @@
           "hasGlare": true
         }
       },
+      "bipmax": {
+        "title": "Bip Max",
+        "bg": "bipmax",
+        "variants": ["carbon_gray", "dark_blue", "silver"],
+        "accents": ["#424242", "#192331", "#87847c"],
+        "preview": {
+          "type": "square",
+          "width": 292,
+          "height": 348,
+          "radius": 70
+        },
+        "displaySpecs": {
+          "type": "AMOLED",
+          "size": "2.07",
+          "width": "432",
+          "height": "514",
+          "radius": "104",
+          "brightness": "3000",
+          "frequency": "",
+          "ppi": "324"
+        }
+      },
       "cheetahpro": {
         "title": "Cheetah Pro",
         "bg": "cheetahpro",
@@ -207,6 +271,48 @@
           "height": 307,
           "radius": 65,
           "hasGlare": true
+        }
+      },
+      "cheetah2pro": {
+        "title": "Cheetah 2 Pro",
+        "bg": "cheetah2pro",
+        "accent": "#42433e",
+        "preview": {
+          "type": "round",
+          "width": 290,
+          "height": 290,
+          "radius": 145
+        },
+        "displaySpecs": {
+          "type": "AMOLED",
+          "size": "1.32",
+          "width": "466",
+          "height": "466",
+          "radius": "233",
+          "brightness": "3000",
+          "frequency": "",
+          "ppi": "353"
+        }
+      },
+      "cheetah2ultra": {
+        "title": "Cheetah 2 Ultra",
+        "bg": "cheetah2ultra",
+        "accent": "#42433e",
+        "preview": {
+          "type": "round",
+          "width": 330,
+          "height": 330,
+          "radius": 165
+        },
+        "displaySpecs": {
+          "type": "AMOLED",
+          "size": "1.5",
+          "width": "480",
+          "height": "480",
+          "radius": "240",
+          "brightness": "3000",
+          "frequency": "",
+          "ppi": "323"
         }
       },
       "falcon": {
@@ -415,9 +521,14 @@
           "hasGlare": false
         },
         "displaySpecs": {
+          "type": "AMOLED",
           "size": "1.5",
           "width": "480",
-          "height": "480"
+          "height": "480",
+          "radius": "240",
+          "brightness": "3000",
+          "frequency": "",
+          "ppi": ""
         }
       }
     }
