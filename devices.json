@@ -83,10 +83,14 @@
           "hasGlare": true
         },
         "displaySpecs": {
+          "type": "AMOLED",
           "size": "1.32",
           "width": "466",
           "height": "466",
-          "radius": "233"
+          "radius": "233",
+          "brightness": "",
+          "frequency": "",
+          "ppi": "353"
         }
       },
       "balance": {
@@ -932,9 +936,11 @@
         "displaySpecs": {
           "type": "AMOLED",
           "size": "1.82",
-          "width": "480",
-          "height": "408",
+          "width": "408",
+          "height": "480",
+          "radius": "",
           "brightness": "2500",
+          "frequency": "",
           "ppi": "347"
         }
       },
@@ -953,9 +959,11 @@
         "displaySpecs": {
           "type": "AMOLED",
           "size": "1.92",
-          "width": "480",
-          "height": "408",
+          "width": "408",
+          "height": "480",
+          "radius": "",
           "brightness": "3000",
+          "frequency": "",
           "ppi": "328"
         }
       },
@@ -1144,6 +1152,97 @@
           "width": 330,
           "height": 330,
           "radius": 165
+        }
+      },
+      "watchultimatedesignspringedition": {
+        "title": "Watch Ultimate Design Spring Edition",
+        "bg": "watchultimatedesign_spring_edition",
+        "accent": "#f6fafd",
+        "preview": {
+          "type": "round",
+          "width": 302,
+          "height": 302,
+          "radius": 151
+        },
+        "displaySpecs": {
+          "type": "LTPO 2.0 AMOLED",
+          "size": "1.38",
+          "width": "466",
+          "height": "466",
+          "radius": "233",
+          "brightness": "3000",
+          "frequency": "",
+          "ppi": "338"
+        }
+      },
+      "watchbuds2": {
+        "title": "Watch Buds 2",
+        "bg": "watchbuds2",
+        "variants": ["black", "brown"],
+        "accents": ["#666666", "#8b7c74"],
+        "preview": {
+          "type": "round",
+          "width": 330,
+          "height": 330,
+          "radius": 165
+        },
+        "displaySpecs": {
+          "type": "LTPO AMOLED",
+          "size": "1.5",
+          "width": "466",
+          "height": "466",
+          "radius": "233",
+          "brightness": "3000",
+          "frequency": "",
+          "ppi": "310"
+        }
+      },
+      "watchkidsx1": {
+        "title": "Watch Kids X1",
+        "bg": "watchkidsx1",
+        "variants": ["blue", "pink"],
+        "accents": ["#1b43fe", "#d57e9a"],
+        "preview": {
+          "type": "square",
+          "rounding": "hyperbolic",
+          "width": 306,
+          "height": 260,
+          "radius": 74,
+          "hasGlare": true
+        },
+        "displaySpecs": {
+          "type": "AMOLED",
+          "size": "1.82",
+          "width": "480",
+          "height": "408",
+          "radius": "116",
+          "brightness": "",
+          "frequency": "",
+          "ppi": ""
+        }
+      },
+      "watchkidsx1pro": {
+        "title": "Watch Kids X1 Pro",
+        "bg": "watchkidsx1pro",
+        "variants": ["black", "purple"],
+        "accents": ["#2f2e32", "#c5afda"],
+        "preview": {
+          "type": "square",
+          "rounding": "hyperbolic",
+          "width": 306,
+          "height": 260,
+          "radius": 74,
+          "hasGlare": true
+        },
+        "displaySpecs": {
+          "type": "AMOLED",
+          "size": "1.82",
+          "width": "480",
+          "height": "408",
+          "radius": "116",
+          "brightness": "",
+          "frequency": "",
+          "ppi": ""
         }
       }
     }
@@ -1869,6 +1968,77 @@
           "width": 304,
           "height": 304,
           "radius": 152
+        }
+      }
+    }
+  },
+  "tecno": {
+    "title": "Tecno",
+    "deviceList": {
+      "watchneo": {
+        "title": "Watch Neo",
+        "bg": "watchneo",
+        "variants": ["black", "orange"],
+        "accents": ["#444444", "#e17336"],
+        "preview": {
+          "type": "round",
+          "width": 314,
+          "height": 314,
+          "radius": 157
+        },
+        "displaySpecs": {
+          "type": "AMOLED",
+          "size": "1.43",
+          "width": "466",
+          "height": "466",
+          "radius": "233",
+          "brightness": "1000",
+          "frequency": "",
+          "ppi": "323"
+        }
+      },
+      "watch3active": {
+        "title": "Watch 3 Active",
+        "bg": "watch3active",
+        "variants": ["black", "gold", "silver"],
+        "accents": ["#454545", "#9f9985", "#8d8f91"],
+        "preview": {
+          "type": "square",
+          "width": 284,
+          "height": 346,
+          "radius": 80
+        },
+        "displaySpecs": {
+          "type": "LCD",
+          "size": "2.04",
+          "width": "320",
+          "height": "390",
+          "radius": "90",
+          "brightness": "",
+          "frequency": "",
+          "ppi": "248"
+        }
+      },
+      "watch3pro": {
+        "title": "Watch 3 Pro",
+        "bg": "watch3pro",
+        "accent": "#242424",
+        "preview": {
+          "type": "round",
+          "width": 314,
+          "height": 314,
+          "radius": 157,
+          "hasGlare": true
+        },
+        "displaySpecs": {
+          "type": "AMOLED",
+          "size": "1.43",
+          "width": "466",
+          "height": "466",
+          "radius": "233",
+          "brightness": "",
+          "frequency": "",
+          "ppi": "323"
         }
       }
     }
