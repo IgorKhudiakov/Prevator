@@ -88,8 +88,6 @@
           "width": "466",
           "height": "466",
           "radius": "233",
-          "brightness": "",
-          "frequency": "",
           "ppi": "353"
         }
       },
@@ -135,9 +133,7 @@
           "width": "480",
           "height": "480",
           "radius": "240",
-          "brightness": "3000",
-          "frequency": "",
-          "ppi": ""
+          "brightness": "3000"
         }
       },
       "balanceultra": {
@@ -157,7 +153,6 @@
           "height": "480",
           "radius": "240",
           "brightness": "3000",
-          "frequency": "",
           "ppi": "323"
         }
       },
@@ -239,7 +234,6 @@
           "height": "514",
           "radius": "104",
           "brightness": "3000",
-          "frequency": "",
           "ppi": "324"
         }
       },
@@ -294,7 +288,6 @@
           "height": "466",
           "radius": "233",
           "brightness": "3000",
-          "frequency": "",
           "ppi": "353"
         }
       },
@@ -315,7 +308,6 @@
           "height": "480",
           "radius": "240",
           "brightness": "3000",
-          "frequency": "",
           "ppi": "323"
         }
       },
@@ -530,9 +522,7 @@
           "width": "480",
           "height": "480",
           "radius": "240",
-          "brightness": "3000",
-          "frequency": "",
-          "ppi": ""
+          "brightness": "3000"
         }
       }
     }
@@ -802,6 +792,27 @@
           "height": "466",
           "radius": "233"
         }
+      },
+      "watch6": {
+        "title": "Watch 6",
+        "bg": "watch6",
+        "variants": ["shadow_black", "twilight_brown"],
+        "accents": ["#494949", "#8b614a"],
+        "preview": {
+          "type": "round",
+          "width": 320,
+          "height": 320,
+          "radius": 160
+        },
+        "displaySpecs": {
+          "type": "AMOLED",
+          "size": "1.46",
+          "width": "464",
+          "height": "464",
+          "radius": "232",
+          "brightness": "3000",
+          "ppi": "317"
+        }
       }
     }
   },
@@ -938,9 +949,7 @@
           "size": "1.82",
           "width": "408",
           "height": "480",
-          "radius": "",
           "brightness": "2500",
-          "frequency": "",
           "ppi": "347"
         }
       },
@@ -961,9 +970,7 @@
           "size": "1.92",
           "width": "408",
           "height": "480",
-          "radius": "",
           "brightness": "3000",
-          "frequency": "",
           "ppi": "328"
         }
       },
@@ -1081,6 +1088,26 @@
           "height": "466"
         }
       },
+      "qingyunH3550": {
+        "title": "Qingyun H3550",
+        "bg": "qingyunH3550",
+        "accent": "#37363b",
+        "preview": {
+          "type": "square",
+          "rounding": "hyperbolic",
+          "width": 260,
+          "height": 306,
+          "radius": 74
+        },
+        "displaySpecs": {
+          "type": "AMOLED",
+          "size": "1.82",
+          "width": "408",
+          "height": "480",
+          "radius": "116",
+          "brightness": "2500"
+        }
+      },
       "watch4": {
         "title": "Watch 4",
         "bg": "watch4",
@@ -1171,7 +1198,6 @@
           "height": "466",
           "radius": "233",
           "brightness": "3000",
-          "frequency": "",
           "ppi": "338"
         }
       },
@@ -1193,7 +1219,6 @@
           "height": "466",
           "radius": "233",
           "brightness": "3000",
-          "frequency": "",
           "ppi": "310"
         }
       },
@@ -1215,10 +1240,7 @@
           "size": "1.82",
           "width": "480",
           "height": "408",
-          "radius": "116",
-          "brightness": "",
-          "frequency": "",
-          "ppi": ""
+          "radius": "116"
         }
       },
       "watchkidsx1pro": {
@@ -1239,10 +1261,29 @@
           "size": "1.82",
           "width": "480",
           "height": "408",
-          "radius": "116",
-          "brightness": "",
-          "frequency": "",
-          "ppi": ""
+          "radius": "116"
+        }
+      }
+    }
+  },
+  "meizu": {
+    "title": "Meizu",
+    "deviceList": {
+      "motowatch": {
+        "title": "Watch M1",
+        "bg": "watchm1",
+        "accent": "#363636",
+        "preview": {
+          "type": "square",
+          "width": 280,
+          "height": 344,
+          "radius": 70
+        },
+        "displaySpecs": {
+          "size": "2.01",
+          "width": "410",
+          "height": "502",
+          "radius": "104"
         }
       }
     }
@@ -1267,28 +1308,6 @@
           "width": "464",
           "height": "464",
           "radius": "232"
-        }
-      }
-    }
-  },
-  "meizu": {
-    "title": "Meizu",
-    "deviceList": {
-      "motowatch": {
-        "title": "Watch M1",
-        "bg": "watchm1",
-        "accent": "#363636",
-        "preview": {
-          "type": "square",
-          "width": 280,
-          "height": 344,
-          "radius": 70
-        },
-        "displaySpecs": {
-          "size": "2.01",
-          "width": "410",
-          "height": "502",
-          "radius": "104"
         }
       }
     }
@@ -1439,8 +1458,6 @@
           "width": "466",
           "height": "466",
           "radius": "233",
-          "brightness": "",
-          "frequency": "",
           "ppi": "326"
         }
       },
@@ -1461,7 +1478,6 @@
           "height": "466",
           "radius": "233",
           "brightness": "1000",
-          "frequency": "",
           "ppi": "326"
         }
       },
@@ -1483,7 +1499,6 @@
           "height": "466",
           "radius": "233",
           "brightness": "2200",
-          "frequency": "",
           "ppi": "310"
         }
       },
@@ -1505,7 +1520,6 @@
           "height": "464",
           "radius": "232",
           "brightness": "3000",
-          "frequency": "",
           "ppi": "317"
         }
       },
@@ -1527,7 +1541,6 @@
           "height": "466",
           "radius": "233",
           "brightness": "3000",
-          "frequency": "",
           "ppi": "310"
         }
       }
@@ -1723,8 +1736,6 @@
           "width": "466",
           "height": "466",
           "radius": "233",
-          "brightness": "",
-          "frequency": "",
           "ppi": "600"
         }
       }
@@ -1850,6 +1861,17 @@
           "width": 260,
           "height": 308,
           "radius": 62
+        },
+        "displaySpecs": {
+          "type": "AMOLED",
+          "size": "2.07",
+          "width": "432",
+          "height": "514",
+          "radius": "102",
+          "brightness": "2000",
+          "frequency": "60",
+          "ppi": "324",
+          "ratio": "82"
         }
       }
     }
@@ -1857,6 +1879,25 @@
   "samsung": {
     "title": "Samsung",
     "deviceList": {
+      "galaxyfit3": {
+        "title": "Galaxy Fit 3",
+        "bg": "galaxyfit3",
+        "variants": ["graphite", "rose_gold", "silver"],
+        "accents": ["#585a5e", "#fee5d9", "#f8f8f6"],
+        "preview": {
+          "type": "square",
+          "width": 188,
+          "height": 296,
+          "radius": 20
+        },
+        "displaySpecs": {
+          "type": "AMOLED",
+          "size": "1.6",
+          "width": "256",
+          "height": "402",
+          "radius": "28"
+        }
+      },
       "galaxywatch6": {
         "title": "Galaxy Watch 6",
         "bg": "galaxywatch6",
@@ -1993,7 +2034,6 @@
           "height": "466",
           "radius": "233",
           "brightness": "1000",
-          "frequency": "",
           "ppi": "323"
         }
       },
@@ -2014,8 +2054,6 @@
           "width": "320",
           "height": "390",
           "radius": "90",
-          "brightness": "",
-          "frequency": "",
           "ppi": "248"
         }
       },
@@ -2036,8 +2074,6 @@
           "width": "466",
           "height": "466",
           "radius": "233",
-          "brightness": "",
-          "frequency": "",
           "ppi": "323"
         }
       }
@@ -2392,9 +2428,13 @@
           "radius": 169
         },
         "displaySpecs": {
+          "type": "AMOLED",
           "size": "1.54",
           "width": "480",
-          "height": "480"
+          "height": "480",
+          "radius": "240",
+          "brightness": "1500",
+          "ppi": "312"
         }
       },
       "watchs5": {
@@ -2409,9 +2449,13 @@
           "radius": 162
         },
         "displaySpecs": {
+          "type": "AMOLED",
           "size": "1.48",
           "width": "480",
-          "height": "480"
+          "height": "480",
+          "radius": "240",
+          "brightness": "2500",
+          "ppi": "323"
         }
       }
     }
