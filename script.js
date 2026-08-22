@@ -518,16 +518,21 @@ document.addEventListener('DOMContentLoaded', () => {
       devices = data
       const devicesMenu = document.getElementById("devices")
       let deviceCount = 0
+      let deviceCount2 = 0
       for (const [brandName, brand] of Object.entries(devices)) {
         const b = document.createElement('div')
         b.classList.add('brand')
+        const brandDeviceCount = document.createElement('div')
+        brandDeviceCount.classList.add('brandDeviceCount')
+        brandDeviceCount.innerHTML = Object.entries(brand.deviceList).length
         const brandTitle = document.createElement('div')
-        brandTitle.innerHTML = brand.title
+        brandTitle.innerHTML = `<span>${brand.title}</span>`
         brandTitle.classList.add('title')
+        brandTitle.appendChild(brandDeviceCount)
         brandTitle.addEventListener('click', e => {
-          b.parentNode.querySelectorAll('.title').forEach(t => {
-            if (t != e.target) t.classList.remove('active')
-            else e.target.classList.toggle('active')
+          b.parentNode.querySelectorAll('.brand').forEach(t => {
+            if (t.querySelector('.title') === e.currentTarget) t.classList.toggle('active')
+            else t.classList.remove('active')
           })
         })
         b.appendChild(brandTitle)
@@ -561,9 +566,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 changeDevice({ brand: brandName, model: deviceModel, variant: v })
               })
               variants.appendChild(variant)
+              deviceCount2++
             })
             d.appendChild(variants)
-          }
+          } else deviceCount2++
           d.addEventListener('click', () => {
             b.parentNode.querySelectorAll('.device').forEach(t => {
               if (t != d) {
@@ -580,6 +586,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
       document.getElementById("openDevices").setAttribute('data-count', deviceCount)
       changeDevice(localDevice)
+      console.log(deviceCount2)
     })
 })
 

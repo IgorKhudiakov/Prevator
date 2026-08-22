@@ -723,33 +723,189 @@
         "accents": ["#ded8d5", "#656565", "#979d9b", "#2b2b2b"],
         "preview": {
           "type": "round",
-          "width": 260,
-          "height": 260,
-          "radius": 130
+          "width": 262,
+          "height": 262,
+          "radius": 131
+        },
+        "displaySpecs": {
+          "type": "AMOLED",
+          "size": "1.2",
+          "width": "384",
+          "height": "384",
+          "radius": "192",
+          "brightness": "1000",
+          "ppi": "320"
         }
       },
       "pixelwatch2": {
         "title": "Pixel Watch 2",
         "bg": "pixelwatch2",
-        "variants": ["bay", "obsidian"],
+        "variants": ["bay", "hazel", "obsidian", "porcelaive"],
         "accents": ["#a8cde8", "#323232"],
         "preview": {
           "type": "round",
-          "width": 260,
-          "height": 260,
-          "radius": 130
+          "width": 262,
+          "height": 262,
+          "radius": 131
+        },
+        "displaySpecs": {
+          "type": "AMOLED",
+          "size": "1.2",
+          "width": "384",
+          "height": "384",
+          "radius": "192",
+          "brightness": "1000",
+          "ppi": "320"
         }
       },
       "pixelwatch3": {
         "title": "Pixel Watch 3",
         "bg": "pixelwatch3",
-        "variants": ["hazel", "obsidian", "porcelain"],
+        "variants": ["hazel", "obsidian", "porcelaive", "rose"],
+        "accents": ["#8f9391", "#414141", "#e1dbd8", "#edcfd9"],
+        "preview": {
+          "type": "round",
+          "width": 262,
+          "height": 262,
+          "radius": 131
+        },
+        "displaySpecs": {
+          "type": "AMOLED LTPO",
+          "size": "1.2",
+          "width": "408",
+          "height": "408",
+          "radius": "204",
+          "brightness": "2000",
+          "ppi": "340",
+          "frequency": "60",
+          "colorGamut": {
+            "DCI-P3": "100"
+          }
+        }
+      },
+      "pixelwatch3xl": {
+        "title": "Pixel Watch 3 XL",
+        "bg": "pixelwatch3xl",
+        "variants": ["hazel", "obsidian", "porcelaive"],
         "accents": ["#8f9391", "#414141", "#e1dbd8"],
         "preview": {
           "type": "round",
-          "width": 310,
-          "height": 310,
-          "radius": 155
+          "width": 306,
+          "height": 306,
+          "radius": 153
+        },
+        "displaySpecs": {
+          "type": "AMOLED LTPO",
+          "size": "1.4",
+          "width": "456",
+          "height": "456",
+          "radius": "228",
+          "brightness": "2000",
+          "ppi": "326",
+          "frequency": "60",
+          "colorGamut": {
+            "DCI-P3": "100"
+          }
+        }
+      },
+      "pixelwatch4_41mm": {
+        "title": "Pixel Watch 4 41mm",
+        "bg": "pixelwatch4_41mm",
+        "variants": ["iris", "lemongrass", "obsidian", "porcelain"],
+        "accents": ["#a3acd5", "#dfecb7", "#3a3a3a", "#c6bfb9"],
+        "preview": {
+          "type": "round",
+          "width": 292,
+          "height": 292,
+          "radius": 146
+        },
+        "displaySpecs": {
+          "type": "AMOLED LTPO",
+          "size": "1.33",
+          "width": "426",
+          "height": "426",
+          "radius": "213",
+          "brightness": "3000",
+          "ppi": "320",
+          "frequency": "60",
+          "colorGamut": {
+            "DCI-P3": "100"
+          }
+        }
+      },
+      "pixelwatch4_45mm": {
+        "title": "Pixel Watch 4 45mm",
+        "bg": "pixelwatch4_45mm",
+        "variants": ["moonstone", "obsidian", "porcelain"],
+        "accents": ["#8f9391", "#414141", "#e1dbd8"],
+        "preview": {
+          "type": "round",
+          "width": 326,
+          "height": 326,
+          "radius": 163
+        },
+        "displaySpecs": {
+          "type": "AMOLED LTPO",
+          "size": "1.49",
+          "width": "480",
+          "height": "480",
+          "radius": "240",
+          "brightness": "2000",
+          "ppi": "320",
+          "frequency": "60",
+          "colorGamut": {
+            "DCI-P3": "100"
+          }
+        }
+      },
+      "pixelwatch5_41mm": {
+        "title": "Pixel Watch 5 41mm",
+        "bg": "pixelwatch5_41mm",
+        "variants": ["canyon", "fog", "obsidian", "olive"],
+        "accents": ["#f19381", "#dfe6e4", "#3a3a3a", "#878a71"],
+        "preview": {
+          "type": "round",
+          "width": 292,
+          "height": 292,
+          "radius": 146
+        },
+        "displaySpecs": {
+          "type": "AMOLED LTPO",
+          "size": "1.33",
+          "width": "426",
+          "height": "426",
+          "radius": "213",
+          "brightness": "3000",
+          "ppi": "320",
+          "frequency": "60",
+          "colorGamut": {
+            "DCI-P3": "100"
+          }
+        }
+      },
+      "pixelwatch5_45mm": {
+        "title": "Pixel Watch 5 45mm",
+        "bg": "pixelwatch5_45mm",
+        "variants": ["fog", "obsidian", "olive"],
+        "accents": ["#8f9391", "#414141", "#e1dbd8"],
+        "preview": {
+          "type": "round",
+          "width": 326,
+          "height": 326,
+          "radius": 163
+        },
+        "displaySpecs": {
+          "type": "AMOLED LTPO",
+          "size": "1.49",
+          "width": "480",
+          "height": "480",
+          "radius": "240",
+          "brightness": "2000",
+          "ppi": "320",
+          "frequency": "60",
+          "colorGamut": {
+            "DCI-P3": "100"
+          }
         }
       }
     }
@@ -757,6 +913,64 @@
   "honor": {
     "title": "Honor",
     "deviceList": {
+      "band6": {
+        "title": "Band 6",
+        "bg": "band6",
+        "variants": ["coral_pink", "meteorite_black", "sandstone_grey"],
+        "accents": ["#eee0dd", "#525356", "#dad4cd"],
+        "preview": {
+          "type": "band",
+          "width": 150,
+          "height": 284,
+          "radius": 20
+        },
+        "displaySpecs": {
+          "type": "AMOLED",
+          "size": "1.47",
+          "width": "194",
+          "height": "368",
+          "radius": "26"
+        }
+      },
+      "band7": {
+        "title": "Band 7",
+        "bg": "band7",
+        "variants": ["coral_pink", "emerald_green", "meteorite_black"],
+        "accents": ["#eee0dd", "#475b58", "#525356"],
+        "preview": {
+          "type": "band",
+          "width": 150,
+          "height": 284,
+          "radius": 20
+        },
+        "displaySpecs": {
+          "type": "AMOLED",
+          "size": "1.47",
+          "width": "194",
+          "height": "368",
+          "radius": "26"
+        }
+      },
+      "band9": {
+        "title": "Band 9",
+        "bg": "band9",
+        "variants": ["black", "blue", "purple"],
+        "accents": ["#3e3f40", "#d0e9f9", "#73679e"],
+        "preview": {
+          "type": "band",
+          "width": 184,
+          "height": 290,
+          "radius": 22
+        },
+        "displaySpecs": {
+          "type": "AMOLED",
+          "size": "1.57",
+          "width": "256",
+          "height": "402",
+          "radius": "30",
+          "ppi": "302"
+        }
+      },
       "band10": {
         "title": "Band 10",
         "bg": "band10",
@@ -773,6 +987,184 @@
           "width": "256",
           "height": "402",
           "radius": "28"
+        }
+      },
+      "choiceband": {
+        "title": "Choice Band",
+        "bg": "choiceband",
+        "variants": ["black", "pink", "white"],
+        "accents": ["#414243", "#f4e6e4", "#eeeeea"],
+        "preview": {
+          "type": "band",
+          "width": 188,
+          "height": 306,
+          "radius": 20
+        },
+        "displaySpecs": {
+          "type": "AMOLED",
+          "size": "1.64",
+          "width": "280",
+          "height": "456",
+          "radius": "30",
+          "ppi": "326",
+          "brightness": "500",
+          "frequency": "60",
+          "ratio": "70"
+        }
+      },
+      "choicekidswatchplus": {
+        "title": "Choice Kids Watch Plus",
+        "bg": "choicekidswatchplus",
+        "variants": ["black", "blue", "purple"],
+        "accents": ["#4f5054", "#b2cddc", "#baade1"],
+        "preview": {
+          "type": "square",
+          "width": 202,
+          "height": 202,
+          "radius": 0
+        },
+        "displaySpecs": {
+          "type": "TFT",
+          "size": "1.3",
+          "width": "240",
+          "height": "240",
+          "radius": "0",
+          "ppi": "261"
+        }
+      },
+      "choicewatch": {
+        "title": "Choice Watch",
+        "bg": "choicewatch",
+        "variants": ["black", "white"],
+        "accents": ["#565a60", "#f3f0f1"],
+        "preview": {
+          "type": "square",
+          "rounding": "hyperbolic",
+          "width": 270,
+          "height": 330,
+          "radius": 50
+        },
+        "displaySpecs": {
+          "type": "AMOLED",
+          "size": "1.95",
+          "width": "410",
+          "height": "502",
+          "radius": "76",
+          "ppi": "332",
+          "brightness": "550",
+          "colorGamut": {
+            "NTSC": "100"
+          },
+          "frequency": "60",
+          "ratio": "75"
+        }
+      },
+      "choicewatch2i": {
+        "title": "Choice Watch 2i",
+        "bg": "choicewatch2i",
+        "variants": ["black", "white"],
+        "accents": ["#1d1d1d", "#d4d2ce"],
+        "preview": {
+          "type": "square",
+          "rounding": "hyperbolic",
+          "width": 266,
+          "height": 306,
+          "radius": 60
+        },
+        "displaySpecs": {
+          "type": "AMOLED",
+          "size": "1.85",
+          "width": "390",
+          "height": "450",
+          "radius": "88",
+          "ppi": "322",
+          "frequency": "60",
+          "ratio": "75"
+        }
+      },
+      "choicewatch2pro": {
+        "title": "Choice Watch 2 Pro",
+        "bg": "choicewatch2pro",
+        "variants": ["black", "white"],
+        "accents": ["#1d1d1d", "#d4d2ce"],
+        "preview": {
+          "type": "square",
+          "rounding": "hyperbolic",
+          "width": 284,
+          "height": 326,
+          "radius": 60
+        },
+        "displaySpecs": {
+          "type": "AMOLED",
+          "size": "1.97",
+          "width": "390",
+          "height": "450",
+          "radius": "83",
+          "ppi": "302",
+          "frequency": "60",
+          "ratio": "82"
+        }
+      },
+      "watch4": {
+        "title": "Watch 4",
+        "bg": "watch4",
+        "variants": ["black", "gold"],
+        "accents": ["#313131", "#dad7d1"],
+        "preview": {
+          "type": "square",
+          "rounding": "hyperbolic",
+          "width": 252,
+          "height": 290,
+          "radius": 70
+        },
+        "displaySpecs": {
+          "type": "AMOLED",
+          "size": "1.85",
+          "width": "390",
+          "height": "450",
+          "radius": "92",
+          "ppi": "340"
+        }
+      },
+      "watch4pro": {
+        "title": "Watch 4 Pro",
+        "bg": "watch4pro",
+        "variants": ["black", "dark_green"],
+        "accents": ["#68696e", "#404e4a"],
+        "preview": {
+          "type": "round",
+          "width": 330,
+          "height": 330,
+          "radius": 165
+        },
+        "displaySpecs": {
+          "type": "AMOLED",
+          "size": "1.5",
+          "width": "464",
+          "height": "464",
+          "radius": "232",
+          "ppi": "310"
+        }
+      },
+      "watch5": {
+        "title": "Watch 5",
+        "bg": "watch5",
+        "variants": ["black", "gold"],
+        "accents": ["#313131", "#e6ded6"],
+        "preview": {
+          "type": "square",
+          "rounding": "hyperbolic",
+          "width": 266,
+          "height": 306,
+          "radius": 80
+        },
+        "displaySpecs": {
+          "type": "AMOLED",
+          "size": "1.85",
+          "width": "390",
+          "height": "450",
+          "radius": "96",
+          "ppi": "322"
         }
       },
       "watch5ultra": {
@@ -813,41 +1205,280 @@
           "brightness": "3000",
           "ppi": "317"
         }
+      },
+      "watches": {
+        "title": "Watch ES",
+        "bg": "watches",
+        "variants": ["coral_pink", "icelandic_white", "meteorite_black"],
+        "accents": ["#fceced", "#eeeeee", "444549"],
+        "preview": {
+          "type": "square",
+          "width": 188,
+          "height": 306,
+          "radius": 0
+        },
+        "displaySpecs": {
+          "type": "AMOLED",
+          "size": "1.64",
+          "width": "280",
+          "height": "456",
+          "radius": "0",
+          "ppi": "326",
+          "ratio": "70"
+        }
+      },
+      "watchfit": {
+        "title": "Watch Fit",
+        "bg": "watchfit",
+        "variants": ["black", "denim"],
+        "accents": ["#414344", "#5d7990"],
+        "preview": {
+          "type": "round",
+          "width": 290,
+          "height": 290,
+          "radius": 145
+        },
+        "displaySpecs": {
+          "type": "AMOLED",
+          "size": "1.32",
+          "width": "466",
+          "height": "466",
+          "radius": "233",
+          "ppi": "352"
+        }
+      },
+      "watchgspro": {
+        "title": "Watch GS Pro",
+        "bg": "watchgspro",
+        "variants": ["camo_blue", "charcoal_black", "marl_white"],
+        "accents": ["#8c9ab3", "#44454a", "#ece8e5"],
+        "preview": {
+          "type": "round",
+          "width": 306,
+          "height": 306,
+          "radius": 153
+        },
+        "displaySpecs": {
+          "type": "AMOLED",
+          "size": "1.39",
+          "width": "454",
+          "height": "454",
+          "radius": "227",
+          "ppi": "326"
+        }
+      },
+      "watchgs3": {
+        "title": "Watch GS 3",
+        "bg": "watchgs3",
+        "variants": ["classic_gold", "midnight_black", "ocean_blue"],
+        "accents": ["#f6c9a5", "#44454a", "#2b3952"],
+        "preview": {
+          "type": "round",
+          "width": 314,
+          "height": 314,
+          "radius": 157
+        },
+        "displaySpecs": {
+          "type": "AMOLED",
+          "size": "1.43",
+          "width": "466",
+          "height": "466",
+          "radius": "233",
+          "ppi": "326"
+        }
+      },
+      "watchmagic2_42mm": {
+        "title": "Watch Magic 2 42mm",
+        "bg": "watchmagic2_42mm",
+        "variants": ["agate_black", "sakura_gold"],
+        "accents": ["#5c5e5f", "#eed7c9"],
+        "preview": {
+          "type": "round",
+          "width": 262,
+          "height": 262,
+          "radius": 131
+        },
+        "displaySpecs": {
+          "type": "AMOLED",
+          "size": "1.2",
+          "width": "390",
+          "height": "390",
+          "radius": "195",
+          "ppi": "326"
+        }
+      },
+      "watchmagic2_46mm": {
+        "title": "Watch Magic 2 46mm",
+        "bg": "watchmagic2_46mm",
+        "variants": ["charcoal_black", "flax_brown"],
+        "accents": ["#f6c9a5", "#44454a"],
+        "preview": {
+          "type": "round",
+          "width": 306,
+          "height": 306,
+          "radius": 153
+        },
+        "displaySpecs": {
+          "type": "AMOLED",
+          "size": "1.39",
+          "width": "454",
+          "height": "454",
+          "radius": "237",
+          "ppi": "326"
+        }
+      },
+      "watchx5i": {
+        "title": "Watch X5i",
+        "bg": "watchx5i",
+        "variants": ["black", "white"],
+        "accents": ["#292a2c", "#d3d3ce"],
+        "preview": {
+          "type": "square",
+          "rounding": "hyperbolic",
+          "width": 284,
+          "height": 326,
+          "radius": 80
+        },
+        "displaySpecs": {
+          "type": "AMOLED",
+          "size": "1.97",
+          "width": "390",
+          "height": "450",
+          "radius": "96",
+          "ppi": "302"
+        }
       }
     }
   },
   "huawei": {
     "title": "Huawei",
     "deviceList": {
+      "band6": {
+        "title": "Band 6",
+        "bg": "band6",
+        "variants": ["amber_sunrise", "forest_green", "graphite_black", "sakura_pink"],
+        "accents": ["#ff785c", "#375254", "#f5dcd7", "#fea040"],
+        "preview": {
+          "type": "band",
+          "width": 150,
+          "height": 286,
+          "radius": 16
+        },
+        "displaySpecs": {
+          "type": "AMOLED",
+          "size": "1.47",
+          "width": "194",
+          "height": "368",
+          "radius": "20",
+          "ppi": "282",
+          "ratio": "64"
+        }
+      },
+      "band7": {
+        "title": "Band 7",
+        "bg": "band7",
+        "variants": ["flame_red", "graphite_black", "nebula_pink", "wilderness_green"],
+        "accents": ["#aa3834", "#353536", "#fbe8e7", "#5a6b4c"],
+        "preview": {
+          "type": "band",
+          "width": 150,
+          "height": 286,
+          "radius": 16
+        },
+        "displaySpecs": {
+          "type": "AMOLED",
+          "size": "1.47",
+          "width": "194",
+          "height": "368",
+          "radius": "20",
+          "ppi": "282"
+        }
+      },
+      "talkbandb7": {
+        "title": "TalkBand B7",
+        "bg": "talkbandb7",
+        "variants": ["luminous_black", "sky_gray"],
+        "accents": ["#3f4041", "#887c78"],
+        "preview": {
+          "type": "band",
+          "width": 126,
+          "height": 310,
+          "radius": 0
+        },
+        "displaySpecs": {
+          "type": "AMOLED",
+          "size": "1.47",
+          "width": "188",
+          "height": "460",
+          "radius": "0",
+          "ppi": "326"
+        }
+      },
+      "band8": {
+        "title": "Band 8",
+        "bg": "band8",
+        "variants": ["emerald_green", "midnight_black", "sakura_pink", "vibrant_orange"],
+        "accents": ["#687b59", "#3b3d41", "#f5dcd7", "#fea040"],
+        "preview": {
+          "type": "band",
+          "width": 150,
+          "height": 286,
+          "radius": 16
+        },
+        "displaySpecs": {
+          "type": "AMOLED",
+          "size": "1.47",
+          "width": "194",
+          "height": "368",
+          "radius": "20",
+          "ppi": "282"
+        }
+      },
       "band9": {
         "title": "Band 9",
         "bg": "band9",
-        "variants": ["black", "blue", "yellow"],
-        "accents": ["#525356", "#232a5b", "#fdf0a7"],
+        "variants": ["blue", "charm_pink", "lemon_yellow", "starry_black", "white"],
+        "accents": ["#232a5b", "#f9e7e4", "#fdf0a7", "#525356", "#f6f4f2"],
         "preview": {
           "type": "band",
           "width": 172,
           "height": 326,
-          "radius": 24
+          "radius": 16
+        },
+        "displaySpecs": {
+          "type": "AMOLED",
+          "size": "1.47",
+          "width": "194",
+          "height": "368",
+          "radius": "20",
+          "ppi": "282"
         }
       },
       "band10": {
         "title": "Band 10",
         "bg": "band10",
-        "variants": ["black", "blue", "green"],
-        "accents": ["#525356", "#9eafbf", "#f7fe5e"],
+        "variants": ["black", "blue", "green", "matte_black", "pink", "purple", "white"],
+        "accents": ["#525356", "#9eafbf", "#f7fe5e", "#444548", "#f8e6e3", "#ebe2f1", "#f3f3f3"],
         "preview": {
           "type": "band",
           "width": 172,
           "height": 326,
-          "radius": 24
+          "radius": 16
+        },
+        "displaySpecs": {
+          "type": "AMOLED",
+          "size": "1.47",
+          "width": "194",
+          "height": "368",
+          "radius": "20",
+          "ppi": "282"
         }
       },
       "band11": {
         "title": "Band 11",
         "bg": "band11",
-        "variants": ["beige", "black", "green", "purple", "white"],
-        "accents": ["#e9cbb7", "#242424", "#c9cdba", "#d8cddd", "#e8e0d6"],
+        "variants": ["beige", "black", "black_plastic", "green", "purple", "purple_plastic", "white"],
+        "accents": ["#e9cbb7", "#242424", "#242424", "#c9cdba", "#d8cddd", "#d8cddd", "#e8e0d6"],
         "preview": {
           "type": "band",
           "width": 182,
@@ -855,10 +1486,14 @@
           "radius": 32
         },
         "displaySpecs": {
+          "type": "AMOLED",
           "size": "1.62",
           "width": "286",
           "height": "482",
-          "radius": "50"
+          "radius": "50",
+          "ppi": "347",
+          "brightness": "1500",
+          "frequency": "60"
         }
       },
       "band11pro": {
@@ -873,10 +1508,14 @@
           "radius": 32
         },
         "displaySpecs": {
+          "type": "AMOLED",
           "size": "1.62",
           "width": "286",
           "height": "482",
-          "radius": "50"
+          "radius": "50",
+          "ppi": "347",
+          "brightness": "2000",
+          "frequency": "60"
         }
       },
       "d2": {
@@ -1050,6 +1689,70 @@
           "height": 318,
           "radius": 159,
           "hasGlare": false
+        }
+      },
+      "gt7_46mm": {
+        "title": "GT 7 46mm",
+        "bg": "gt7_46mm",
+        "variants": ["black", "blue", "grey", "yellow"],
+        "accents": ["#2e2e2e", "#384778", "#aba29e", "#f2db66"],
+        "preview": {
+          "type": "round",
+          "width": 322,
+          "height": 322,
+          "radius": 161
+        },
+        "displaySpecs": {
+          "type": "AMOLED",
+          "size": "1.47",
+          "width": "466",
+          "height": "466",
+          "radius": "233",
+          "brightness": "3000",
+          "ppi": "317"
+        }
+      },
+      "gt7_41mm": {
+        "title": "GT 7 41mm",
+        "bg": "gt7_41mm",
+        "variants": ["blue", "grey", "pink", "white"],
+        "accents": ["#cadbec", "#cecece", "#f7ebea", "#fafafa"],
+        "preview": {
+          "type": "round",
+          "width": 290,
+          "height": 290,
+          "radius": 145,
+          "hasGlare": true
+        },
+        "displaySpecs": {
+          "type": "AMOLED",
+          "size": "1.32",
+          "width": "466",
+          "height": "466",
+          "radius": "233",
+          "brightness": "3000",
+          "ppi": "352"
+        }
+      },
+      "gt7pro": {
+        "title": "GT 7 Pro",
+        "bg": "gt7pro",
+        "variants": ["black", "green", "yellow"],
+        "accents": ["#4e4e4e", "#648167", "#d9cf53"],
+        "preview": {
+          "type": "round",
+          "width": 322,
+          "height": 322,
+          "radius": 161
+        },
+        "displaySpecs": {
+          "type": "AMOLED",
+          "size": "1.47",
+          "width": "466",
+          "height": "466",
+          "radius": "233",
+          "brightness": "3000",
+          "ppi": "317"
         }
       },
       "gt_runner": {
@@ -1933,9 +2636,28 @@
           "radius": 157
         }
       },
-      "galaxywatch9": {
-        "title": "Galaxy Watch 9",
-        "bg": "galaxywatch9",
+      "galaxywatch9_40mm": {
+        "title": "Galaxy Watch 9 40mm",
+        "bg": "galaxywatch9_40mm",
+        "variants": ["graphite", "white_gold"],
+        "accents": ["#606367", "#f0f0ee"],
+        "preview": {
+          "type": "round",
+          "width": 284,
+          "height": 284,
+          "radius": 142
+        },
+        "displaySpecs": {
+          "type": "Super AMOLED",
+          "size": "1.3",
+          "width": "438",
+          "height": "438",
+          "ppi": "337"
+        }
+      },
+      "galaxywatch9_44mm": {
+        "title": "Galaxy Watch 9 44mm",
+        "bg": "galaxywatch9_44mm",
         "variants": ["graphite", "silver"],
         "accents": ["#606367", "#6f7669"],
         "preview": {
@@ -1945,9 +2667,11 @@
           "radius": 165
         },
         "displaySpecs": {
+          "type": "Super AMOLED",
           "size": "1.5",
           "width": "480",
-          "height": "480"
+          "height": "480",
+          "ppi": "320"
         }
       },
       "galaxywatchultra2024": {
@@ -2009,6 +2733,111 @@
           "width": 304,
           "height": 304,
           "radius": 152
+        }
+      }
+    }
+  },
+  "tcl": {
+    "title": "TCL",
+    "deviceList": {
+      "kidswatchk5": {
+        "title": "Kids Watch K5",
+        "bg": "kidswatchk5",
+        "variants": ["dawn_pink", "meteor_orange", "sky_blue"],
+        "accents": ["#fee6ea", "#f78c55", "#d1ecf8"],
+        "preview": {
+          "type": "square",
+          "width": 218,
+          "height": 218,
+          "radius": 0
+        },
+        "displaySpecs": {
+          "type": "TFT",
+          "size": "1.4",
+          "width": "240",
+          "height": "240",
+          "radius": "0",
+          "ppi": "242"
+        }
+      },
+      "kidswatchmt40": {
+        "title": "Kids Watch MT40",
+        "bg": "kidswatchmt40",
+        "variants": ["blue", "pink"],
+        "accents": ["#73d2e4", "#ffc1d1"],
+        "preview": {
+          "type": "square",
+          "width": 202,
+          "height": 202,
+          "radius": 0
+        },
+        "displaySpecs": {
+          "type": "TFT",
+          "size": "1.3",
+          "width": "240",
+          "height": "240",
+          "radius": "0",
+          "ppi": "261"
+        }
+      },
+      "kidswatchmt42": {
+        "title": "Kids Watch MT42",
+        "bg": "kidswatchmt42",
+        "variants": ["sakura_pink", "speed_blue"],
+        "accents": ["#b5416d", "#3c5279"],
+        "preview": {
+          "type": "square",
+          "width": 240,
+          "height": 240,
+          "radius": 0
+        },
+        "displaySpecs": {
+          "type": "TFT",
+          "size": "1.54",
+          "width": "240",
+          "height": "240",
+          "radius": "0",
+          "ppi": "220"
+        }
+      },
+      "kidswatchmt46": {
+        "title": "Kids Watch MT46",
+        "bg": "kidswatchmt46",
+        "variants": ["black", "blue", "pink"],
+        "accents": ["#2f2e31", "#4970b5", "#f0d2d1"],
+        "preview": {
+          "type": "square",
+          "width": 202,
+          "height": 202,
+          "radius": 0
+        },
+        "displaySpecs": {
+          "type": "TFT",
+          "size": "1.3",
+          "width": "240",
+          "height": "240",
+          "radius": "0",
+          "ppi": "261"
+        }
+      },
+      "kidswatchmt48": {
+        "title": "Kids Watch MT48",
+        "bg": "kidswatchmt48",
+        "variants": ["cosmic_pink", "galactic_blue", "lunar_cream", "nebula_grey"],
+        "accents": ["#eac8c5", "#5e7a9e", "#c6c5bf", "#454449"],
+        "preview": {
+          "type": "square",
+          "width": 250,
+          "height": 270,
+          "radius": 40
+        },
+        "displaySpecs": {
+          "type": "TFT",
+          "size": "1.68",
+          "width": "360",
+          "height": "390",
+          "radius": "60",
+          "ppi": "317"
         }
       }
     }
