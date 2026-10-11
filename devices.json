@@ -887,7 +887,7 @@
         "title": "Pixel Watch 5 45mm",
         "bg": "pixelwatch5_45mm",
         "variants": ["fog", "obsidian", "olive"],
-        "accents": ["#8f9391", "#414141", "#e1dbd8"],
+        "accents": ["#e0e5e3", "#414141", "#888a72"],
         "preview": {
           "type": "round",
           "width": 326,
@@ -1521,40 +1521,91 @@
       "d2": {
         "title": "D 2",
         "bg": "d2",
-        "variants": ["black", "golden"],
-        "accents": ["#494d57", "#ad9a84"],
+        "variants": ["black", "blue", "golden"],
+        "accents": ["#494d57", "#5f7a8d", "#ad9a84"],
         "preview": {
           "type": "square",
           "rounding": "hyperbolic",
-          "width": 290,
-          "height": 340,
-          "radius": 85
+          "width": 260,
+          "height": 306,
+          "radius": 60
+        },
+        "displaySpecs": {
+          "type": "AMOLED",
+          "size": "1.82",
+          "width": "408",
+          "height": "480",
+          "radius": "94",
+          "ppi": "347",
+          "brightness": "1500"
+        }
+      },
+      "d3": {
+        "title": "D 3",
+        "bg": "d3",
+        "variants": ["black", "gold", "mocha_gold"],
+        "accents": ["#38393d", "#e8e7e5", "#9d8b85"],
+        "preview": {
+          "type": "square",
+          "rounding": "hyperbolic",
+          "width": 274,
+          "height": 322,
+          "radius": 70
+        },
+        "displaySpecs": {
+          "type": "AMOLED",
+          "size": "1.92",
+          "width": "408",
+          "height": "480",
+          "radius": "104",
+          "ppi": "328",
+          "brightness": "3000"
         }
       },
       "fit3": {
         "title": "Fit 3",
         "bg": "fit3",
-        "accent": "#67686a",
+        "variants": ["black", "green", "grey", "pink", "white", "white_leather"],
+        "accents": ["#434343", "#cdd6bb", "#d0d0d0", "#fae2e0", "#d9d0c9", "#f2ecea"],
         "preview": {
           "type": "square",
           "rounding": "hyperbolic",
-          "width": 290,
-          "height": 340,
-          "radius": 85
+          "width": 260,
+          "height": 306,
+          "radius": 60
+        },
+        "displaySpecs": {
+          "type": "AMOLED",
+          "size": "1.82",
+          "width": "408",
+          "height": "480",
+          "radius": "94",
+          "ppi": "347",
+          "brightness": "1500",
+          "frequency": "60"
         }
       },
       "fit4": {
         "title": "Fit 4",
         "bg": "fit4",
-        "variants": ["black", "purple", "white"],
-        "accents": ["#494a4b", "#ded7e6", "#afa69a"],
+        "variants": ["black", "grey", "purple", "white"],
+        "accents": ["#494a4b", "#ababab", "#ded7e6", "#afa69a"],
         "preview": {
           "type": "square",
           "rounding": "hyperbolic",
-          "width": 290,
-          "height": 340,
-          "radius": 85,
+          "width": 260,
+          "height": 306,
+          "radius": 60,
           "hasGlare": true
+        },
+        "displaySpecs": {
+          "type": "AMOLED",
+          "size": "1.82",
+          "width": "408",
+          "height": "480",
+          "radius": "94",
+          "ppi": "347",
+          "brightness": "2000"
         }
       },
       "fit4pro": {
@@ -1848,6 +1899,90 @@
           "hasGlare": true
         }
       },
+      "watch6_42mm": {
+        "title": "Watch 6 42mm",
+        "bg": "watch6_42mm",
+        "variants": ["black", "gold", "white"],
+        "accents": ["#404243", "#e7d9ce", "#f2f0ee"],
+        "preview": {
+          "type": "round",
+          "width": 302,
+          "height": 302,
+          "radius": 151
+        },
+        "displaySpecs": {
+          "type": "LTPO 2.0 AMOLED",
+          "size": "1.38",
+          "width": "466",
+          "height": "466",
+          "radius": "233",
+          "brightness": "3500",
+          "ppi": "338"
+        }
+      },
+      "watch6_46mm": {
+        "title": "Watch 6 46mm",
+        "bg": "watch6_46mm",
+        "variants": ["black", "blue"],
+        "accents": ["#4a4a4a", "#a2abbc"],
+        "preview": {
+          "type": "round",
+          "width": 330,
+          "height": 330,
+          "radius": 165
+        },
+        "displaySpecs": {
+          "type": "LTPO 2.0 AMOLED",
+          "size": "1.5",
+          "width": "466",
+          "height": "466",
+          "radius": "233",
+          "brightness": "3500",
+          "ppi": "310"
+        }
+      },
+      "watch6pro_43mm": {
+        "title": "Watch 6 Pro 43mm",
+        "bg": "watch6pro_43mm",
+        "variants": ["ceramic_edition", "white"],
+        "accents": ["#f7f8fa", "#f7f8fa"],
+        "preview": {
+          "type": "round",
+          "width": 302,
+          "height": 302,
+          "radius": 151
+        },
+        "displaySpecs": {
+          "type": "LTPO 2.0 AMOLED",
+          "size": "1.38",
+          "width": "466",
+          "height": "466",
+          "radius": "233",
+          "brightness": "3500",
+          "ppi": "338"
+        }
+      },
+      "watch6pro_46mm": {
+        "title": "Watch 6 Pro 46mm",
+        "bg": "watch6pro_46mm",
+        "variants": ["brown", "silver", "space_edition"],
+        "accents": ["#6a5248", "#e0dad3", "#878787"],
+        "preview": {
+          "type": "round",
+          "width": 330,
+          "height": 330,
+          "radius": 165
+        },
+        "displaySpecs": {
+          "type": "LTPO 2.0 AMOLED",
+          "size": "1.5",
+          "width": "466",
+          "height": "466",
+          "radius": "233",
+          "brightness": "3500",
+          "ppi": "310"
+        }
+      },
       "watchultimate": {
         "title": "Watch Ultimate",
         "bg": "watchultimate",
@@ -2032,27 +2167,47 @@
       "cmfwatchpro2": {
         "title": "CMF Watch Pro 2",
         "bg": "cmfwatchpro2",
-        "variants": ["ash", "dark", "orange"],
-        "accents": ["#bbbbbb", "#181818", "#fb461f"],
+        "variants": ["ash", "blue", "dark", "orange"],
+        "accents": ["#bbbbbb", "#445992", "#181818", "#fb461f"],
         "preview": {
           "type": "round",
           "width": 290,
           "height": 290,
           "radius": 145,
           "hasGlare": true
+        },
+        "displaySpecs": {
+          "type": "AMOLED",
+          "size": "1.32",
+          "width": "466",
+          "height": "466",
+          "radius": "233",
+          "brightness": "620",
+          "frequency": "60",
+          "ppi": "353"
         }
       },
       "cmfwatchpro3": {
         "title": "CMF Watch Pro 3",
         "bg": "cmfwatchpro3",
-        "variants": ["dark_grey", "light_grey", "orange"],
-        "accents": ["#444850", "#cecfd3", "#fb461f"],
+        "variants": ["dark_grey", "light_green", "light_grey", "orange"],
+        "accents": ["#444850", "#88a79f", "#cecfd3", "#fb461f"],
         "preview": {
           "type": "round",
           "width": 314,
           "height": 314,
           "radius": 157,
           "hasGlare": true
+        },
+        "displaySpecs": {
+          "type": "AMOLED",
+          "size": "1.43",
+          "width": "466",
+          "height": "466",
+          "radius": "233",
+          "brightness": "670",
+          "frequency": "60",
+          "ppi": "326"
         }
       }
     }
