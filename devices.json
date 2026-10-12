@@ -634,6 +634,25 @@
           "radius": 152
         }
       },
+      "forerunner165": {
+        "title": "Forerunner 165",
+        "bg": "forerunner165",
+        "variants": ["berry", "black", "mist_gray", "turquoise"],
+        "accents": ["#724057", "#3b3b3b", "#d6d6d6", "#389197"],
+        "preview": {
+          "type": "round",
+          "width": 264,
+          "height": 264,
+          "radius": 132
+        },
+        "displaySpecs": {
+          "type": "AMOLED",
+          "size": "1.2",
+          "width": "390",
+          "height": "390",
+          "ppi": "326"
+        }
+      },
       "lily2": {
         "title": "Lily 2",
         "bg": "lily2",
@@ -2241,16 +2260,44 @@
           "hasGlare": true
         }
       },
-      "watch3": {
-        "title": "Watch 3",
-        "bg": "watch3",
+      "watch3_43mm": {
+        "title": "Watch 3 43mm",
+        "bg": "watch3_43mm",
+        "variants": ["black", "white"],
+        "accents": ["#3b3c40", "#f8f1ea"],
+        "preview": {
+          "type": "round",
+          "width": 290,
+          "height": 290,
+          "radius": 145
+        },
+        "displaySpecs": {
+          "type": "AMOLED",
+          "size": "1.32",
+          "width": "466",
+          "height": "466",
+          "brightness": "",
+          "ppi": "352"
+        }
+      },
+      "watch3_46mm": {
+        "title": "Watch 3 46mm",
+        "bg": "watch3_46mm",
         "variants": ["emerald", "obsidian"],
         "accents": ["#65755d", "#43444a"],
         "preview": {
           "type": "round",
-          "width": 324,
-          "height": 324,
-          "radius": 162
+          "width": 330,
+          "height": 330,
+          "radius": 165
+        },
+        "displaySpecs": {
+          "type": "LTPO AMOLED",
+          "size": "1.5",
+          "width": "466",
+          "height": "466",
+          "brightness": "2200",
+          "ppi": "310"
         }
       },
       "watchlite": {
@@ -2780,15 +2827,61 @@
           "radius": 157
         }
       },
-      "galaxywatch8": {
-        "title": "Galaxy Watch 8",
-        "bg": "galaxywatch8",
-        "accent": "#535257",
+      "galaxywatch8_40mm": {
+        "title": "Galaxy Watch 8 40mm",
+        "bg": "galaxywatch8_40mm",
+        "variants": ["black", "white"],
+        "accents": ["#5c5f64", "#eff1f0"],
         "preview": {
           "type": "round",
           "width": 314,
           "height": 314,
           "radius": 157
+        },
+        "displaySpecs": {
+          "type": "Super AMOLED",
+          "size": "1.3",
+          "width": "438",
+          "height": "438",
+          "ppi": "337"
+        }
+      },
+      "galaxywatch8_44mm": {
+        "title": "Galaxy Watch 8 44mm",
+        "bg": "galaxywatch8_44mm",
+        "variants": ["black", "white"],
+        "accents": ["#5c5f64", "#eff1f0"],
+        "preview": {
+          "type": "round",
+          "width": 330,
+          "height": 330,
+          "radius": 165
+        },
+        "displaySpecs": {
+          "type": "Super AMOLED",
+          "size": "1.5",
+          "width": "480",
+          "height": "480",
+          "ppi": "320"
+        }
+      },
+      "galaxywatch8classic": {
+        "title": "Galaxy Watch 8 Classic",
+        "bg": "galaxywatch8classic",
+        "variants": ["black", "white"],
+        "accents": ["#535257", "#ebebeb"],
+        "preview": {
+          "type": "round",
+          "width": 286,
+          "height": 286,
+          "radius": 143
+        },
+        "displaySpecs": {
+          "type": "Super AMOLED",
+          "size": "1.3",
+          "width": "438",
+          "height": "438",
+          "ppi": "337"
         }
       },
       "galaxywatch9_40mm": {
